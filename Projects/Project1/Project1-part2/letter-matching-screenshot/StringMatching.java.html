@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>StringMatching.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7ec3e6;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a;}
+.s3 { color: #ed864a; font-weight: bold;}
+.s4 { color: #54b33e;}
+.s5 { color: #33ccff; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+StringMatching.java</font>
+</center></td></tr></table>
+<pre><span class="s0">/* 
+ 
+Author: Vishal Prabhachandar 
+Section: CSCI 5448-001 
+JDK version: Open JDK Amazon Corretto-11.0.13.8.1 
+String matching program 
+ 
+Assumptions: 
+1. The program ends when the user inputs a null/empty string or the input word matches the randomly selected word. 
+2. Static arrays is used to store the predefined 12 five-letter words. 
+3. All the predefined words are assumed to be in upper case and have non-repeating characters. 
+4. Only the input string is upper-cased. 
+*/</span>
+
+<span class="s2">import </span><span class="s1">java.util.HashSet</span><span class="s3">;</span>
+<span class="s2">import </span><span class="s1">java.util.Random</span><span class="s3">;</span>
+<span class="s2">import </span><span class="s1">java.util.Scanner</span><span class="s3">;</span>
+
+<span class="s0">// Class to hold list of predefined words</span>
+<span class="s2">class </span><span class="s1">WordList{</span>
+    <span class="s0">// Storing the 12 words</span>
+    <span class="s2">static </span><span class="s1">String[] WORD_SET = { </span><span class="s4">&quot;BRUCE&quot;</span><span class="s3">, </span><span class="s4">&quot;DWIGH&quot;</span><span class="s3">, </span><span class="s4">&quot;MAXDO&quot;</span><span class="s3">, </span><span class="s4">&quot;ROSHN&quot;</span><span class="s3">, </span><span class="s4">&quot;GAPBN&quot;</span><span class="s3">, </span><span class="s4">&quot;FRANK&quot;</span><span class="s3">,</span>
+            <span class="s4">&quot;PHONE&quot;</span><span class="s3">, </span><span class="s4">&quot;WORDS&quot;</span><span class="s3">, </span><span class="s4">&quot;CREAM&quot;</span><span class="s3">, </span><span class="s4">&quot;PASTE&quot;</span><span class="s3">, </span><span class="s4">&quot;DOUGH&quot;</span><span class="s3">, </span><span class="s4">&quot;DOGIE&quot;</span><span class="s1">}</span><span class="s3">;</span>
+
+    <span class="s1">String getWord(){</span>
+        <span class="s0">// Random generator</span>
+        <span class="s1">Random randomIndex = </span><span class="s2">new </span><span class="s1">Random()</span><span class="s3">;</span>
+        <span class="s2">int </span><span class="s1">cardIndex = randomIndex.nextInt(WORD_SET.length)</span><span class="s3">;</span>
+        <span class="s2">return </span><span class="s1">WORD_SET[cardIndex]</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s0">/* Class to perform the string comparison 
+    1. Hash set is used to store the characters of the randomly selected word (the random word doesn't contain repeating characters) 
+    2. Both input string and randomly selected word are converted to character array, so they are iterable 
+    3. We first check if there is an exact match of characters 
+    4. Otherwise, we look up the hashset using contains function to find if a character is present 
+    5. Finally, we conclude the character is not present 
+ 
+*/</span>
+
+<span class="s2">class </span><span class="s1">CompareStrings {</span>
+
+    <span class="s2">boolean </span><span class="s1">run(String randomWord</span><span class="s3">, </span><span class="s1">String inputString) {</span>
+
+        <span class="s1">HashSet&lt;Character&gt; charLocation = </span><span class="s2">new </span><span class="s1">HashSet&lt;&gt;()</span><span class="s3">;</span>
+        <span class="s2">int </span><span class="s1">countMatch = </span><span class="s5">0</span><span class="s3">;</span>
+        <span class="s2">char</span><span class="s1">[] randomWordChars = randomWord.toCharArray()</span><span class="s3">;</span>
+        <span class="s2">char</span><span class="s1">[] inputStringChars = inputString.toUpperCase().toCharArray()</span><span class="s3">;</span>
+        <span class="s2">for </span><span class="s1">(</span><span class="s2">char </span><span class="s1">c : randomWordChars) {</span>
+            <span class="s1">charLocation.add(c)</span><span class="s3">;</span>
+        <span class="s1">}</span>
+        <span class="s2">for </span><span class="s1">(</span><span class="s2">int </span><span class="s1">index = </span><span class="s5">0</span><span class="s3">; </span><span class="s1">index &lt; inputString.length()</span><span class="s3">; </span><span class="s1">index++) {</span>
+            <span class="s2">if </span><span class="s1">(randomWordChars[index] == inputStringChars[index]) {</span>
+                <span class="s1">++countMatch</span><span class="s3">;</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;</span><span class="s2">\&quot;</span><span class="s4">&quot; </span><span class="s1">+ inputStringChars[index] + </span><span class="s4">&quot;</span><span class="s2">\&quot;</span><span class="s4">&quot; </span><span class="s1">+ </span><span class="s4">&quot; is a match in the correct location&quot;</span><span class="s1">)</span><span class="s3">;</span>
+            <span class="s1">} </span><span class="s2">else if </span><span class="s1">(charLocation.contains(inputStringChars[index])) {</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;</span><span class="s2">\&quot;</span><span class="s4">&quot; </span><span class="s1">+ inputStringChars[index] + </span><span class="s4">&quot;</span><span class="s2">\&quot;</span><span class="s4">&quot; </span><span class="s1">+ </span><span class="s4">&quot; is in the word but in a different location&quot;</span><span class="s1">)</span><span class="s3">;</span>
+            <span class="s1">} </span><span class="s2">else </span><span class="s1">{</span>
+                <span class="s1">System.out.println(</span><span class="s4">&quot;</span><span class="s2">\&quot;</span><span class="s4">&quot; </span><span class="s1">+ inputStringChars[index] + </span><span class="s4">&quot;</span><span class="s2">\&quot;</span><span class="s4">&quot; </span><span class="s1">+ </span><span class="s4">&quot; is not in the word&quot;</span><span class="s1">)</span><span class="s3">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s0">// Code to return boolean value, if all characters match inorder to exit the program</span>
+        <span class="s2">return </span><span class="s1">countMatch == inputString.length()</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+<span class="s0">// Class for custom exception</span>
+<span class="s0">// Reference - https://stackoverflow.com/questions/8423700/how-to-create-a-custom-exception-type-in-java</span>
+<span class="s2">class </span><span class="s1">wordException </span><span class="s2">extends </span><span class="s1">Exception{</span>
+
+    <span class="s2">public </span><span class="s1">wordException(String message){</span>
+        <span class="s2">super</span><span class="s1">(message)</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s0">// Driver class</span>
+<span class="s2">public class </span><span class="s1">StringMatching {</span>
+
+    <span class="s2">public static void </span><span class="s1">main(String[] args){</span>
+
+        <span class="s0">// getting random word</span>
+        <span class="s1">WordList words = </span><span class="s2">new </span><span class="s1">WordList()</span><span class="s3">;</span>
+        <span class="s1">String randomWord</span><span class="s3">;</span>
+        <span class="s0">// Object for CompareStrings class</span>
+        <span class="s1">CompareStrings compare = </span><span class="s2">new </span><span class="s1">CompareStrings()</span><span class="s3">;</span>
+        <span class="s0">// Flag variable to denote end of program or complete word match</span>
+        <span class="s2">boolean </span><span class="s1">isEnd</span><span class="s3">;</span>
+        <span class="s1">String inputString</span><span class="s3">;</span>
+        <span class="s1">Scanner input = </span><span class="s2">new </span><span class="s1">Scanner(System.in)</span><span class="s3">;</span>
+        <span class="s0">// Accepting input until empty or word matches random word</span>
+        <span class="s2">do</span><span class="s1">{</span>
+            <span class="s0">// Setting isEnd flag to false</span>
+            <span class="s1">isEnd = </span><span class="s2">false</span><span class="s3">;</span>
+            <span class="s0">// Set random word</span>
+            <span class="s1">randomWord = words.getWord()</span><span class="s3">;</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Enter a 5-letter word: &quot;</span><span class="s1">)</span><span class="s3">;</span>
+            <span class="s0">// Try catch for handling inputs other than numbers</span>
+
+            <span class="s1">inputString = input.nextLine()</span><span class="s3">;</span>
+            <span class="s0">// Checking for empty input</span>
+            <span class="s2">if </span><span class="s1">(inputString.isBlank() || inputString.isEmpty()){</span>
+                <span class="s1">isEnd = </span><span class="s2">true</span><span class="s3">;</span>
+            <span class="s1">}</span>
+            <span class="s0">// Check if words are alphabets only</span>
+            <span class="s0">// Reference - https://www.tutorialkart.com/java/how-to-check-if-string-contains-only-alphabets-in-java/</span>
+            <span class="s2">else if</span><span class="s1">(!inputString.matches(</span><span class="s4">&quot;[a-zA-Z]+&quot;</span><span class="s1">)){</span>
+                <span class="s2">try</span><span class="s1">{</span>
+                    <span class="s2">throw new </span><span class="s1">wordException(</span><span class="s4">&quot;Enter a valid 5-letter word!&quot;</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">}</span>
+                <span class="s2">catch</span><span class="s1">(wordException we){</span>
+                    <span class="s1">System.out.println(we.getMessage())</span><span class="s3">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+            <span class="s0">// Checking for valid input length</span>
+            <span class="s2">else if </span><span class="s1">(inputString.length() != </span><span class="s5">5</span><span class="s1">){</span>
+                <span class="s2">try</span><span class="s1">{</span>
+                    <span class="s2">throw new </span><span class="s1">wordException(</span><span class="s4">&quot;Enter a valid 5-letter word!&quot;</span><span class="s1">)</span><span class="s3">;</span>
+                <span class="s1">}</span>
+                <span class="s2">catch</span><span class="s1">(wordException we){</span>
+                    <span class="s1">System.out.println(we.getMessage())</span><span class="s3">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span>
+            <span class="s0">// Perform comparison</span>
+            <span class="s2">else</span><span class="s1">{</span>
+                <span class="s1">isEnd = compare.run(randomWord</span><span class="s3">, </span><span class="s1">inputString)</span><span class="s3">;</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span><span class="s2">while</span><span class="s1">(!isEnd)</span><span class="s3">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
