@@ -1,6 +1,6 @@
 <div align="center">
   <p>
-    <img src="resources/logo.png" alt="Logo" width="80" height="80">
+    <img src="Resources/logo.png" alt="Logo" width="80" height="80">
   </p>
 
   <h1 align="center">CSCI 5448-Object Oriented Analysis and Design</h1>
