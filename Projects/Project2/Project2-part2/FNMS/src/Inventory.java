@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Inventory {
     List<Item> ItemsList;
 
@@ -22,7 +24,7 @@ public class Inventory {
     }
 
     public List<Item> checkInventory(String s){
-
+        return ItemsList;
     }
 
     public void announce(Item item){

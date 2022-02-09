@@ -1,16 +1,23 @@
 abstract class Music extends Item{
+
     String band;
     String album;
-}
 
-class PaperScore extends Music {
+    public String getBand() {
+        return band;
+    }
 
-}
+    public void setBand(String band) {
+        this.band = band;
+    }
 
-class CD extends Music {
+    public String getAlbum() {
+        return album;
+    }
 
-}
+    public void setAlbum(String album) {
+        this.album = album;
+    }
 
-class Vinyl extends Music {
 
 }

@@ -1,15 +1,14 @@
 abstract class Stringed extends Instruments{
+
     boolean electric;
-}
 
-class Guitar extends Stringed {
+    public boolean isElectric() {
+        return electric;
+    }
 
-}
+    public void setElectric(boolean electric) {
+        this.electric = electric;
+    }
 
-class Bass extends Stringed {
-
-}
-
-class Mandolin extends Stringed {
 
 }

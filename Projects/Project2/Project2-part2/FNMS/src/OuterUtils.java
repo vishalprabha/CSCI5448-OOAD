@@ -48,18 +48,12 @@ public  class OuterUtils {
         boolean getRandomDamage(int x) {
             //works for velma- need to add code based on x
             int p =  rand.nextInt(100);
-            if( p<5 )
-                return true;
-            else
-                return false;
+            return p < 5;
         }
 
         boolean getRandomBuy() {
             int p =  rand.nextInt(50);
-            if( p<25 )
-                return true;
-            else
-                return false;
+            return p < 25;
         }
 
         String getRandomClerkObj() {
