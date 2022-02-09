@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class MusicStore {
     private Delivery deliveryObj;
     private Inventory inventoryObj;
@@ -47,16 +49,16 @@ public class MusicStore {
     List<Customer> listCustomerObj;
 
     void MusicStore(){
-        //initializeItems()
-        //Add Items to Inventory
-        //InitializeCustomers()
+
     }
-    public void simulation(int days){
-//Main work
+    void initializeItems(){
 
     }
 
-    void initialize Items(){
+    public void simulate(int days){
+
 
     }
+
+
 }
