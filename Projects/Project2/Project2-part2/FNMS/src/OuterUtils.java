@@ -8,7 +8,7 @@ public  class OuterUtils {
         static Random rand = new Random();
 
         public static String getRandomName() {
-            Random rand = new Random();
+
             int nameLength = rand.nextInt(6) + 3;
 
             // References
@@ -92,17 +92,19 @@ public  class OuterUtils {
             itemTypes.add("Strings");
             return itemTypes;
         }
-
-        double getRandomPrice(int x) {
-            return rand.nextDouble();
+        // Generate random value in given range
+        static double getRandomPrice(int max) {
+            int min = 1;
+            // https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/32808589
+            return (min + (max - min) * rand.nextDouble());
         }
 
-        int getRandomDay(int d) {
+        static int getRandomDay(int d) {
             //delivery day after ordering
             return d + (rand.nextInt(3) + 1);
         }
 
-        double getRandomPrice(String a, String b) {
+        static double  getRandomPrice(String a, String b) {
             return 0.0;
         }
     }

@@ -8,7 +8,7 @@ public class Delivery {
 
     // Constructor initializing itemsList
     Delivery() {
-        itemsList = new HashMap<>();
+        this.itemsList = new HashMap<>();
     }
 
     // Function to get delivery items for a particular day

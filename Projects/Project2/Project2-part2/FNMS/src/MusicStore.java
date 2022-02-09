@@ -5,6 +5,7 @@ public class MusicStore {
     private Inventory inventoryObj;
     private List<Clerk> clerkObjList;
     private CashRegister cashRegisterObj;
+    private List<Customer> listCustomerObj;
 
     public Delivery getDeliveryObj() {
         return deliveryObj;
@@ -46,23 +47,20 @@ public class MusicStore {
         this.listCustomerObj = listCustomerObj;
     }
 
-    List<Customer> listCustomerObj;
-
     MusicStore(){
 
         deliveryObj = new Delivery();
-        inventoryObj = new Inventory();
         // initializing cash resgister money with 0 at the start
         cashRegisterObj = new CashRegister(0);
+        // Initializing inventory with 51 Item objects
+        inventoryObj = new Inventory();
         // Creating Shaggy clerk object
         clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 20, "Shaggy"));
         // Creating Velma clerk object
         clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 5, "Velma"));
 
     }
-    void initializeItems(){
 
-    }
 
     public void simulate(int days){
 
