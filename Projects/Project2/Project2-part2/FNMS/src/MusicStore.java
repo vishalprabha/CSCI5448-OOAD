@@ -48,7 +48,16 @@ public class MusicStore {
 
     List<Customer> listCustomerObj;
 
-    void MusicStore(){
+    MusicStore(){
+
+        deliveryObj = new Delivery();
+        inventoryObj = new Inventory();
+        // initializing cash resgister money with 0 at the start
+        cashRegisterObj = new CashRegister(0);
+        // Creating Shaggy clerk object
+        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 20, "Shaggy"));
+        // Creating Velma clerk object
+        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 5, "Velma"));
 
     }
     void initializeItems(){

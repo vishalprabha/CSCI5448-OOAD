@@ -104,9 +104,9 @@ public class Clerk extends Staff{
         this.leaveTheStoreObj = leaveTheStoreObj;
     }
 
-    public Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, float damagePercentage)
+    Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, float damagePercentage, String name)
     {
-
+        setName(name);
     }
 
     public boolean checkConsecutive(int day){
