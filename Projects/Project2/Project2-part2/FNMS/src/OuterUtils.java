@@ -98,13 +98,15 @@ public  class OuterUtils {
             return (min + (max - min) * rand.nextDouble());
         }
 
+        static int getRandomInt(int min, int max){
+            // https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/32808589
+            return (min + (max - min) * rand.nextInt());
+        }
+
         static int getRandomDay(int d) {
             //delivery day after ordering
             return d + (rand.nextInt(3) + 1);
         }
 
-        static double  getRandomPrice(String a, String b) {
-            return 0.0;
-        }
     }
 }
