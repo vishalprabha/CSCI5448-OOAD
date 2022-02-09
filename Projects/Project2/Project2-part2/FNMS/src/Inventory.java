@@ -8,7 +8,7 @@ public class Inventory {
     Inventory(){
         this.ItemsList = new ArrayList<>();
         for (int index = 0; index < 3; index ++){
-            double purchasePrice = OuterUtils.Utils.getRandomPrice(50);
+            double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
             PaperScore paperScoreItem = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent",OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
 
         }

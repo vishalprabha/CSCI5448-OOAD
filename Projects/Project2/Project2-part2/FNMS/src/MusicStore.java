@@ -61,8 +61,12 @@ public class MusicStore {
 
     }
 
-
     public void simulate(int days){
+
+        for( int index=0; index < days; index ++)
+        {
+
+        }
 
 
     }

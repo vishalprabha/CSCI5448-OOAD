@@ -93,8 +93,7 @@ public  class OuterUtils {
             return itemTypes;
         }
         // Generate random value in given range
-        static double getRandomPrice(int max) {
-            int min = 1;
+        static double getRandomPrice(int min, int max) {
             // https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/32808589
             return (min + (max - min) * rand.nextDouble());
         }
