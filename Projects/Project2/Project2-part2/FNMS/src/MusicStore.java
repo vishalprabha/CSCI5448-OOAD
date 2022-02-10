@@ -167,6 +167,10 @@ public class MusicStore {
             clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj);
             // Check the register
             clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj);
+            // Clean the store
+            clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj);
+            // Leave the store
+            clerkObj.leaveTheStoreObj.announce(clerkObj.name, day);
 
             
 
