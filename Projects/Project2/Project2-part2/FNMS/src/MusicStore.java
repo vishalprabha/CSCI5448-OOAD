@@ -6,6 +6,15 @@ public class MusicStore {
     private List<Clerk> clerkObjList;
     private CashRegister cashRegisterObj;
     private List<Customer> listCustomerObj;
+    private HashMap<Integer, List<Item>> listItemsSold;
+
+    public HashMap<Integer, List<Item>> getListItemsSold() {
+        return listItemsSold;
+    }
+
+    public void setListItemsSold(HashMap<Integer, List<Item>> listItemsSold) {
+        this.listItemsSold = listItemsSold;
+    }
 
     public Delivery getDeliveryObj() {
         return deliveryObj;
@@ -48,8 +57,12 @@ public class MusicStore {
     }
 
     MusicStore(){
+        // Initializing clerkObject list
         clerkObjList = new ArrayList<>();
+        // Initializing Delivery object
         deliveryObj = new Delivery();
+        // Initializing soldItem list
+        listItemsSold = new HashMap<>();
         // initializing cash resgister money with 0 at the start
         cashRegisterObj = new CashRegister(0, 0);
         // Initializing inventory with 51 Item objects
@@ -167,11 +180,22 @@ public class MusicStore {
             // Check the deliveries
             clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj);
 
-
             // Check the register
             clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj);
 
+            // Check inventory and place and order
             clerkObj.doInventoryObj.checkInventory(inventoryObj, clerkObj.placeAnOrderObj, day);
+
+            // Open the store
+            for(Customer customer : listCustomerObj){
+                if(customer.getCustomerType().equals("Buyer")){
+                    clerkObj.openTheStoreObj.orchestrateSell(inventoryObj, cashRegisterObj, customer, listItemsSold);
+                }
+                else{
+                    clerkObj.openTheStoreObj.orchestrateBuy(inventoryObj, cashRegisterObj, customer, clerkObj.getName());
+                }
+            }
+
             // Clean the store
             clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj);
             // Leave the store

@@ -1,29 +1,17 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class OpenTheStore {
 
-     HashMap listItemsSold;
     Random rand = new Random();
-    public HashMap getListItemsSold() {
-        return listItemsSold;
-    }
-
-    public void setListItemsSold(HashMap listItemsSold) {
-        this.listItemsSold = listItemsSold;
-    }
-
     public void announce(int day){
 
     }
-
-    public void orchestrateBuy(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj){
+    // Function to sell an item to customer
+    public void orchestrateSell(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, HashMap<Integer, List<Item>> listItemsSold){
         String buyItemName = customerObj.getBuyItemName();
         List<Item> items = inventoryObj.getItemsList();
         for(Item item : items) {
-            if(item.getName() == buyItemName) {
+            if(Objects.equals(item.getName(), buyItemName)) {
                 boolean buy = OuterUtils.Utils.getRandomBuy(50);
                 if(buy) {
                     cashRegisterObj.addMoney(item.getListPrice());
@@ -41,21 +29,20 @@ public class OpenTheStore {
             }
         }
     }
-
-    public void orchestrateSell(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName){
-
+    // Function to buy an item from the customer
+    public void orchestrateBuy(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName){
         Item addItem = customerObj.getSellItemObj();
         String currCondition = addItem.getCondition();
         double purchasePrice = 0.0;
-        if(currCondition == "poor") {
+        if(Objects.equals(currCondition, "poor")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(0,20);
-        } else if(currCondition == "fair") {
+        } else if(Objects.equals(currCondition, "fair")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(21,40);
-        } else if(currCondition == "good") {
+        } else if(Objects.equals(currCondition, "good")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(41,60);
-        } else if(currCondition == "very good") {
+        } else if(Objects.equals(currCondition, "very good")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(61,80);
-        } else if(currCondition == "excellent") {
+        } else if(Objects.equals(currCondition, "excellent")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(81,100);
         }
         boolean accept = OuterUtils.Utils.getRandomBuy(50);
