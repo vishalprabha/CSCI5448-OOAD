@@ -24,9 +24,10 @@ public class CleanTheStore {
             if(i==0) {
                 inventoryObj.deleteInventory(damageItem);
             } else {
-                damageItem.condition = conditionOptions[i-1];
+                damageItem.condition = conditionOptions[i - 1];
             }
             announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
+            System.out.println("Store cleaned on day");
         }
     }
 }

@@ -23,6 +23,7 @@ public class DoInventory {
             int updatedCount = countItems.get(item.getClass().getName()) + 1;
             countItems.put(item.getClass().getName(), updatedCount);
         }
+        announce(totalPurchasePrice);
         for(Map.Entry<String, Integer> e : countItems.entrySet()){
             if(e.getValue() == 0){
                 placeAnOrderObj.orderItems(e.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay);
@@ -37,7 +38,7 @@ public class DoInventory {
     }
 
     public void announce(double totalValue){
-
+        System.out.println("Value of all the items in the store:" + totalValue);
     }
 
 
