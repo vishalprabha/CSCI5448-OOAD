@@ -1,12 +1,12 @@
 import java.util.*;
-
+//Encapsulation
 public class MusicStore {
     private Delivery deliveryObj;
     private Inventory inventoryObj;
     private List<Clerk> clerkObjList;
     private CashRegister cashRegisterObj;
     private List<Customer> listCustomerObj;
-    private HashMap<Integer, List<Item>> listItemsSold;
+    private HashMap<Integer, List<Item>> listItemsSold; //Example of identity
 
     public HashMap<Integer, List<Item>> getListItemsSold() {
         return listItemsSold;

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+//Example of abstraction
 public class Clerk extends Staff{
 
     ArrayList<Integer> daysWorked = new ArrayList<>();
