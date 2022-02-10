@@ -9,5 +9,15 @@ public class Hats extends Clothing {
         this.hatSize = hatSize;
     }
 
+    public Hats(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, char hatSize){
+        setName(name);
+        setPurchasePrice(purchasePrice);
+        setListPrice(listPrice);
+        setNewOrUsed(newOrUsed);
+        setDayArrived(dayArrived);
+        setCondition(condition);
+        setHatSize(hatSize);
+    }
+
 
 }

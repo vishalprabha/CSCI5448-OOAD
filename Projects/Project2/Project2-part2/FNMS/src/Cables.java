@@ -9,5 +9,13 @@ public class Cables extends Accessories {
         this.length = length;
     }
 
-
+    public Cables(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, int length){
+        setName(name);
+        setPurchasePrice(purchasePrice);
+        setListPrice(listPrice);
+        setNewOrUsed(newOrUsed);
+        setDayArrived(dayArrived);
+        setCondition(condition);
+        setLength(length);
+    }
 }

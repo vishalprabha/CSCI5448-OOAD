@@ -7,6 +7,12 @@ public  class OuterUtils {
 
         static Random rand = new Random();
 
+        public static char getRandomSize(){
+            char[] sizes = {'S','M','L'};
+            int size = rand.nextInt(sizes.length);
+            return sizes[size];
+        }
+
         public static String getRandomName() {
 
             int nameLength = rand.nextInt(6) + 3;
