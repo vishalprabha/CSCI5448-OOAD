@@ -14,6 +14,7 @@
 - Java JDK 17
 - Open JDK Amazon Corretto-11.0.13.8.1
 
+ <br>
 # OO concepts in code
 
 - Mandolin.java - Inheritance example
@@ -31,3 +32,13 @@ All the data is hidden and methods are properly specified.
 
 - Clerk.java - Abstraction
  The clerk will only the work related to him.
+
+<br>
+# Assumptions
+
+
+# Changes in UML compared to previous submission
+- Item condition options changed to listItemsSold
+- Cables class name changed
+- Variable access type changed
+- Additional helper functions added in Util class
