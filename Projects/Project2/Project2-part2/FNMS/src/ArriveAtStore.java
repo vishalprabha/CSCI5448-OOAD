@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
+// Clerk ArriveAtStore functionality
 public class ArriveAtStore {
     // Store arrival announcement
     public void announce(int day, String name){
