@@ -44,10 +44,10 @@ public class OpenTheStore {
         }
     }
     // Function to buy an item from the customer
-    public void orchestrateBuy(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName){
+    public void orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
         Item addItem = customerObj.getSellItemObj();
         String currCondition = addItem.getCondition();
-        double purchasePrice = 0.0;
+        double purchasePrice;
         if(Objects.equals(currCondition, "poor")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(0,20);
         } else if(Objects.equals(currCondition, "fair")) {
@@ -56,30 +56,33 @@ public class OpenTheStore {
             purchasePrice = OuterUtils.Utils.getRandomPrice(41,60);
         } else if(Objects.equals(currCondition, "very good")) {
             purchasePrice = OuterUtils.Utils.getRandomPrice(61,80);
-        } else if(Objects.equals(currCondition, "excellent")) {
+        } else {
             purchasePrice = OuterUtils.Utils.getRandomPrice(81,100);
         }
-        boolean accept = OuterUtils.Utils.getRandomBuy(50);
-        if(accept) {
+        if(OuterUtils.Utils.getRandomBuy(50)) {
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2*purchasePrice);
-            if(cashRegisterObj.getMoney() > purchasePrice) {
+            if(cashRegisterObj.getMoney() < purchasePrice) {
+                checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj);
+            }
                 inventoryObj.addInventory(addItem);
                 cashRegisterObj.removeMoney(purchasePrice);
                 announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
+        }
+        else if(OuterUtils.Utils.getRandomBuy(75)) {
+            purchasePrice = (1.1) * purchasePrice;
+            addItem.setPurchasePrice(purchasePrice);
+            addItem.setListPrice(2 * purchasePrice);
+            if(cashRegisterObj.getMoney() > purchasePrice) {
+                checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj);
             }
-        } else {
-            accept = OuterUtils.Utils.getRandomBuy(75);
-            if(accept) {
-                purchasePrice = (1.1) * purchasePrice;
-                addItem.setPurchasePrice(purchasePrice);
-                addItem.setListPrice(2 * purchasePrice);
-                if(cashRegisterObj.getMoney() > purchasePrice) {
-                    inventoryObj.addInventory(addItem);
-                    cashRegisterObj.removeMoney(purchasePrice);
-                    announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
-                }
-            }
+                inventoryObj.addInventory(addItem);
+                cashRegisterObj.removeMoney(purchasePrice);
+                announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
+
+        }
+        else{
+            System.out.println("Customer "+customerObj.getId()+ " wanted to sell a "+addItem.getClass().getName()+"  but did not sell even after providing discount");
         }
     }
 

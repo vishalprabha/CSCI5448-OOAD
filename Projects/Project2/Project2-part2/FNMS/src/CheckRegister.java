@@ -13,7 +13,7 @@ public class CheckRegister {
         }
     }
 
-    public void checkBalanceForDeliveryItem(int day, CashRegister cashRegisterObj){
+    public void checkBalanceInRegister(int day, CashRegister cashRegisterObj){
         double amount = cashRegisterObj.getMoney();
         if(amount < 75) {
             cashRegisterObj.addMoneyRemovedBank(1000);

@@ -191,7 +191,7 @@ public class MusicStore {
                     clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, customer, listItemsSold);
                 }
                 else{
-                    clerkObj.openTheStoreObj.orchestrateBuy(inventoryObj, cashRegisterObj, customer, clerkObj.getName());
+                    clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, customer, clerkObj.getName(), clerkObj.checkRegisterObj);
                 }
             }
 
