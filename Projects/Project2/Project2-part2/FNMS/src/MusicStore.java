@@ -188,7 +188,7 @@ public class MusicStore {
             // Open the store
             for(Customer customer : listCustomerObj){
                 if(customer.getCustomerType().equals("Buyer")){
-                    clerkObj.openTheStoreObj.orchestrateSell(inventoryObj, cashRegisterObj, customer, listItemsSold);
+                    clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, customer, listItemsSold);
                 }
                 else{
                     clerkObj.openTheStoreObj.orchestrateBuy(inventoryObj, cashRegisterObj, customer, clerkObj.getName());
