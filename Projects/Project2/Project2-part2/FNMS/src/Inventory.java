@@ -100,7 +100,7 @@ public class Inventory {
     }
     // Announcing Items added
     public void announce(Item item){
-        System.out.println("Item: " + item.name + " has been added the store's inventory" );
+        System.out.println("Item: " + item.name + " of type " + item.getClass().getName() + " has been added the store's inventory" );
     }
     // Announcing Item sold with discount percentage
     public void announce(Item item, int i){

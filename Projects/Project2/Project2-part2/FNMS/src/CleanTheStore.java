@@ -13,6 +13,10 @@ public class CleanTheStore {
         int i;
         boolean toDamage = OuterUtils.Utils.getRandomDamage(damagePercentage);
         if(toDamage) {
+            if(items.size()== 0) {
+                System.out.println("Store cleaned");
+                return;
+            }
             Item damageItem = items.get(rand.nextInt(items.size()));
             String[] conditionOptions = damageItem.conditionOptions;
             damageItem.listPrice = (0.8) * (damageItem.listPrice);
@@ -27,7 +31,7 @@ public class CleanTheStore {
                 damageItem.condition = conditionOptions[i - 1];
             }
             announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
-            System.out.println("Store cleaned on day");
+            System.out.println("Store cleaned");
         }
     }
 }
