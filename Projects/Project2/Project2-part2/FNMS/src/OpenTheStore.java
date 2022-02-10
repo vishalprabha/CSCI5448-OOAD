@@ -42,18 +42,23 @@ public class OpenTheStore {
         if(accept) {
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2*purchasePrice);
-            inventoryObj.addInventory(addItem);
-            cashRegisterObj.removeMoney(purchasePrice);
-            announceSelling(clerkName, addItem.getName(), customerObj.getId(), purchasePrice, currCondition);
+            if(cashRegisterObj.getMoney() > purchasePrice) {
+                inventoryObj.addInventory(addItem);
+                cashRegisterObj.removeMoney(purchasePrice);
+                announceSelling(clerkName, addItem.getName(), customerObj.getId(), purchasePrice, currCondition);
+            }
         } else {
             accept = OuterUtils.Utils.getRandomBuy(75);
             if(accept) {
                 purchasePrice = (1.1) * purchasePrice;
                 addItem.setPurchasePrice(purchasePrice);
                 addItem.setListPrice(2 * purchasePrice);
-                cashRegisterObj.removeMoney(purchasePrice);
+                if(cashRegisterObj.getMoney() > purchasePrice) {
+                    inventoryObj.addInventory(addItem);
+                    cashRegisterObj.removeMoney(purchasePrice);
+                    announceSelling(clerkName, addItem.getName(), customerObj.getId(), purchasePrice, currCondition);
+                }
             }
-            announceSelling(clerkName, addItem.getName(), customerObj.getId(), purchasePrice, currCondition);
         }
     }
 
