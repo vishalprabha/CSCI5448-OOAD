@@ -67,7 +67,7 @@ public class MusicStore {
 
         int randomNumberCustomers;
         String itemType;
-        Clerk clearkObj;
+        Clerk clerkObj;
         for( int day=1; day <= days; day ++)
         {
             if(day%7 == 0){
@@ -157,10 +157,12 @@ public class MusicStore {
 
             // Getting a random clerk and checking if they have worked continuously
             do{
-                clearkObj = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
-            }while(clearkObj.checkConsecutive(day));
+                clerkObj = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
+            }while(clerkObj.checkConsecutive(day));
 
-            clearkObj.arriveAtStoreObj.announce(day, clearkObj.name);
+            clerkObj.arriveAtStoreObj.announce(day, clerkObj.name);
+
+
 
             
 
