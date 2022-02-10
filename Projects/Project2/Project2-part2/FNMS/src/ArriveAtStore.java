@@ -2,6 +2,7 @@ public class ArriveAtStore {
 
     public void announce(int day, String name){
 
+        System.out.println(name + " arrives at the store on Day "+ day);
 
     }
 
