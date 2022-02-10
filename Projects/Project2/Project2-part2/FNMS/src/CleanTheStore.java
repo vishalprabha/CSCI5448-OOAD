@@ -17,6 +17,7 @@ public class CleanTheStore {
                 System.out.println("Store cleaned");
                 return;
             }
+            //Polymorphism concept
             Item damageItem = items.get(rand.nextInt(items.size()));
             String[] conditionOptions = damageItem.conditionOptions;
             damageItem.listPrice = (0.8) * (damageItem.listPrice);
@@ -30,6 +31,7 @@ public class CleanTheStore {
             } else {
                 damageItem.condition = conditionOptions[i - 1];
             }
+            //Polymorphism
             announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
             System.out.println("Store cleaned");
         }

@@ -77,7 +77,6 @@ public class MusicStore {
     }
 
     public void simulate(int days){
-
         int randomNumberCustomers;
         String itemType;
         Clerk clerkObj;
@@ -208,6 +207,7 @@ public class MusicStore {
         finish();
     }//end of simlate function
 
+    //Final output of values
     public void finish(){
         System.out.println("30 days simulated!");
         inventoryObj.getItemsList().size();
@@ -216,6 +216,14 @@ public class MusicStore {
             totalPurchasePrice += item.getPurchasePrice();
         }
         System.out.println("There are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
+        double totalItemsSoldPrice = 0.0;
+        for(Map.Entry<Integer, List<Item>> e : getListItemsSold().entrySet()){
+            for(Item item: e.getValue()){
+                System.out.println("Item "+item.name+" sold on day "+e.getKey()+" for price $"+item.getSalePrice());
+                totalItemsSoldPrice += item.getSalePrice();
+            }
+        }
+        System.out.println("Total amount of sold prices is $"+totalItemsSoldPrice);
         System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getTotalMoneyFromBank());
         System.out.println("Total amount of money in cash register " + cashRegisterObj.getMoney());
     }

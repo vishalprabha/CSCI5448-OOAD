@@ -1,3 +1,4 @@
+//Example of cohesion
 public class CashRegister {
     // Hold money in the register
     double money;
