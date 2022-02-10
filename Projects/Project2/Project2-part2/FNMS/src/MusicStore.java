@@ -48,7 +48,7 @@ public class MusicStore {
     }
 
     MusicStore(){
-
+        clerkObjList = new ArrayList<>();
         deliveryObj = new Delivery();
         // initializing cash resgister money with 0 at the start
         cashRegisterObj = new CashRegister(0);

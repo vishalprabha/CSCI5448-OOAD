@@ -98,13 +98,13 @@ public  class OuterUtils {
         }
         // Generate random value in given range
         static double getRandomPrice(int min, int max) {
-            // https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/32808589
-            return (min + (max - min) * rand.nextDouble());
+            // https://stackoverflow.com/questions/5271598/java-generate-random-number-between-two-given-values
+            return rand.nextDouble(max- min) + min;
         }
 
         static int getRandomInt(int min, int max){
-            // https://stackoverflow.com/questions/3680637/generate-a-random-double-in-a-range/32808589
-            return (min + (max - min) * rand.nextInt());
+            // https://stackoverflow.com/questions/5271598/java-generate-random-number-between-two-given-values
+            return rand.nextInt(max- min) + min;
         }
 
         static int getRandomDay(int d) {
