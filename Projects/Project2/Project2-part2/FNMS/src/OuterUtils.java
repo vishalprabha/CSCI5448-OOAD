@@ -55,9 +55,9 @@ public  class OuterUtils {
             return p < x;
         }
 
-        boolean getRandomBuy() {
-            int p =  rand.nextInt(50);
-            return p < 25;
+        static boolean getRandomBuy(int x) {
+            int p =  rand.nextInt(100);
+            return p < x;
         }
 
         static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
@@ -111,6 +111,8 @@ public  class OuterUtils {
             //delivery day after ordering
             return d + (rand.nextInt(3) + 1);
         }
+
+
 
     }
 }
