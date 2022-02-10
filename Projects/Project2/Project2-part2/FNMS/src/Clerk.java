@@ -8,7 +8,7 @@ public class Clerk extends Staff{
     ArriveAtStore arriveAtStoreObj;
     Delivery deliveryObj;
     CashRegister cashRegisterObj;
-    float damagePercentage;
+    int damagePercentage;
     CheckRegister checkRegisterObj;
     DoInventory doInventoryObj;
     PlaceAnOrder placeAnOrderObj;
@@ -61,7 +61,7 @@ public class Clerk extends Staff{
         return damagePercentage;
     }
 
-    public void setDamagePercentage(float damagePercentage) {
+    public void setDamagePercentage(int damagePercentage) {
         this.damagePercentage = damagePercentage;
     }
 
@@ -113,7 +113,7 @@ public class Clerk extends Staff{
         this.leaveTheStoreObj = leaveTheStoreObj;
     }
 
-    Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, float damagePercentage, String name)
+    Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, int damagePercentage, String name)
     {
         setInventoryObj(inventoryObj);
         setDeliveryObj(deliveryObj);
@@ -143,30 +143,4 @@ public class Clerk extends Staff{
         }
         return true;
     }
-
-    public void arriveAtStoreOperation(){
-
-    }
-
-    public void checkRegisterOperation(){
-
-    }
-
-    public void doInventoryOperation(){
-
-    }
-
-    public void doOpenTheStoreOperation(List<Customer> customers){
-
-    }
-
-    public void doCleanTheStore(float damagePercentage, Inventory inventoryObj){
-
-    }
-
-    public void doLeaveTheStore(int day){
-
-    }
-
-
 }
