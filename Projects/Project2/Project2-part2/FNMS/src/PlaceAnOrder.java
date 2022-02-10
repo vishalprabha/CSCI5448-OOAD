@@ -3,8 +3,8 @@ import java.util.*;
 public class PlaceAnOrder {
 
     public void orderItems(String itemStr, Delivery deliverObj, CashRegister cashRegisterObj, CheckRegister checkRegObj,int currentDay){
-        // Generate random amount
-        double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+        // Initilize purchase amount
+        double purchasePrice = 0.0;
         ArrayList<Item> itemObjs = new ArrayList<Item>();
         // Can approach it better but due to time constraints used an if else ladder to create item objects
         if(Objects.equals(itemStr, "PaperScore")) {
@@ -145,11 +145,14 @@ public class PlaceAnOrder {
         }
 
         Random rand = new Random();
-
-        deliverObj.setItemsList(currentDay + rand.nextInt(1,3), itemObjs);
+        int expectedDay = currentDay + rand.nextInt(1,4);
+        announce(itemObjs, expectedDay, currentDay);
+        //Place order of the items
+        deliverObj.setItemsList(expectedDay, itemObjs);
 
     }
-    public void announce(List<Item> itemObjs){
 
+    public void announce(List<Item> itemObjs, int expectedDay, int currentDay){
+        System.out.println("Three items of type "+itemObjs.get(0).getClass().getName()+" ordered on day "+ currentDay + " and expected on day "+ expectedDay);
     }
 }

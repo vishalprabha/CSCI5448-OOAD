@@ -18,12 +18,14 @@ public class DoInventory {
         for(String itemType: itemTypes){
             countItems.put(itemType, 0);
         }
+        //Keep hashmap count of items
         for(Item item: items){
             totalPurchasePrice += item.getPurchasePrice();
             int updatedCount = countItems.get(item.getClass().getName()) + 1;
             countItems.put(item.getClass().getName(), updatedCount);
         }
         announce(totalPurchasePrice);
+        //For subclass items with zero count, place an order
         for(Map.Entry<String, Integer> e : countItems.entrySet()){
             if(e.getValue() == 0){
                 placeAnOrderObj.orderItems(e.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay);
