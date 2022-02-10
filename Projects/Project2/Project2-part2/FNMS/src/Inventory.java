@@ -62,40 +62,34 @@ public class Inventory {
             Strings string = new Strings(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomName());
             ItemsList.add(string);
         }
-
-
-
     }
+    // Getter for inventory list
     public List<Item> getItemsList() {
         return ItemsList;
     }
-
+    // Setter for inventory list
     public void setItemsList(List<Item> itemsList) {
         ItemsList = itemsList;
     }
-
+    // Add item to the inventory list
     public void addInventory(Item item){
         ItemsList.add(item);
     }
-
-    //public void updateInventory(Item item){
-   //     ItemsList.add(item);
-    //}
-
+    // Delete item from inventory list
     public void deleteInventory(Item item){
         ItemsList.remove(item);
     }
-
-    public List<Item> checkInventory(String s){
+    // Checking inventory for a particular item
+    public List<Item> checkInventory(String itemName){
         List<Item> particularItemList = new ArrayList<>();
         for (Item item : ItemsList) {
-            if (item.getClass().getName().equals(s)) {
+            if (item.getClass().getName().equals(itemName)) {
                 particularItemList.add(item);
             }
         }
         return particularItemList;
     }
-
+    // Checking if an item is present in the inventory
     public boolean peekInventory(String s){
         for (Item item : ItemsList) {
             if (item.getClass().getName().equals(s)) {
@@ -104,12 +98,12 @@ public class Inventory {
         }
         return false;
     }
-
+    // Announcing Items added
     public void announce(Item item){
-        System.out.println("Item Name: " + item);
+        System.out.println("Item: " + item.name + " has been added the store's inventory" );
     }
-
+    // Announcing Item sold with discount percentage
     public void announce(Item item, int i){
-        System.out.println("Item Name: " + item + "Item number: " + i);
+        System.out.println("Item Name: " + item + "Discount: " + i);
     }
 }

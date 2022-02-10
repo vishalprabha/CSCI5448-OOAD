@@ -4,8 +4,9 @@ public class CashRegister {
     // Hold the money withdrawn from bank
     double withdrawal;
     // Constructor for initialization
-    CashRegister(double initialMoney){
+    CashRegister(double initialMoney, double initialWithdrawal){
         setMoney(initialMoney);
+        setWithdrawal(initialWithdrawal);
     }
     // Getter for cash register money
     public double getMoney() {
@@ -41,7 +42,7 @@ public class CashRegister {
     // Function to add money removed from bank
     public void addMoneyRemovedBank(double moneyFrombank){
         double currentMoney = getWithdrawal();
-        currentMoney -= moneyFrombank;
+        currentMoney += moneyFrombank;
         setWithdrawal(currentMoney);
     }
 }
