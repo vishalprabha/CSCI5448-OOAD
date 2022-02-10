@@ -128,8 +128,19 @@ public class Clerk extends Staff{
         setCleanTheStoreObj(new CleanTheStore());
         setLeaveTheStoreObj(new LeaveTheStore());
     }
-
+    // Function to check if clerk has worked continuously
+    // Return true if they have worked for 3 days consecutively
     public boolean checkConsecutive(int day){
+
+        for(int index = day-1; index >= day-3; day--){
+            if(day <= 0){
+                return false;
+            }
+            else if(!daysWorked.contains(index)){
+                return false;
+            }
+
+        }
         return true;
     }
 

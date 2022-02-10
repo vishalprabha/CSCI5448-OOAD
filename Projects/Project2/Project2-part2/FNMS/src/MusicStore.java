@@ -67,8 +67,13 @@ public class MusicStore {
 
         int randomNumberCustomers;
         String itemType;
-        for( int day=0; day < days; day ++)
+        Clerk clearkObj;
+        for( int day=1; day <= days; day ++)
         {
+            if(day%7 == 0){
+                System.out.println("It's a sunday, the store is closed!");
+                continue;
+            }
             // Customer ID count
             int count = 0;
             // Generate random 4-10 customer for buying
@@ -149,6 +154,14 @@ public class MusicStore {
             }
             // Shuffling the customer list to get randomness
             Collections.shuffle(listCustomerObj);
+
+            // Getting a random clerk and checking if they have worked continuously
+            do{
+                clearkObj = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
+            }while(clearkObj.checkConsecutive(day));
+
+            clearkObj.arriveAtStoreObj.announce(day, clearkObj.name);
+
             
 
         }//end of days loop

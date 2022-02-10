@@ -60,12 +60,8 @@ public  class OuterUtils {
             return p < 25;
         }
 
-        String getRandomClerkObj() {
-            if (rand.nextBoolean()) {
-                return "Shaggy";
-            } else {
-                return "Velma";
-            }
+        static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
+            return clerkObjList.get(rand.nextInt(clerkObjList.size()));
         }
 
         String getRandomItem() {
@@ -76,8 +72,7 @@ public  class OuterUtils {
         static String getRandomCondition(){
             // Getting random condition - https://www.baeldung.com/java-random-list-element#:~:text=In%20order%20to%20get%20a,that%20exceeds%20your%20List's%20size.
             List<String> conditionList = Arrays.asList("poor", "fair", "good", "very good", "excellent");
-            String randomElement = conditionList.get(rand.nextInt(conditionList.size()));
-            return randomElement;
+            return conditionList.get(rand.nextInt(conditionList.size()));
         }
         static String getRandomItemTypes() {
             List<String> itemTypes = new ArrayList<>();
