@@ -9,5 +9,15 @@ public class PracticeAmps extends Accessories {
         this.wattage = wattage;
     }
 
+    public PracticeAmps(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, int wattage){
+        setName(name);
+        setPurchasePrice(purchasePrice);
+        setListPrice(listPrice);
+        setNewOrUsed(newOrUsed);
+        setDayArrived(dayArrived);
+        setCondition(condition);
+        setWattage(wattage);
+    }
+
 
 }
