@@ -162,6 +162,8 @@ public class MusicStore {
 
             clerkObj.arriveAtStoreObj.announce(day, clerkObj.name);
 
+            clerkObj.doInventoryObj.checkInventory(inventoryObj, clerkObj.placeAnOrderObj, day);
+
 
 
             
