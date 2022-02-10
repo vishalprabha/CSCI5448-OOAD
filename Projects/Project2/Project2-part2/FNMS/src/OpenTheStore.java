@@ -11,7 +11,7 @@ public class OpenTheStore {
         String buyItemName = customerObj.getBuyItemName();
         List<Item> items = inventoryObj.getItemsList();
         for(Item item : items) {
-            if(Objects.equals(item.getName(), buyItemName)) {
+            if(Objects.equals(item.getClass().getName(), buyItemName)) {
                 if(OuterUtils.Utils.getRandomBuy(50)) {
                     cashRegisterObj.addMoney(item.getListPrice());
                     item.setSalePrice(item.getListPrice());
@@ -39,7 +39,7 @@ public class OpenTheStore {
                 }
             }
         }
-        System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName.getClass().getName()+"  but none were in inventory, so they left.");
+        System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName+"  but none were in inventory, so they left.");
     }
     // Function to buy an item from the customer
     public void orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
@@ -85,11 +85,11 @@ public class OpenTheStore {
     }
 
     public void announceSelling(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
-        System.out.println(clerkName + " sold a " + itemName + " to Customer " + customerNumber + "for $" + itemCost + "after a "+discountPercentage+"% discount");
+        System.out.println(clerkName + " sold a " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
     }
 
     public void announceBuying(String clerkName, String itemName, int customerNumber, double itemCost, String condition, String age){
-        System.out.println(clerkName + " bought a " + condition +" condition "+  age + " " + itemName + " from Customer" + customerNumber + " for " + itemCost);
+        System.out.println(clerkName + " bought a " + condition +" condition "+  age + " " + itemName + " from Customer " + customerNumber + " for " + itemCost);
     }
 
 }

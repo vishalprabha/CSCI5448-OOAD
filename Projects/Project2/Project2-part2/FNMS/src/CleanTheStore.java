@@ -33,7 +33,7 @@ public class CleanTheStore {
             }
             //Polymorphism
             announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
-            System.out.println("Store cleaned");
         }
+        System.out.println("Store cleaned");
     }
 }

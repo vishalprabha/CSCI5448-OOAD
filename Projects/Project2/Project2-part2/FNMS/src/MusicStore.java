@@ -217,15 +217,16 @@ public class MusicStore {
         }
         System.out.println("There are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
         double totalItemsSoldPrice = 0.0;
+        System.out.println("List of items sold:");
         for(Map.Entry<Integer, List<Item>> e : getListItemsSold().entrySet()){
             for(Item item: e.getValue()){
-                System.out.println("Item "+item.name+" sold on day "+e.getKey()+" for price $"+item.getSalePrice());
+                System.out.println("Item "+item.getClass().getName()+" sold on day "+e.getKey()+" for price $"+item.getSalePrice());
                 totalItemsSoldPrice += item.getSalePrice();
             }
         }
         System.out.println("Total amount of sold prices is $"+totalItemsSoldPrice);
         System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getTotalMoneyFromBank());
-        System.out.println("Total amount of money in cash register " + cashRegisterObj.getMoney());
+        System.out.println("Total amount of money in cash register is $" + cashRegisterObj.getMoney());
     }
 
 }
