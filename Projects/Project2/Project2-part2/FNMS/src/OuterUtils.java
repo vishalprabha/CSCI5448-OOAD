@@ -48,18 +48,18 @@ public  class OuterUtils {
 
             return name.charAt(0) + String.valueOf(lowers);
         }
-
+        // Get random damage based on percentage of x
         static boolean getRandomDamage(int x) {
             //works for velma- need to add code based on x
             int p =  rand.nextInt(100);
             return p < x;
         }
-
+        // Get random buy based on percentage of x
         static boolean getRandomBuy(int x) {
             int p =  rand.nextInt(100);
             return p < x;
         }
-
+        // Function to get random clerk
         static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
             return clerkObjList.get(rand.nextInt(clerkObjList.size()));
         }
