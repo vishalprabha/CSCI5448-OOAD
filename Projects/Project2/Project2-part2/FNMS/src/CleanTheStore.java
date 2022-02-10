@@ -1,11 +1,32 @@
+import java.util.List;
+import java.util.Random;
+
 public class CleanTheStore {
 
-    public void announce(float damagePercentage, String itemType, double listPrice, String condition)
-    {
-
+    Random rand = new Random();
+    public String announce(float damagePercentage, String itemType, double listPrice, String condition) {
+        return (itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
     }
 
-    public void orchestrateCleaning(float damagePercentage, Inventory inventoryObj){
-
+    public void orchestrateCleaning(int damagePercentage, Inventory inventoryObj) {
+        List<Item> items = inventoryObj.ItemsList;
+        int i;
+        boolean toDamage = OuterUtils.Utils.getRandomDamage(damagePercentage);
+        if(toDamage) {
+            Item damageItem = items.get(rand.nextInt(items.size()));
+            String[] conditionOptions = damageItem.conditionOptions;
+            damageItem.listPrice = (0.8) * (damageItem.listPrice);
+            String currcondition = damageItem.condition;
+            for(i=0; i< 5;i++ ) {
+                if( conditionOptions[i] == currcondition)
+                    break;
+            }
+            if(i==0) {
+                inventoryObj.deleteInventory(damageItem);
+            } else {
+                damageItem.condition = conditionOptions[i-1];
+            }
+            announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
+        }
     }
 }

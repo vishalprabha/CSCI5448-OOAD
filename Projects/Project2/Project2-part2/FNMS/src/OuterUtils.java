@@ -49,10 +49,10 @@ public  class OuterUtils {
             return name.charAt(0) + String.valueOf(lowers);
         }
 
-        boolean getRandomDamage(int x) {
+        static boolean getRandomDamage(int x) {
             //works for velma- need to add code based on x
             int p =  rand.nextInt(100);
-            return p < 5;
+            return p < x;
         }
 
         boolean getRandomBuy() {
