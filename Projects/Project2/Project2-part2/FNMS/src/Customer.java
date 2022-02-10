@@ -36,5 +36,11 @@ public class Customer {
         this.sellItemObj = sellItemObj;
     }
 
+    Customer(int id, String customerType, String buyItemName, Item sellItemObj){
+        setId(id);
+        setCustomerType(customerType);
+        setBuyItemName(buyItemName);
+        setSellItemObj(sellItemObj);
+    }
 
 }

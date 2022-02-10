@@ -1,13 +1,12 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.function.Function;
 
 public  class OuterUtils {
     public static class Utils {
 
         static Random rand = new Random();
 
-        public static String getRandomName() {
+         static String getRandomName() {
 
             int nameLength = rand.nextInt(6) + 3;
 
@@ -42,7 +41,7 @@ public  class OuterUtils {
                 lowers.append(Character.toLowerCase(letters[i - 1]));
             }
 
-            return String.valueOf(name.charAt(0)) + String.valueOf(lowers);
+            return name.charAt(0) + String.valueOf(lowers);
         }
 
         boolean getRandomDamage(int x) {
@@ -68,8 +67,14 @@ public  class OuterUtils {
             //assigning random item name
             return getRandomName();
         }
-
-        List<String> getItemTypes() {
+        // Function to get random condition for Item
+        static String getRandomCondition(){
+            // Getting random condition - https://www.baeldung.com/java-random-list-element#:~:text=In%20order%20to%20get%20a,that%20exceeds%20your%20List's%20size.
+            List<String> conditionList = Arrays.asList("poor", "fair", "good", "very good", "excellent");
+            String randomElement = conditionList.get(rand.nextInt(conditionList.size()));
+            return randomElement;
+        }
+        static String getRandomItemTypes() {
             List<String> itemTypes = new ArrayList<>();
             //adding all sub classes
             itemTypes.add("PaperScore");
@@ -90,7 +95,7 @@ public  class OuterUtils {
             itemTypes.add("Cables");
             itemTypes.add("PracticeAmps");
             itemTypes.add("Strings");
-            return itemTypes;
+            return itemTypes.get(rand.nextInt(itemTypes.size()));
         }
         // Generate random value in given range
         static double getRandomPrice(int min, int max) {
