@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -19,7 +20,26 @@ public class OpenTheStore {
     }
 
     public void orchestrateBuy(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj){
-
+        String buyItemName = customerObj.getBuyItemName();
+        List<Item> items = inventoryObj.getItemsList();
+        for(Item item : items) {
+            if(item.getName() == buyItemName) {
+                boolean buy = OuterUtils.Utils.getRandomBuy(50);
+                if(buy) {
+                    cashRegisterObj.addMoney(item.getListPrice());
+                    inventoryObj.deleteInventory(item);
+                   // this.getListItemsSold().put(item,  new ArrayList<> List.of(item.getListPrice(), it)));
+                } else {
+                     buy = OuterUtils.Utils.getRandomBuy(75);
+                    if(buy) {
+                        cashRegisterObj.addMoney((0.9)*item.getListPrice());
+                        inventoryObj.deleteInventory(item);
+                      //  this.getListItemsSold()
+                    }
+                }
+                break;
+            }
+        }
     }
 
     public void orchestrateSell(Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName){
@@ -62,7 +82,7 @@ public class OpenTheStore {
         }
     }
 
-    public void announce(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
+    public void announceBuying(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
 
     }
 
