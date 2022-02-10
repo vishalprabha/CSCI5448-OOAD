@@ -48,10 +48,10 @@ public class MusicStore {
     }
 
     MusicStore(){
-
+        clerkObjList = new ArrayList<>();
         deliveryObj = new Delivery();
         // initializing cash resgister money with 0 at the start
-        cashRegisterObj = new CashRegister(0);
+        cashRegisterObj = new CashRegister(0, 0);
         // Initializing inventory with 51 Item objects
         inventoryObj = new Inventory();
         // Creating Shaggy clerk object
@@ -67,7 +67,7 @@ public class MusicStore {
 
         int randomNumberCustomers;
         String itemType;
-        Clerk clearkObj;
+        Clerk clerkObj;
         for( int day=1; day <= days; day ++)
         {
             if(day%7 == 0){
@@ -97,6 +97,7 @@ public class MusicStore {
                 // Generate random amount
                 double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
                 // Can approach it better but due to time constraints used an if else ladder to create item objects
+                // The purchase prices are randomly assigned here, but the protocol followed by customer to sell is followed as per the question description
                 if(Objects.equals(itemType, "PaperScore")){
                     itemObj = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(),OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
                 }
@@ -157,10 +158,15 @@ public class MusicStore {
 
             // Getting a random clerk and checking if they have worked continuously
             do{
-                clearkObj = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
-            }while(clearkObj.checkConsecutive(day));
+                clerkObj = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
+            }while(clerkObj.checkConsecutive(day));
 
-            clearkObj.arriveAtStoreObj.announce(day, clearkObj.name);
+            // Announce store arrival
+            clerkObj.arriveAtStoreObj.announce(day, clerkObj.name);
+            // Check the deliveries
+            clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj);
+            // Check the register
+            clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj);
 
             
 
