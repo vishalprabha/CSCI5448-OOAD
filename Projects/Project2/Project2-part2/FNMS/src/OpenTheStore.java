@@ -21,7 +21,7 @@ public class OpenTheStore {
                     listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                     listItemsSold.get(day).add(item);
                     announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
-                    break;
+                    return;
                 }
                 else if(OuterUtils.Utils.getRandomBuy(75)){
                         cashRegisterObj.addMoney((0.9)*item.getListPrice());
@@ -31,17 +31,15 @@ public class OpenTheStore {
                         listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                         listItemsSold.get(day).add(item);
                         announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 10 );
-                        break;
+                        return;
                     }
                 else{
                     System.out.println("Customer "+customerObj.getId()+ " left without buying "+item.getClass().getName()+" even though it was present");
-                    break;
+                    return;
                 }
             }
-            else{
-                System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+item.getClass().getName()+"  but none were in inventory, so they left.");
-            }
         }
+        System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName.getClass().getName()+"  but none were in inventory, so they left.");
     }
     // Function to buy an item from the customer
     public void orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
