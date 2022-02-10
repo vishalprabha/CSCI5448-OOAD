@@ -112,7 +112,27 @@ public  class OuterUtils {
             return d + (rand.nextInt(3) + 1);
         }
 
-
-
+        static List<String> getItemTypes() {
+            List<String> itemTypes = new ArrayList<>();
+            //adding all sub classes
+            itemTypes.add("PaperScore");
+            itemTypes.add("CD");
+            itemTypes.add("Vinyl");
+            itemTypes.add("PlayersCD");
+            itemTypes.add("RecordPlayer");
+            itemTypes.add("MP3");
+            itemTypes.add("Guitar");
+            itemTypes.add("Bass");
+            itemTypes.add("Mandolin");
+            itemTypes.add("Flute");
+            itemTypes.add("Harmonica");
+            itemTypes.add("Hats");
+            itemTypes.add("Shirts");
+            itemTypes.add("Bandanas");
+            itemTypes.add("Cables");
+            itemTypes.add("PracticeAmps");
+            itemTypes.add("Strings");
+            return itemTypes;
+        }
     }
 }
