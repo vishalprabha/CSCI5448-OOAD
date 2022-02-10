@@ -6,7 +6,9 @@ public class Inventory {
 
 
     Inventory(){
+        // Initializing inventory
         this.ItemsList = new ArrayList<>();
+        // Creating the initial inventory list
         for (int index = 0; index < 3; index ++){
             double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
             PaperScore paperScoreItem = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent",OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());

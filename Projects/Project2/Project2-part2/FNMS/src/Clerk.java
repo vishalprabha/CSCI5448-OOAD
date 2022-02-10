@@ -11,6 +11,7 @@ public class Clerk extends Staff{
     float damagePercentage;
     CheckRegister checkRegisterObj;
     DoInventory doInventoryObj;
+    PlaceAnOrder placeAnOrderObj;
     OpenTheStore openTheStoreObj;
     CleanTheStore cleanTheStoreObj;
     LeaveTheStore leaveTheStoreObj;
@@ -80,6 +81,14 @@ public class Clerk extends Staff{
         this.doInventoryObj = doInventoryObj;
     }
 
+    public PlaceAnOrder getPlaceAnOrderObj() {
+        return placeAnOrderObj;
+    }
+
+    public void setPlaceAnOrderObj(PlaceAnOrder placeAnOrderObj) {
+        this.placeAnOrderObj = placeAnOrderObj;
+    }
+
     public OpenTheStore getOpenTheStoreObj() {
         return openTheStoreObj;
     }
@@ -106,7 +115,18 @@ public class Clerk extends Staff{
 
     Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, float damagePercentage, String name)
     {
+        setInventoryObj(inventoryObj);
+        setDeliveryObj(deliveryObj);
+        setCashRegisterObj(cashRegisterObj);
+        setDamagePercentage(damagePercentage);
         setName(name);
+        setArriveAtStoreObj(new ArriveAtStore());
+        setCheckRegisterObj(new CheckRegister());
+        setDoInventoryObj(new DoInventory());
+        setPlaceAnOrderObj(new PlaceAnOrder());
+        setOpenTheStoreObj(new OpenTheStore());
+        setCleanTheStoreObj(new CleanTheStore());
+        setLeaveTheStoreObj(new LeaveTheStore());
     }
 
     public boolean checkConsecutive(int day){

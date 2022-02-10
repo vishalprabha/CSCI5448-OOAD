@@ -96,7 +96,6 @@ public  class OuterUtils {
             itemTypes.add("Hats");
             itemTypes.add("Shirts");
             itemTypes.add("Bandanas");
-            itemTypes.add("PaperScore");
             itemTypes.add("Cables");
             itemTypes.add("PracticeAmps");
             itemTypes.add("Strings");

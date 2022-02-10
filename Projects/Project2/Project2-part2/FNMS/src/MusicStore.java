@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class MusicStore {
     private Delivery deliveryObj;
@@ -80,34 +77,84 @@ public class MusicStore {
             for(int buyingCustomers=0; buyingCustomers < randomNumberCustomers; buyingCustomers++){
                 // Generate random itemtype to buy
                 itemType = OuterUtils.Utils.getRandomItemTypes();
+                count += 1;
                 Customer buyCustomer = new Customer(count, "Buyer", itemType, null);
                 listCustomerObj.add(buyCustomer);
             }
             // Generate random 1-4 customer for selling
             randomNumberCustomers = OuterUtils.Utils.getRandomInt(1, 4);
             // Creating customer objects and appending to customer list
-            for(int buyingCustomers=0; buyingCustomers < randomNumberCustomers; buyingCustomers++){
+            for(int sellingCustomer=0; sellingCustomer < randomNumberCustomers; sellingCustomer++){
                 // Item class object
                 Item itemObj;
                 // Generate random itemtype to sell
                 itemType = OuterUtils.Utils.getRandomItemTypes();
+                // Generate random amount
+                double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
                 // Can approach it better but due to time constraints used an if else ladder to create item objects
-                if(itemType == "PaperScore"){
-                    double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+                if(Objects.equals(itemType, "PaperScore")){
                     itemObj = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(),OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+                }
+                else if(Objects.equals(itemType, "CD")){
+                    itemObj = new CD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+                }
+                else if(Objects.equals(itemType, "Vinyl")){
+                    itemObj = new Vinyl(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+                }
+                else if(Objects.equals(itemType, "PlayersCD")){
+                    itemObj = new PlayersCD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "RecordPlayer")){
+                    itemObj = new RecordPlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "MP3")){
+                    itemObj = new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "Guitar")){
+                    itemObj = new Guitar(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "Bass")){
+                    itemObj = new Bass(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "Mandolin")){
+                    itemObj = new Mandolin(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "Flute")){
+                    itemObj = new Flute(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
+                }
+                else if(Objects.equals(itemType, "Harmonica")){
+                    itemObj = new Harmonica(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
+                }
+                else if(Objects.equals(itemType, "Hats")){
+                    itemObj = new Hats(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomSize());
+                }
+                else if(Objects.equals(itemType, "Shirts")){
+                    itemObj = new Shirts(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomSize());
+                }
+                else if(Objects.equals(itemType, "Bandanas")){
+                    itemObj = new Bandanas(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "PracticeAmps")){
+                    itemObj = new PracticeAmps(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomInt(1,10));
+                }
+                else if(Objects.equals(itemType, "Cables")){
+                    itemObj = new Cables(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomInt(1,10));
                 }
                 else{
-                    double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
-                    itemObj = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(),OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+                    itemObj = new Strings(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
                 }
-                Customer buyCustomer = new Customer(count, "Seller", itemType, itemObj);
-                listCustomerObj.add(buyCustomer);
+                count +=1;
+                Customer sellCustomer = new Customer(count, "Seller", itemType, itemObj);
+                listCustomerObj.add(sellCustomer);
             }
+            // Shuffling the customer list to get randomness
+            Collections.shuffle(listCustomerObj);
+            
 
-        }
+        }//end of days loop
 
 
-    }
+    }//end of simlate function
 
 
 }
