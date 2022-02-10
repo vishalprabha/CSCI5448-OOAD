@@ -170,19 +170,29 @@ public class MusicStore {
 
             // Check the register
             clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj);
-
             clerkObj.doInventoryObj.checkInventory(inventoryObj, clerkObj.placeAnOrderObj, day);
             // Clean the store
             clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj);
             // Leave the store
             clerkObj.leaveTheStoreObj.announce(clerkObj.name, day);
 
-            
+
 
         }//end of days loop
 
-
+        finish();
     }//end of simlate function
 
+    public void finish(){
+        System.out.println("30 days simulated!");
+        inventoryObj.getItemsList().size();
+        double totalPurchasePrice = 0.0;
+        for(Item item: inventoryObj.getItemsList()){
+            totalPurchasePrice += item.getPurchasePrice();
+        }
+        System.out.println("There are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
+        System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getTotalMoneyFromBank());
+        System.out.println("Total amount of money in cash register " + cashRegisterObj.getMoney());
+    }
 
 }

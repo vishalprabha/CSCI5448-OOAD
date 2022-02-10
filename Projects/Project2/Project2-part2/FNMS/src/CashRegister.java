@@ -25,6 +25,16 @@ public class CashRegister {
         this.withdrawal = withdrawal;
     }
 
+    double totalMoneyFromBank = 0.0;
+
+    public double getTotalMoneyFromBank() {
+        return totalMoneyFromBank;
+    }
+
+    public void setTotalMoneyFromBank(double totalMoneyFromBank) {
+        this.totalMoneyFromBank = totalMoneyFromBank;
+    }
+
     // Function to add money to cash register
     public void addMoney(double moneyToAdd){
         double currentMoney = getMoney();
@@ -43,6 +53,7 @@ public class CashRegister {
     public void addMoneyRemovedBank(double moneyFrombank){
         double currentMoney = getWithdrawal();
         currentMoney += moneyFrombank;
+        totalMoneyFromBank += moneyFrombank;
         setWithdrawal(currentMoney);
     }
 }
