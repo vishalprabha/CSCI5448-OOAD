@@ -5,7 +5,7 @@
 
   <h1 align="center">CSCI 5448-Object Oriented Analysis and Design</h1>
 <br>
-   
+
 </div>
 
 
@@ -24,3 +24,6 @@
 - Java JDK 17
 - Java JDK 17
 - Open JDK Amazon Corretto-11.0.13.8.1
+
+# Project 2
+<a href="https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project2/Project2-part2"> Project 2 code and documentation </a>
