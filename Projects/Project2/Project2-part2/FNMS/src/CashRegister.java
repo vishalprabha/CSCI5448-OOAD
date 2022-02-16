@@ -5,7 +5,6 @@ public class CashRegister {
     // Hold the money withdrawn from bank
     double withdrawal;
 
-    double totalMoneyFromBank = 0.0;
     // Constructor for initialization
     CashRegister(double initialMoney, double initialWithdrawal){
         setMoney(initialMoney);
@@ -28,14 +27,6 @@ public class CashRegister {
         this.withdrawal = withdrawal;
     }
 
-    public double getTotalMoneyFromBank() {
-        return totalMoneyFromBank;
-    }
-
-    public void setTotalMoneyFromBank(double totalMoneyFromBank) {
-        this.totalMoneyFromBank = totalMoneyFromBank;
-    }
-
     // Function to add money to cash register
     public void addMoney(double moneyToAdd){
         double currentMoney = getMoney();
@@ -54,7 +45,6 @@ public class CashRegister {
     public void addMoneyRemovedBank(double moneyFrombank){
         double currentMoney = getWithdrawal();
         currentMoney += moneyFrombank;
-        totalMoneyFromBank += moneyFrombank;
         setWithdrawal(currentMoney);
     }
 }

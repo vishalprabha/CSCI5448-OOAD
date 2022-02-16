@@ -2,10 +2,6 @@ import java.util.*;
 
 public class OpenTheStore {
 
-    Random rand = new Random();
-    public void announce(int day){
-
-    }
     // Function to sell an item to customer
     public void orchestrateSell(int day, String clerkName, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, HashMap<Integer, List<Item>> listItemsSold){
         String buyItemName = customerObj.getBuyItemName();

@@ -225,7 +225,7 @@ public class MusicStore {
             }
         }
         System.out.println("\nTotal amount of sold prices is $"+totalItemsSoldPrice);
-        System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getTotalMoneyFromBank());
+        System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getWithdrawal());
         System.out.println("Total amount of money in cash register is $" + cashRegisterObj.getMoney());
     }
 
