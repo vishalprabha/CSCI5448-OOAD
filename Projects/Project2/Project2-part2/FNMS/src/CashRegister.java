@@ -4,6 +4,8 @@ public class CashRegister {
     double money;
     // Hold the money withdrawn from bank
     double withdrawal;
+
+    double totalMoneyFromBank = 0.0;
     // Constructor for initialization
     CashRegister(double initialMoney, double initialWithdrawal){
         setMoney(initialMoney);
@@ -25,8 +27,6 @@ public class CashRegister {
     public void setWithdrawal(double withdrawal) {
         this.withdrawal = withdrawal;
     }
-
-    double totalMoneyFromBank = 0.0;
 
     public double getTotalMoneyFromBank() {
         return totalMoneyFromBank;

@@ -63,11 +63,11 @@ public  class OuterUtils {
         static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
             return clerkObjList.get(rand.nextInt(clerkObjList.size()));
         }
-
-        String getRandomItem() {
-            //assigning random item name
-            return getRandomName();
-        }
+//
+//        String getRandomItem() {
+//            //assigning random item name
+//            return getRandomName();
+//        }
         // Function to get random condition for Item
         static String getRandomCondition(){
             // Getting random condition - https://www.baeldung.com/java-random-list-element#:~:text=In%20order%20to%20get%20a,that%20exceeds%20your%20List's%20size.
@@ -99,7 +99,8 @@ public  class OuterUtils {
         // Generate random value in given range
         static double getRandomPrice(int min, int max) {
             // https://stackoverflow.com/questions/5271598/java-generate-random-number-between-two-given-values
-            return rand.nextDouble(max- min) + min;
+            return min + (rand.nextDouble() * (max - min));
+
         }
 
         static int getRandomInt(int min, int max){
@@ -107,10 +108,10 @@ public  class OuterUtils {
             return rand.nextInt(max- min) + min;
         }
 
-        static int getRandomDay(int d) {
-            //delivery day after ordering
-            return d + (rand.nextInt(3) + 1);
-        }
+//        static int getRandomDay(int d) {
+//            //delivery day after ordering
+//            return d + (rand.nextInt(3) + 1);
+//        }
 
         static List<String> getItemTypes() {
             List<String> itemTypes = new ArrayList<>();

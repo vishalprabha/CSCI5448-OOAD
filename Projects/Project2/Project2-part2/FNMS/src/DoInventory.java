@@ -4,13 +4,8 @@ import java.util.Map;
 
 public class DoInventory {
 
-    Delivery deliveryObj;
 
-    CashRegister cashRegisterObj;
-
-    CheckRegister checkRegisterObj;
-
-    public void checkInventory(Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay){
+    public void checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay){
         List<Item> items = inventoryObj.getItemsList();
         double totalPurchasePrice = 0.0;
         HashMap<String, Integer> countItems = new HashMap<String, Integer>();
@@ -31,12 +26,6 @@ public class DoInventory {
                 placeAnOrderObj.orderItems(e.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay);
             }
         }
-    }
-
-    DoInventory(Delivery deliObj, CashRegister cashObj, CheckRegister checkRegObj){
-        deliveryObj = deliObj;
-        cashRegisterObj = cashObj;
-        checkRegisterObj = checkRegObj;
     }
 
     public void announce(double totalValue){

@@ -4,6 +4,7 @@ import java.util.Random;
 public class CleanTheStore {
 
     Random rand = new Random();
+
     public String announce(float damagePercentage, String itemType, double listPrice, String condition) {
         return (itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
     }

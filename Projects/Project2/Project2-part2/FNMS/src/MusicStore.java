@@ -183,7 +183,7 @@ public class MusicStore {
             clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj);
 
             // Check inventory and place and order
-            clerkObj.doInventoryObj.checkInventory(inventoryObj, clerkObj.placeAnOrderObj, day);
+            clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day);
 
             // Open the store
             for(Customer customer : listCustomerObj){
@@ -204,18 +204,18 @@ public class MusicStore {
 
         }//end of days loop
 
-        finish();
+        finish(days);
     }//end of simlate function
 
     //Final output of values
-    public void finish(){
-        System.out.println("30 days simulated!");
+    public void finish(int days){
+        System.out.println("\n" +days+" days simulation ended");
         inventoryObj.getItemsList().size();
         double totalPurchasePrice = 0.0;
         for(Item item: inventoryObj.getItemsList()){
             totalPurchasePrice += item.getPurchasePrice();
         }
-        System.out.println("There are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
+        System.out.println("\nThere are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
         double totalItemsSoldPrice = 0.0;
         System.out.println("List of items sold:");
         for(Map.Entry<Integer, List<Item>> e : getListItemsSold().entrySet()){
@@ -224,7 +224,7 @@ public class MusicStore {
                 totalItemsSoldPrice += item.getSalePrice();
             }
         }
-        System.out.println("Total amount of sold prices is $"+totalItemsSoldPrice);
+        System.out.println("\nTotal amount of sold prices is $"+totalItemsSoldPrice);
         System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getTotalMoneyFromBank());
         System.out.println("Total amount of money in cash register is $" + cashRegisterObj.getMoney());
     }

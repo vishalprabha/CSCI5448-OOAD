@@ -122,7 +122,7 @@ public class Clerk extends Staff{
         setName(name);
         setArriveAtStoreObj(new ArriveAtStore());
         setCheckRegisterObj(new CheckRegister());
-        setDoInventoryObj(new DoInventory(deliveryObj, cashRegisterObj, checkRegisterObj));
+        setDoInventoryObj(new DoInventory());
         setPlaceAnOrderObj(new PlaceAnOrder());
         setOpenTheStoreObj(new OpenTheStore());
         setCleanTheStoreObj(new CleanTheStore());

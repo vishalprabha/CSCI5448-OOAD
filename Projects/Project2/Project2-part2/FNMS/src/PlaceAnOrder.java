@@ -144,8 +144,7 @@ public class PlaceAnOrder {
             }
         }
 
-        Random rand = new Random();
-        int expectedDay = currentDay + rand.nextInt(1,4);
+        int expectedDay = currentDay + OuterUtils.Utils.getRandomInt(1,4);
         announce(itemObjs, expectedDay, currentDay);
         //Place order of the items
         deliverObj.setItemsList(expectedDay, itemObjs);

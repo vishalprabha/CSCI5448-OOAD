@@ -79,31 +79,28 @@ public class Inventory {
     public void deleteInventory(Item item){
         ItemsList.remove(item);
     }
-    // Checking inventory for a particular item
-    public List<Item> checkInventory(String itemName){
-        List<Item> particularItemList = new ArrayList<>();
-        for (Item item : ItemsList) {
-            if (item.getClass().getName().equals(itemName)) {
-                particularItemList.add(item);
-            }
-        }
-        return particularItemList;
-    }
-    // Checking if an item is present in the inventory
-    public boolean peekInventory(String s){
-        for (Item item : ItemsList) {
-            if (item.getClass().getName().equals(s)) {
-                return true;
-            }
-        }
-        return false;
-    }
+//    // Checking inventory for a particular item
+//    public List<Item> checkInventory(String itemName){
+//        List<Item> particularItemList = new ArrayList<>();
+//        for (Item item : ItemsList) {
+//            if (item.getClass().getName().equals(itemName)) {
+//                particularItemList.add(item);
+//            }
+//        }
+//        return particularItemList;
+//    }
+//    // Checking if an item is present in the inventory
+//    public boolean peekInventory(String s){
+//        for (Item item : ItemsList) {
+//            if (item.getClass().getName().equals(s)) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
     // Announcing Items added
     public void announce(Item item){
         System.out.println("Item: " + item.name + " of type " + item.getClass().getName() + " has been added the store's inventory" );
     }
-    // Announcing Item sold with discount percentage
-    public void announce(Item item, int i){
-        System.out.println("Item Name: " + item + "Discount: " + i);
-    }
+
 }
