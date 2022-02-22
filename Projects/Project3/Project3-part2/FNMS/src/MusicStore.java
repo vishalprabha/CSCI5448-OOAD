@@ -8,6 +8,10 @@ public class MusicStore {
     private List<Customer> listCustomerObj;
     private HashMap<Integer, List<Item>> listItemsSold; //Example of identity
 
+    public Announcer announcer;
+    public Logger logger;
+    public Tracker tracker;
+
     public HashMap<Integer, List<Item>> getListItemsSold() {
         return listItemsSold;
     }
@@ -75,6 +79,12 @@ public class MusicStore {
         clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 10, "Daphne"));
         // Creating Customer list for holding customers arriving in a day
         listCustomerObj =  new ArrayList<>();
+
+        Announcer announcer= new Announcer();
+        logger= new Logger();
+        tracker= new Tracker(clerkObjList);
+        announcer.addListener(logger);
+        announcer.addListener(tracker);
 
     }
 
@@ -201,33 +211,41 @@ public class MusicStore {
             }while(clerkObj.checkConsecutive(day) || clerkObj.isSick);
 
             // Announce store arrival
-            clerkObj.arriveAtStoreObj.announce(day, clerkObj.name);
+            clerkObj.arriveAtStoreObj.announce(day, clerkObj.name, announcer);
 
             // Check the deliveries
-            clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj);
+            clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj, announcer, clerkObj.name);
 
             // Check the register
-            clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj);
+            clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name);
 
             // Check inventory and place and order
-            clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day);
+            clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name);
 
             // Open the store
+            int beforeSell = inventoryObj.ItemsList.size();
+            int beforeBuy = inventoryObj.ItemsList.size();
+            int sold = 0;
+            int bought = 0;
             for(Customer customer : listCustomerObj){
                 if(customer.getCustomerType().equals("Buyer")){
-                    clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, customer, listItemsSold);
+                    if(clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, customer, listItemsSold))
+                        sold++;
                 }
                 else{
-                    clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, customer, clerkObj.getName(), clerkObj.checkRegisterObj);
+                    if(clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, customer, clerkObj.getName(), clerkObj.checkRegisterObj))
+                        bought++;
                 }
             }
-
+            clerkObj.itemsSold = clerkObj.itemsSold + sold;
+            clerkObj.itemsPurchased = clerkObj.itemsPurchased + bought;
+            announcer.publishEvent(clerkObj.name + " sold" + sold + " Items", day);
+            announcer.publishEvent(clerkObj.name + " bought" + bought + " Items", day);
             // Clean the store
-            clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj);
+            clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
             // Leave the store
-            clerkObj.leaveTheStoreObj.announce(clerkObj.name, day);
-
-
+            clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer);
+            tracker.notifyEvent("", day);
 
         }//end of days loop
 
