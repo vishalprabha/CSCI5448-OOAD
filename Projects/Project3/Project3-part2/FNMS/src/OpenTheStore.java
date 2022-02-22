@@ -8,7 +8,7 @@ public class OpenTheStore {
         List<Item> items = inventoryObj.getItemsList();
         for(Item item : items) {
             if(Objects.equals(item.getClass().getName(), buyItemName)) {
-                if(OuterUtils.Utils.getRandomBuy(50)) {
+                if(OuterUtils.Utils.getRandomProbability(50)) {
                     cashRegisterObj.addMoney(item.getListPrice());
                     item.setSalePrice(item.getListPrice());
                     item.setDaySold(day);
@@ -19,7 +19,7 @@ public class OpenTheStore {
                     announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
                     return;
                 }
-                else if(OuterUtils.Utils.getRandomBuy(75)){
+                else if(OuterUtils.Utils.getRandomProbability(75)){
                         cashRegisterObj.addMoney((0.9)*item.getListPrice());
                         item.setSalePrice((0.9)*item.getListPrice());
                         item.setDaySold(day);
@@ -78,7 +78,7 @@ public class OpenTheStore {
                 return;
             }}
         // Executing normal buy oepration
-        if(OuterUtils.Utils.getRandomBuy(50)) {
+        if(OuterUtils.Utils.getRandomProbability(50)) {
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2*purchasePrice);
             // Checking if the register has enough money, else withdrawing from bank
@@ -89,7 +89,7 @@ public class OpenTheStore {
                 cashRegisterObj.removeMoney(purchasePrice);
                 announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
         }
-        else if(OuterUtils.Utils.getRandomBuy(75)) {
+        else if(OuterUtils.Utils.getRandomProbability(75)) {
             purchasePrice = (1.1) * purchasePrice;
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2 * purchasePrice);

@@ -54,11 +54,6 @@ public  class OuterUtils {
             int p =  rand.nextInt(100);
             return p < x;
         }
-        // Get random buy based on percentage of x
-        static boolean getRandomBuy(int x) {
-            int p =  rand.nextInt(100);
-            return p < x;
-        }
         // Function to get random clerk
         static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
             return clerkObjList.get(rand.nextInt(clerkObjList.size()));
