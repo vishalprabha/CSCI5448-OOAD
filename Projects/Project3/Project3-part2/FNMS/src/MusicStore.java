@@ -88,8 +88,8 @@ public class MusicStore {
             }
             // Customer ID count
             int count = 0;
-            // Generate random 4-10 customer for buying
-            randomNumberCustomers = OuterUtils.Utils.getRandomInt(4, 10);
+            // Generate buying customers using poisson distribution
+            randomNumberCustomers = OuterUtils.Utils.getRandomBuyCustomers();
             // Creating customer objects and append to customer list
             for(int buyingCustomers=0; buyingCustomers < randomNumberCustomers; buyingCustomers++){
                 // Generate random itemtype to buy

@@ -8,7 +8,7 @@ public class DoInventory {
     public void checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay){
         List<Item> items = inventoryObj.getItemsList();
         double totalPurchasePrice = 0.0;
-        HashMap<String, Integer> countItems = new HashMap<String, Integer>();
+        HashMap<String, Integer> countItems = new HashMap<>();
         List<String> itemTypes = OuterUtils.Utils.getItemTypes();
         for(String itemType: itemTypes){
             countItems.put(itemType, 0);
@@ -20,10 +20,10 @@ public class DoInventory {
             countItems.put(item.getClass().getName(), updatedCount);
         }
         announce(totalPurchasePrice);
-        //For subclass items with zero count, place an order
-        for(Map.Entry<String, Integer> e : countItems.entrySet()){
-            if(e.getValue() == 0){
-                placeAnOrderObj.orderItems(e.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay);
+        //For subclass items with zero count, place an order except for clothing class
+        for(Map.Entry<String, Integer> element : countItems.entrySet()){
+            if(element.getValue() == 0 && (!element.getKey().equals("Hats") && !element.getKey().equals("Shirts") && !element.getKey().equals("Bandanas"))){
+                placeAnOrderObj.orderItems(element.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay);
             }
         }
     }

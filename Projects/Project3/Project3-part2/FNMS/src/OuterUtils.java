@@ -63,17 +63,15 @@ public  class OuterUtils {
         static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
             return clerkObjList.get(rand.nextInt(clerkObjList.size()));
         }
-//
-//        String getRandomItem() {
-//            //assigning random item name
-//            return getRandomName();
-//        }
+
         // Function to get random condition for Item
         static String getRandomCondition(){
             // Getting random condition - https://www.baeldung.com/java-random-list-element#:~:text=In%20order%20to%20get%20a,that%20exceeds%20your%20List's%20size.
             List<String> conditionList = Arrays.asList("poor", "fair", "good", "very good", "excellent");
             return conditionList.get(rand.nextInt(conditionList.size()));
         }
+
+        // Function to get one random item
         static String getRandomItemTypes() {
             List<String> itemTypes = new ArrayList<>();
             //adding all sub classes
@@ -102,17 +100,13 @@ public  class OuterUtils {
             return min + (rand.nextDouble() * (max - min));
 
         }
-
+        // Generate random int value in given range
         static int getRandomInt(int min, int max){
             // https://stackoverflow.com/questions/5271598/java-generate-random-number-between-two-given-values
             return rand.nextInt(max- min) + min;
         }
 
-//        static int getRandomDay(int d) {
-//            //delivery day after ordering
-//            return d + (rand.nextInt(3) + 1);
-//        }
-
+        // Function to get all Item types from inventory
         static List<String> getItemTypes() {
             List<String> itemTypes = new ArrayList<>();
             //adding all sub classes
@@ -134,6 +128,22 @@ public  class OuterUtils {
             itemTypes.add("PracticeAmps");
             itemTypes.add("Strings");
             return itemTypes;
+        }
+
+        // Function to generate poisson distribution for generating number of arriving customers
+        // Refernce - https://stackoverflow.com/questions/9832919/generate-poisson-arrival-in-java
+        static int getRandomBuyCustomers(){
+            // Mean defaultly set as 3 as per question
+            int mean = 3;
+            double L = Math.exp(-mean);
+            int k = 0;
+            double p = 1.0;
+            do {
+                p = p * rand.nextDouble();
+                k++;
+            } while (p > L);
+            // returning 2 + a random variate from a Poisson distribution
+            return k - 1 + 2;
         }
     }
 }

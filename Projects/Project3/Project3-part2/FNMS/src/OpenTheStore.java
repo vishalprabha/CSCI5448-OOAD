@@ -37,6 +37,23 @@ public class OpenTheStore {
         }
         System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName+"  but none were in inventory, so they left.");
     }
+    // Function to check count of clothing items
+    public int countClothing(Inventory inventoryObj){
+        List<Item> items = inventoryObj.getItemsList();
+        HashMap<String, Integer> countItems = new HashMap<>();
+        List<String> itemTypes = OuterUtils.Utils.getItemTypes();
+        for(String itemType: itemTypes){
+            countItems.put(itemType, 0);
+        }
+        //Keep hashmap count of items
+        for(Item item: items){
+            int updatedCount = countItems.get(item.getClass().getName()) + 1;
+            countItems.put(item.getClass().getName(), updatedCount);
+        }
+        int count = 0;
+        count += countItems.get("Hats") + countItems.get("Shirts") + countItems.get("Bandanas");
+        return count;
+    }
     // Function to buy an item from the customer
     public void orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
         Item addItem = customerObj.getSellItemObj();
@@ -53,9 +70,18 @@ public class OpenTheStore {
         } else {
             purchasePrice = OuterUtils.Utils.getRandomPrice(81,100);
         }
+        // Checking if Item being sold is clothing
+        if( addItem.getClass().getName().equals("Hats") || addItem.getClass().getName().equals("Shirts") || addItem.getClass().getName().equals("Bandanas")){
+            // If clothing inventory empty, we don't buy any clothes
+            if (countClothing(inventoryObj) == 0){
+                System.out.println("Store received a  "+addItem.getClass().getName()+ " from customer "+customerObj.getId()+ ", but store will no longer buy clothes from customer");
+                return;
+            }}
+        // Executing normal buy oepration
         if(OuterUtils.Utils.getRandomBuy(50)) {
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2*purchasePrice);
+            // Checking if the register has enough money, else withdrawing from bank
             if(cashRegisterObj.getMoney() < purchasePrice) {
                 checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj);
             }
@@ -67,6 +93,7 @@ public class OpenTheStore {
             purchasePrice = (1.1) * purchasePrice;
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2 * purchasePrice);
+            // Checking if the register has enough money, else withdrawing from bank
             if(cashRegisterObj.getMoney() > purchasePrice) {
                 checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj);
             }
@@ -78,6 +105,7 @@ public class OpenTheStore {
         else{
             System.out.println("Customer "+customerObj.getId()+ " wanted to sell a "+addItem.getClass().getName()+"  but did not sell even after providing discount");
         }
+
     }
 
     public void announceSelling(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
