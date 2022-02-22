@@ -49,7 +49,7 @@ public  class OuterUtils {
             return name.charAt(0) + String.valueOf(lowers);
         }
         // Get random damage based on percentage of x
-        static boolean getRandomDamage(int x) {
+        static boolean getRandomProbability(int x) {
             //works for velma- need to add code based on x
             int p =  rand.nextInt(100);
             return p < x;

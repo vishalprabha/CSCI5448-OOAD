@@ -12,7 +12,7 @@ public class CleanTheStore {
     public void orchestrateCleaning(int damagePercentage, Inventory inventoryObj) {
         List<Item> items = inventoryObj.ItemsList;
         int i;
-        boolean toDamage = OuterUtils.Utils.getRandomDamage(damagePercentage);
+        boolean toDamage = OuterUtils.Utils.getRandomProbability(damagePercentage);
         if(toDamage) {
             if(items.size()== 0) {
                 System.out.println("Store cleaned");

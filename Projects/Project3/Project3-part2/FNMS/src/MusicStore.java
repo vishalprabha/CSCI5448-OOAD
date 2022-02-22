@@ -71,6 +71,8 @@ public class MusicStore {
         clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 20, "Shaggy"));
         // Creating Velma clerk object
         clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 5, "Velma"));
+        // Creating Daphne clerk object with damage chance 10%
+        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 10, "Daphne"));
         // Creating Customer list for holding customers arriving in a day
         listCustomerObj =  new ArrayList<>();
 
@@ -167,11 +169,24 @@ public class MusicStore {
             }
             // Shuffling the customer list to get randomness
             Collections.shuffle(listCustomerObj);
-
-            // Getting a random clerk and checking if they have worked continuously
+            // initialize that every clerk as not sick at the beginning of each day
+            for(Clerk staffMember: clerkObjList){
+                staffMember.isSick = false;
+            }
+            // Flag to keep track that only one clerk falls sick
+            boolean isSickAlreadySet = false;
+            // Getting a random clerk and checking if they have worked continuously and is not sick
             do{
+
                 clerkObj = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
-            }while(clerkObj.checkConsecutive(day));
+                if(! isSickAlreadySet) {
+                    if (OuterUtils.Utils.getRandomProbability(10)) {
+                        clerkObj.isSick = true;
+                        isSickAlreadySet = true;
+                        System.out.println("Clerk " +clerkObj.name+ " has fallen sick and another clerk is going to replace him/her today");
+                    }
+                }
+            }while(clerkObj.checkConsecutive(day) || clerkObj.isSick);
 
             // Announce store arrival
             clerkObj.arriveAtStoreObj.announce(day, clerkObj.name);
