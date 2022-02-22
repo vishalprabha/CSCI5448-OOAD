@@ -12,47 +12,56 @@ public class Inventory {
         for (int index = 0; index < 3; index ++){
             double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
             PaperScore paperScoreItem = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent",OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(paperScoreItem);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             CD cdItem = new CD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent",OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(cdItem);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Vinyl vinylItem = new Vinyl(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent",OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(vinylItem);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
+            Cassette cassette = new Cassette(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent",OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+            ItemsList.add(cassette);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             PlayersCD playersCD = new PlayersCD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(playersCD);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             RecordPlayer recordPlayer = new RecordPlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(recordPlayer);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             MP3 mp3Player = new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(mp3Player);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
+            CassettePlayer cassettePlayer = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
+            ItemsList.add(cassettePlayer);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Guitar guitar = new Guitar(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(guitar);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Bass bass = new Bass(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(bass);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Mandolin mandolin = new Mandolin(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(mandolin);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Flute flute = new Flute(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomName());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(flute);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Harmonica harmonica = new Harmonica(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomName());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(harmonica);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
+            Saxaphone saxaphone = new Saxaphone(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomName());
+            ItemsList.add(saxaphone);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Hats hat = new Hats(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomSize());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(hat);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Shirts shirt = new Shirts(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomSize());
-            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             ItemsList.add(shirt);
-            Bandanas bandana = new Bandanas(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
             purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
+            Bandanas bandana = new Bandanas(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
             ItemsList.add(bandana);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             PracticeAmps practiceAmp = new PracticeAmps(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomInt(1,10));
             ItemsList.add(practiceAmp);
             purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
@@ -61,6 +70,9 @@ public class Inventory {
             purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Strings string = new Strings(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomName());
             ItemsList.add(string);
+            purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
+            GigBag gigBag = new GigBag(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
+            ItemsList.add(gigBag);
         }
     }
     // Getter for inventory list
@@ -79,25 +91,6 @@ public class Inventory {
     public void deleteInventory(Item item){
         ItemsList.remove(item);
     }
-//    // Checking inventory for a particular item
-//    public List<Item> checkInventory(String itemName){
-//        List<Item> particularItemList = new ArrayList<>();
-//        for (Item item : ItemsList) {
-//            if (item.getClass().getName().equals(itemName)) {
-//                particularItemList.add(item);
-//            }
-//        }
-//        return particularItemList;
-//    }
-//    // Checking if an item is present in the inventory
-//    public boolean peekInventory(String s){
-//        for (Item item : ItemsList) {
-//            if (item.getClass().getName().equals(s)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
     // Announcing Items added
     public void announce(Item item){
         System.out.println("Item: " + item.name + " of type " + item.getClass().getName() + " has been added the store's inventory" );

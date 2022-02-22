@@ -31,6 +31,14 @@ public class PlaceAnOrder {
                 cashRegisterObj.removeMoney(purchasePrice);
             }
         }
+        else if(Objects.equals(itemStr, "Cassette")){
+            for(int i = 0; i < 3;i++) {
+                purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+                itemObjs.add(new Cassette(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName()));
+                checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
+                cashRegisterObj.removeMoney(purchasePrice);
+            }
+        }
         else if(Objects.equals(itemStr, "PlayersCD")){
             for(int i = 0; i < 3;i++) {
                 purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
@@ -51,6 +59,14 @@ public class PlaceAnOrder {
             for(int i = 0; i < 3;i++) {
                 purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
                 itemObjs.add(new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition()));
+                checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
+                cashRegisterObj.removeMoney(purchasePrice);
+            }
+        }
+        else if(Objects.equals(itemStr, "CassettePlayer")){
+            for(int i = 0; i < 3;i++) {
+                purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+                itemObjs.add(new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition()));
                 checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
                 cashRegisterObj.removeMoney(purchasePrice);
             }
@@ -95,6 +111,14 @@ public class PlaceAnOrder {
                 cashRegisterObj.removeMoney(purchasePrice);
             }
         }
+        else if(Objects.equals(itemStr, "Saxaphone")){
+            for(int i = 0; i < 3;i++) {
+                purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+                itemObjs.add(new Saxaphone(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName()));
+                checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
+                cashRegisterObj.removeMoney(purchasePrice);
+            }
+        }
         else if(Objects.equals(itemStr, "Hats")){
             for(int i = 0; i < 3;i++) {
                 purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
@@ -131,6 +155,14 @@ public class PlaceAnOrder {
             for(int i = 0; i < 3;i++) {
                 purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
                 itemObjs.add(new Cables(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomInt(1,10)));
+                checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
+                cashRegisterObj.removeMoney(purchasePrice);
+            }
+        }
+        else if(Objects.equals(itemStr, "GigBag")){
+            for(int i = 0; i < 3;i++) {
+                purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+                itemObjs.add(new GigBag(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition()));
                 checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
                 cashRegisterObj.removeMoney(purchasePrice);
             }

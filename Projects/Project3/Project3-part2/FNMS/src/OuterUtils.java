@@ -87,6 +87,10 @@ public  class OuterUtils {
             itemTypes.add("Cables");
             itemTypes.add("PracticeAmps");
             itemTypes.add("Strings");
+            itemTypes.add("Cassette");
+            itemTypes.add("CassettePlayer");
+            itemTypes.add("Saxaphone");
+            itemTypes.add("GigBag");
             return itemTypes.get(rand.nextInt(itemTypes.size()));
         }
         // Generate random value in given range
@@ -122,6 +126,10 @@ public  class OuterUtils {
             itemTypes.add("Cables");
             itemTypes.add("PracticeAmps");
             itemTypes.add("Strings");
+            itemTypes.add("Cassette");
+            itemTypes.add("CassettePlayer");
+            itemTypes.add("Saxaphone");
+            itemTypes.add("GigBag");
             return itemTypes;
         }
 

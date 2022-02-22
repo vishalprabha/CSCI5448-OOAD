@@ -121,6 +121,9 @@ public class MusicStore {
                 else if(Objects.equals(itemType, "Vinyl")){
                     itemObj = new Vinyl(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
                 }
+                else if(Objects.equals(itemType, "Cassette")){
+                    itemObj = new Cassette(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+                }
                 else if(Objects.equals(itemType, "PlayersCD")){
                     itemObj = new PlayersCD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
                 }
@@ -129,6 +132,9 @@ public class MusicStore {
                 }
                 else if(Objects.equals(itemType, "MP3")){
                     itemObj = new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                }
+                else if(Objects.equals(itemType, "CassettePlayer")){
+                    itemObj = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
                 }
                 else if(Objects.equals(itemType, "Guitar")){
                     itemObj = new Guitar(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
@@ -145,6 +151,9 @@ public class MusicStore {
                 else if(Objects.equals(itemType, "Harmonica")){
                     itemObj = new Harmonica(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
                 }
+                else if(Objects.equals(itemType, "Saxaphone")){
+                    itemObj = new Saxaphone(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
+                }
                 else if(Objects.equals(itemType, "Hats")){
                     itemObj = new Hats(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomSize());
                 }
@@ -160,8 +169,11 @@ public class MusicStore {
                 else if(Objects.equals(itemType, "Cables")){
                     itemObj = new Cables(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomInt(1,10));
                 }
-                else{
+                else if(Objects.equals(itemType, "Strings")){
                     itemObj = new Strings(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
+                }
+                else{
+                    itemObj = new GigBag(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
                 }
                 count +=1;
                 Customer sellCustomer = new Customer(count, "Seller", itemType, itemObj);
