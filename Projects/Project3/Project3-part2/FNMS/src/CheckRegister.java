@@ -11,7 +11,7 @@ public class CheckRegister {
             amount = cashRegisterObj.getMoney();
             announce(day, amount);
         }
-        announcer.publishEvent( name + "checks " + amount +" in register.", day);
+        announcer.publishEvent( name + "reports " + amount +" in register.", day);
     }
 
     public void checkBalanceInRegister(int day, CashRegister cashRegisterObj){

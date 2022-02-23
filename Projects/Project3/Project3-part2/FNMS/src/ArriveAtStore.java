@@ -4,7 +4,7 @@ import java.util.List;
 public class ArriveAtStore {
     // Store arrival announcement
     public void announce(int day, String name, Announcer announcer){
-        announcer.publishEvent("",day);
+        announcer.publishEvent(name +" arrives at store",day);
         System.out.println(name + " arrives at the store on Day "+ day);
     }
     // Checking for any deliveries and adding to inventory

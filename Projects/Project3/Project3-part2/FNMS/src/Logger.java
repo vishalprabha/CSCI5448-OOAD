@@ -9,8 +9,9 @@ public class Logger implements MyListener{
 
             // Open given file in append mode by creating an
             // object of BufferedWriter class
-            BufferedWriter bout = new BufferedWriter(
-                    new FileWriter("C:\\Spring22OOADProj2\\Spring22OOADProj2\\src\\com\\OOAD\\outputs\\Logger-"+(day)+".txt", true));
+//            BufferedWriter bout = new BufferedWriter(
+//                    new FileWriter("C:\\Spring22OOADProj2\\Spring22OOADProj2\\src\\com\\OOAD\\outputs\\Logger-"+(day)+".txt", true));
+            BufferedWriter bout = new BufferedWriter(new FileWriter("/Users/Admin/Documents/CSCI5448-OOAD/Projects/Project3/Project3-part2/FNMS/outputs/Logger-"+day+".txt", true));
 
             // Writing on output stream
             bout.write(event+"\n");

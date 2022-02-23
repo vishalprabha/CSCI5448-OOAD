@@ -80,7 +80,7 @@ public class MusicStore {
         // Creating Customer list for holding customers arriving in a day
         listCustomerObj =  new ArrayList<>();
 
-        Announcer announcer= new Announcer();
+        announcer= new Announcer();
         logger= new Logger();
         tracker= new Tracker(clerkObjList);
         announcer.addListener(logger);
@@ -245,7 +245,7 @@ public class MusicStore {
             clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
             // Leave the store
             clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer);
-            tracker.notifyEvent("", day);
+            //announcer.publishEvent("final", day);
 
         }//end of days loop
 
