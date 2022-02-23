@@ -10,7 +10,7 @@ public class Harmonica extends Wind {
         this.key = key;
     }
 
-    Harmonica(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, String key){
+    Harmonica(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, String key, boolean adjusted){
         setName(name);
         setPurchasePrice(purchasePrice);
         setListPrice(listPrice);
@@ -18,5 +18,6 @@ public class Harmonica extends Wind {
         setDayArrived(dayArrived);
         setCondition(condition);
         setKey(key);
+        setAdjusted(adjusted);
     }
 }

@@ -11,7 +11,7 @@ public class Flute extends Wind {
         this.type = type;
     }
 
-    Flute(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, String type){
+    Flute(String name, double purchasePrice, double listPrice, String newOrUsed, int dayArrived, String condition, String type, boolean adjusted){
         setName(name);
         setPurchasePrice(purchasePrice);
         setListPrice(listPrice);
@@ -19,6 +19,7 @@ public class Flute extends Wind {
         setDayArrived(dayArrived);
         setCondition(condition);
         setType(type);
+        setAdjusted(adjusted);
     }
 
 

@@ -54,6 +54,12 @@ public  class OuterUtils {
             int p =  rand.nextInt(100);
             return p < x;
         }
+        // Get random sale percentage based on percentage of x
+        static boolean getRandomProbability(double x) {
+            //works for velma- need to add code based on x
+            double p =  rand.nextDouble(100);
+            return p < x;
+        }
         // Function to get random clerk
         static Clerk getRandomClerkObj(List<Clerk> clerkObjList) {
             return clerkObjList.get(rand.nextInt(clerkObjList.size()));
@@ -147,6 +153,11 @@ public  class OuterUtils {
             } while (p > L);
             // returning 2 + a random variate from a Poisson distribution
             return k - 1 + 2;
+        }
+
+        //Random boolean
+        static boolean getRandomBoolean(){
+            return rand.nextBoolean();
         }
     }
 }

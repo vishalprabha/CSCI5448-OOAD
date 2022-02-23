@@ -10,5 +10,14 @@ abstract class Stringed extends Instruments{
         this.electric = electric;
     }
 
+    boolean tuned;
+
+    public boolean isTuned() {
+        return tuned;
+    }
+
+    public void setTuned(boolean tuned) {
+        this.tuned = tuned;
+    }
 
 }

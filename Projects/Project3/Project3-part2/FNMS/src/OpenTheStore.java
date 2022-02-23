@@ -8,7 +8,38 @@ public class OpenTheStore {
         List<Item> items = inventoryObj.getItemsList();
         for(Item item : items) {
             if(Objects.equals(item.getClass().getName(), buyItemName)) {
-                if(OuterUtils.Utils.getRandomProbability(50)) {
+                double initialProb = 50; //First probability of selling
+                double secondProb = 75; //Second probability of selling if customer doesn't buy first time.
+                if(Objects.equals(item.getClass().getSuperclass().getName(), "Players")){
+                    //Typecasting to access item
+                    Players p = (Players) item;
+                    if(p.isEqualized()){
+                        //Adjusted sale probabilities accordingly
+                        initialProb = 50*1.10;
+                        secondProb = 75*1.10;
+                    }
+                }
+
+                if(Objects.equals(item.getClass().getSuperclass().getName(), "Stringed")){
+                    //Typecasting to access item
+                    Stringed s = (Stringed) item;
+                    if(s.isTuned()){
+                        //Adjusted sale probabilities accordingly
+                        initialProb = 50*1.15;
+                        secondProb = 75*1.15;
+                    }
+                }
+
+                if(Objects.equals(item.getClass().getSuperclass().getName(), "Wind")){
+                    //Typecasting to access item
+                    Wind w = (Wind) item;
+                    if(w.isAdjusted()){
+                        //Adjusted sale probabilities accordingly
+                        initialProb = 50*1.20;
+                        secondProb = 75*1.20;
+                    }
+                }
+                if(OuterUtils.Utils.getRandomProbability(initialProb)) {
                     cashRegisterObj.addMoney(item.getListPrice());
                     item.setSalePrice(item.getListPrice());
                     item.setDaySold(day);
@@ -19,7 +50,7 @@ public class OpenTheStore {
                     announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
                     return;
                 }
-                else if(OuterUtils.Utils.getRandomProbability(75)){
+                else if(OuterUtils.Utils.getRandomProbability(secondProb)){
                         cashRegisterObj.addMoney((0.9)*item.getListPrice());
                         item.setSalePrice((0.9)*item.getListPrice());
                         item.setDaySold(day);
