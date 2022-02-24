@@ -1,12 +1,13 @@
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class CleanTheStore {
 
     Random rand = new Random();
 
-    public String announce(float damagePercentage, String itemType, double listPrice, String condition) {
-        return (itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
+    public void announce(float damagePercentage, String itemType, double listPrice, String condition) {
+        System.out.println(itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
     }
 
     public void orchestrateCleaning(int damagePercentage, Inventory inventoryObj, Announcer announcer, String name, int day) {
@@ -25,7 +26,7 @@ public class CleanTheStore {
             damageItem.listPrice = (0.8) * (damageItem.listPrice);
             String currcondition = damageItem.condition;
             for(i=0; i< 5;i++ ) {
-                if( conditionOptions[i] == currcondition)
+                if(Objects.equals(conditionOptions[i], currcondition))
                     break;
             }
             if(i==0) {

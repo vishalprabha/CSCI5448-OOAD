@@ -230,7 +230,7 @@ public class MusicStore {
             clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name);
 
             // Check inventory and place and order
-            clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name);
+            clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj);
 
             // Open the store
             int beforeSell = inventoryObj.ItemsList.size();
