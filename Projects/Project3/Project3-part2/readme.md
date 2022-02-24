@@ -65,6 +65,23 @@ Assumptions:
 
 # Changes in UML compared to previous submission
 
+- Initial observer implementation is removed and new observer implementation is added.
+The new observer contains one interface called MyListener which the observers extend from and we also
+have an announcer class which contains a list of listeners and publishes events to the listeners. Finally 
+we have two observer classes listening to any published message.
 
+- The return types of the functions present in the Strategy design pattern classes were changed from void to boolean to
+to account for tune change from true to false.
 
+- The initial decorator implementation approach is removed. 
+A new decorator is added to OpenTheStore class from which additional accessories(items) are sold
+when a stringed item is bought.
+
+- Two additional utility functions are added. One to generate a random probability based on double value and another to generate a random boolean value.
+
+- The return type of orchestrate function in CleanTheStore class is changed from void to int to keep track of damaged items.
+
+- The return type of doInventory function in Clerk class is changed from void to int to keep track of damaged items.
+
+- Tune object variable is added to clerk. Additional variables are itemsSold, itemsDamaged and itemsPurchased to keep cumulative counts.
 
