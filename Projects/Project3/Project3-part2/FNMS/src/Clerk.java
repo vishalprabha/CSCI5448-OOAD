@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 //Example of abstraction
 public class Clerk extends Staff{
 
@@ -15,107 +14,64 @@ public class Clerk extends Staff{
     OpenTheStore openTheStoreObj;
     CleanTheStore cleanTheStoreObj;
     LeaveTheStore leaveTheStoreObj;
+    TuneAlgorithm tuneObj;
     int itemsSold;
     int itemsPurchased;
     int itemsDamaged;
 
-    public ArrayList<Integer> getDaysWorked() {
-        return daysWorked;
+    public TuneAlgorithm getTuneObj() {
+        return tuneObj;
     }
 
-    public void setDaysWorked(ArrayList<Integer> daysWorked) {
-        this.daysWorked = daysWorked;
-    }
-
-    public Inventory getInventoryObj() {
-        return inventoryObj;
+    public void setTuneObj(TuneAlgorithm tuneObj) {
+        this.tuneObj = tuneObj;
     }
 
     public void setInventoryObj(Inventory inventoryObj) {
         this.inventoryObj = inventoryObj;
     }
 
-    public ArriveAtStore getArriveAtStoreObj() {
-        return arriveAtStoreObj;
-    }
-
     public void setArriveAtStoreObj(ArriveAtStore arriveAtStoreObj) {
         this.arriveAtStoreObj = arriveAtStoreObj;
-    }
-
-    public Delivery getDeliveryObj() {
-        return deliveryObj;
     }
 
     public void setDeliveryObj(Delivery deliveryObj) {
         this.deliveryObj = deliveryObj;
     }
 
-    public CashRegister getCashRegisterObj() {
-        return cashRegisterObj;
-    }
-
     public void setCashRegisterObj(CashRegister cashRegisterObj) {
         this.cashRegisterObj = cashRegisterObj;
-    }
-
-    public float getDamagePercentage() {
-        return damagePercentage;
     }
 
     public void setDamagePercentage(int damagePercentage) {
         this.damagePercentage = damagePercentage;
     }
 
-    public CheckRegister getCheckRegisterObj() {
-        return checkRegisterObj;
-    }
-
     public void setCheckRegisterObj(CheckRegister checkRegisterObj) {
         this.checkRegisterObj = checkRegisterObj;
-    }
-
-    public DoInventory getDoInventoryObj() {
-        return doInventoryObj;
     }
 
     public void setDoInventoryObj(DoInventory doInventoryObj) {
         this.doInventoryObj = doInventoryObj;
     }
 
-    public PlaceAnOrder getPlaceAnOrderObj() {
-        return placeAnOrderObj;
-    }
-
     public void setPlaceAnOrderObj(PlaceAnOrder placeAnOrderObj) {
         this.placeAnOrderObj = placeAnOrderObj;
-    }
-
-    public OpenTheStore getOpenTheStoreObj() {
-        return openTheStoreObj;
     }
 
     public void setOpenTheStoreObj(OpenTheStore openTheStoreObj) {
         this.openTheStoreObj = openTheStoreObj;
     }
 
-    public CleanTheStore getCleanTheStoreObj() {
-        return cleanTheStoreObj;
-    }
-
     public void setCleanTheStoreObj(CleanTheStore cleanTheStoreObj) {
         this.cleanTheStoreObj = cleanTheStoreObj;
-    }
-
-    public LeaveTheStore getLeaveTheStoreObj() {
-        return leaveTheStoreObj;
     }
 
     public void setLeaveTheStoreObj(LeaveTheStore leaveTheStoreObj) {
         this.leaveTheStoreObj = leaveTheStoreObj;
     }
 
-    Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, int damagePercentage, String name)
+    Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, int damagePercentage, String name, TuneAlgorithm tuneObj)
     {
         setInventoryObj(inventoryObj);
         setDeliveryObj(deliveryObj);
@@ -129,6 +85,7 @@ public class Clerk extends Staff{
         setOpenTheStoreObj(new OpenTheStore());
         setCleanTheStoreObj(new CleanTheStore());
         setLeaveTheStoreObj(new LeaveTheStore());
+        setTuneObj(tuneObj);
     }
     // Function to check if clerk has worked continuously
     // Return true if they have worked for 3 days consecutively

@@ -71,12 +71,22 @@ public class MusicStore {
         cashRegisterObj = new CashRegister(0, 0);
         // Initializing inventory with 51 Item objects
         inventoryObj = new Inventory();
+        // Creating an array list of TuneAlgorithm objects
+        List<TuneAlgorithm> tuneAlgos = new ArrayList<>();
+        tuneAlgos.add(new HaphazardTune());
+        tuneAlgos.add(new ManualTune());
+        tuneAlgos.add(new ElectronicTune());
+        // Getting a random tune to be assigned
+        int choice = OuterUtils.Utils.getRandomInt(0, 2);
         // Creating Shaggy clerk object
-        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 20, "Shaggy"));
+        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 20, "Shaggy", tuneAlgos.get(choice)));
+        tuneAlgos.remove(choice);
         // Creating Velma clerk object
-        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 5, "Velma"));
+        choice = OuterUtils.Utils.getRandomInt(0, 1);
+        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 5, "Velma", tuneAlgos.get(choice)));
+        tuneAlgos.remove(choice);
         // Creating Daphne clerk object with damage chance 10%
-        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 10, "Daphne"));
+        clerkObjList.add(new Clerk(inventoryObj, deliveryObj, cashRegisterObj, 10, "Daphne", tuneAlgos.get(0)));
         // Creating Customer list for holding customers arriving in a day
         listCustomerObj =  new ArrayList<>();
 
@@ -144,7 +154,7 @@ public class MusicStore {
                     itemObj = new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), false);
                 }
                 else if(Objects.equals(itemType, "CassettePlayer")){
-                    itemObj = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+                    itemObj = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), false);
                 }
                 else if(Objects.equals(itemType, "Guitar")){
                     itemObj = new Guitar(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomBoolean(), false);
