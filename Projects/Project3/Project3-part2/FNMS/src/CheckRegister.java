@@ -1,7 +1,7 @@
 public class CheckRegister {
 
     // Checking balance and getting amount from bank accordingly
-    public void checkBalance(int day, CashRegister cashRegisterObj){
+    public void checkBalance(int day, CashRegister cashRegisterObj, Announcer announcer, String name){
         double amount = cashRegisterObj.getMoney();
         announce(day, amount);
         if(amount < 75) {
@@ -11,6 +11,7 @@ public class CheckRegister {
             amount = cashRegisterObj.getMoney();
             announce(day, amount);
         }
+        announcer.publishEvent( name + "reports " + amount +" in register.", day);
     }
 
     public void checkBalanceInRegister(int day, CashRegister cashRegisterObj){

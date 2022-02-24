@@ -15,7 +15,9 @@ public class Clerk extends Staff{
     OpenTheStore openTheStoreObj;
     CleanTheStore cleanTheStoreObj;
     LeaveTheStore leaveTheStoreObj;
-
+    int itemsSold;
+    int itemsPurchased;
+    int itemsDamaged;
 
     public ArrayList<Integer> getDaysWorked() {
         return daysWorked;
