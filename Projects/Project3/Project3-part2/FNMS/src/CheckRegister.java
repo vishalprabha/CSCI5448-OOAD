@@ -10,8 +10,9 @@ public class CheckRegister {
             System.out.println("Balance is less than threshold, withdrawing $1000 from Bank");
             amount = cashRegisterObj.getMoney();
             announce(day, amount);
+            announcer.publishEvent( name + " got thousand dollars from bank", day);
         }
-        announcer.publishEvent( name + "reports " + amount +" in register.", day);
+        announcer.publishEvent( name + " reports " + amount +" in register.", day);
     }
 
     public void checkBalanceInRegister(int day, CashRegister cashRegisterObj){

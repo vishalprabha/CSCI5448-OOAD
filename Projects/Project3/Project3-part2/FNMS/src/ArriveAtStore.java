@@ -16,7 +16,7 @@ public class ArriveAtStore {
                 inventoryObj.addInventory(itemObj);
                 inventoryObj.announce(itemObj);
             }
-            announcer.publishEvent(name + "number of items added on "+day+" is "+deliveredItems.size(), day);
+            announcer.publishEvent(name + " added "+ deliveredItems.size() + " items to inventory", day);
         }
         else{
             System.out.println("No Items delivered on day "+ day);
