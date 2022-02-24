@@ -10,15 +10,3 @@ Velma sold 27 Items
 Velma bought 19 Items
 The number of items damaged during cleaning by Velma is 1
 Velma leaves the store 
-Velma arrives at store
-Velma added 3 items to inventory
-Velma reports 2491.109392073234 in register.
-Velma finds 50 items in store
-Velma finds  worth 2000.7773175231216
-Velma damaged 1 items while tuning during doinventory step
-Items in inventory are worth 2000.7773175231216
-Velma ordered 6 items
-Velma sold 13 Items
-Velma bought 8 Items
-The number of items damaged during cleaning by Velma is 0
-Velma leaves the store 

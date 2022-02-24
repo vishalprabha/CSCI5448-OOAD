@@ -1,72 +1,25 @@
-Daphne arrives at store
-Daphne got thousand dollars from bank
-Daphne reports 1000.0 in register.
-Daphne finds 63 items in store
-Daphne finds  worth 1631.0387474482463
-Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1631.0387474482463
-Daphne ordered 0 items
-Daphne sold 4 Items
-Daphne bought 1 Items
-The number of items damaged during cleaning by Daphne is 0
-Daphne leaves the store 
-Velma arrives at store
-Velma got thousand dollars from bank
-Velma reports 1000.0 in register.
-Velma finds 63 items in store
-Velma finds  worth 1711.2236582012458
-Velma damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1711.2236582012458
-Velma ordered 0 items
-Velma sold 5 Items
-Velma bought 3 Items
-The number of items damaged during cleaning by Velma is 0
-Velma leaves the store 
-Daphne arrives at store
-Daphne got thousand dollars from bank
-Daphne reports 1000.0 in register.
-Daphne finds 63 items in store
-Daphne finds  worth 1604.9115598946594
-Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1604.9115598946594
-Daphne ordered 0 items
-Daphne sold 4 Items
-Daphne bought 1 Items
-The number of items damaged during cleaning by Daphne is 0
-Daphne leaves the store 
-Velma arrives at store
-Velma got thousand dollars from bank
-Velma reports 1000.0 in register.
-Velma finds 63 items in store
-Velma finds  worth 1420.3269892340254
-Velma damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1420.3269892340254
-Velma ordered 0 items
-Velma sold 5 Items
-Velma bought 1 Items
-The number of items damaged during cleaning by Velma is 0
-Velma leaves the store 
-Daphne arrives at store
-Daphne got thousand dollars from bank
-Daphne reports 1000.0 in register.
-Daphne finds 63 items in store
-Daphne finds  worth 1409.0546669051978
-Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1409.0546669051978
-Daphne ordered 0 items
-Daphne sold 4 Items
-Daphne bought 3 Items
-The number of items damaged during cleaning by Daphne is 1
-Daphne leaves the store 
 Shaggy arrives at store
 Shaggy got thousand dollars from bank
 Shaggy reports 1000.0 in register.
 Shaggy finds 63 items in store
-Shaggy finds  worth 1674.2642296268748
+Shaggy finds  worth 1610.2066027404333
 Shaggy damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1674.2642296268748
+Items in inventory are worth 1610.2066027404333
 Shaggy ordered 0 items
-Shaggy sold 3 Items
+Shaggy sold 5 Items
 Shaggy bought 3 Items
+The number of items damaged during cleaning by Shaggy is 0
+Shaggy leaves the store 
+Shaggy arrives at store
+Shaggy got thousand dollars from bank
+Shaggy withdraws 1000 from the bank as it was below threshold
+Shaggy reports 1000.0 in register.
+Shaggy finds 63 items in store
+Shaggy finds  worth 1652.893691252786
+Shaggy damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1652.893691252786
+Shaggy ordered 0 items
+Shaggy sold 6 Items
+Shaggy bought 1 Items
 The number of items damaged during cleaning by Shaggy is 0
 Shaggy leaves the store 

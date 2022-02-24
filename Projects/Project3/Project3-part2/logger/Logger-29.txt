@@ -10,15 +10,3 @@ Daphne sold 54 Items
 Daphne bought 51 Items
 The number of items damaged during cleaning by Daphne is 0
 Daphne leaves the store 
-Velma arrives at store
-Velma added 6 items to inventory
-Velma reports 29800.730844991253 in register.
-Velma finds 36 items in store
-Velma finds  worth 1407.9310483684915
-Velma damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1407.9310483684915
-Velma ordered 11 items
-Velma sold 34 Items
-Velma bought 45 Items
-The number of items damaged during cleaning by Velma is 1
-Velma leaves the store 

@@ -10,15 +10,3 @@ Daphne sold 51 Items
 Daphne bought 49 Items
 The number of items damaged during cleaning by Daphne is 0
 Daphne leaves the store 
-Daphne arrives at store
-Daphne added 27 items to inventory
-Daphne reports 24243.8388658414 in register.
-Daphne finds 59 items in store
-Daphne finds  worth 1981.261701268983
-Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1981.261701268983
-Daphne ordered 5 items
-Daphne sold 62 Items
-Daphne bought 35 Items
-The number of items damaged during cleaning by Daphne is 0
-Daphne leaves the store 

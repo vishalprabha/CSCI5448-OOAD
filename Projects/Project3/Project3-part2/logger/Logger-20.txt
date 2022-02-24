@@ -1,0 +1,12 @@
+Shaggy arrives at store
+Shaggy added 9 items to inventory
+Shaggy reports 16406.38685560337 in register.
+Shaggy finds 63 items in store
+Shaggy finds  worth 3121.200184509677
+Shaggy damaged 3 items while tuning during doinventory step
+Items in inventory are worth 3121.200184509677
+Shaggy ordered 5 items
+Shaggy sold 43 Items
+Shaggy bought 38 Items
+The number of items damaged during cleaning by Shaggy is 1
+Shaggy leaves the store 

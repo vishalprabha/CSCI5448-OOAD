@@ -1,70 +1,23 @@
-Daphne arrives at store
-Daphne reports 1455.4629199723192 in register.
-Daphne finds 48 items in store
-Daphne finds  worth 1600.626753948295
-Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1600.626753948295
-Daphne ordered 4 items
-Daphne sold 9 Items
-Daphne bought 8 Items
-The number of items damaged during cleaning by Daphne is 0
-Daphne leaves the store 
-Shaggy arrives at store
-Shaggy added 3 items to inventory
-Shaggy reports 1235.015400891689 in register.
-Shaggy finds 55 items in store
-Shaggy finds  worth 2277.418709798921
-Shaggy damaged 2 items while tuning during doinventory step
-Items in inventory are worth 2277.418709798921
-Shaggy ordered 4 items
-Shaggy sold 8 Items
-Shaggy bought 11 Items
-The number of items damaged during cleaning by Shaggy is 0
-Shaggy leaves the store 
-Daphne arrives at store
-Daphne added 3 items to inventory
-Daphne reports 1934.4712364191666 in register.
-Daphne finds 48 items in store
-Daphne finds  worth 1282.427485422372
-Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1282.427485422372
-Daphne ordered 1 items
-Daphne sold 10 Items
-Daphne bought 4 Items
-The number of items damaged during cleaning by Daphne is 0
-Daphne leaves the store 
 Velma arrives at store
-Velma reports 1573.8062505106684 in register.
-Velma finds 48 items in store
-Velma finds  worth 1379.188370155269
-Velma damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1379.188370155269
-Velma ordered 3 items
-Velma sold 13 Items
-Velma bought 9 Items
+Velma reports 2283.622307341027 in register.
+Velma finds 41 items in store
+Velma finds  worth 1313.0379197443676
+Velma damaged 1 items while tuning during doinventory step
+Items in inventory are worth 1313.0379197443676
+Velma ordered 7 items
+Velma sold 8 Items
+Velma bought 7 Items
 The number of items damaged during cleaning by Velma is 0
 Velma leaves the store 
 Daphne arrives at store
 Daphne added 3 items to inventory
-Daphne reports 1395.6349257847723 in register.
-Daphne finds 52 items in store
-Daphne finds  worth 1553.2413220119372
+Daphne reports 2264.575337223945 in register.
+Daphne finds 35 items in store
+Daphne finds  worth 1181.6933063055876
 Daphne damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1553.2413220119372
-Daphne ordered 4 items
-Daphne sold 9 Items
-Daphne bought 6 Items
+Items in inventory are worth 1181.6933063055876
+Daphne ordered 7 items
+Daphne sold 8 Items
+Daphne bought 4 Items
 The number of items damaged during cleaning by Daphne is 0
 Daphne leaves the store 
-Shaggy arrives at store
-Shaggy added 3 items to inventory
-Shaggy reports 1935.4998588626581 in register.
-Shaggy finds 49 items in store
-Shaggy finds  worth 1509.3357853862328
-Shaggy damaged 0 items while tuning during doinventory step
-Items in inventory are worth 1509.3357853862328
-Shaggy ordered 3 items
-Shaggy sold 17 Items
-Shaggy bought 6 Items
-The number of items damaged during cleaning by Shaggy is 1
-Shaggy leaves the store 

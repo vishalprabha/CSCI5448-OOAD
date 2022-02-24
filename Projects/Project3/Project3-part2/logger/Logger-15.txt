@@ -1,0 +1,11 @@
+Velma arrives at store
+Velma reports 9145.649525525192 in register.
+Velma finds 36 items in store
+Velma finds  worth 2128.3749047250985
+Velma damaged 1 items while tuning during doinventory step
+Items in inventory are worth 2128.3749047250985
+Velma ordered 8 items
+Velma sold 27 Items
+Velma bought 31 Items
+The number of items damaged during cleaning by Velma is 0
+Velma leaves the store 

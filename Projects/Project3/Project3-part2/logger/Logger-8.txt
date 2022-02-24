@@ -1,0 +1,12 @@
+Daphne arrives at store
+Daphne added 9 items to inventory
+Daphne reports 2659.3062318737348 in register.
+Daphne finds 50 items in store
+Daphne finds  worth 1966.87292639883
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1966.87292639883
+Daphne ordered 4 items
+Daphne sold 24 Items
+Daphne bought 14 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 

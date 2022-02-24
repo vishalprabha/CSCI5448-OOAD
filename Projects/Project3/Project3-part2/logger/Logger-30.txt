@@ -10,15 +10,3 @@ Shaggy sold 51 Items
 Shaggy bought 50 Items
 The number of items damaged during cleaning by Shaggy is 0
 Shaggy leaves the store 
-Velma arrives at store
-Velma added 9 items to inventory
-Velma reports 30481.860752837118 in register.
-Velma finds 49 items in store
-Velma finds  worth 1983.9468720520351
-Velma damaged 1 items while tuning during doinventory step
-Items in inventory are worth 1983.9468720520351
-Velma ordered 8 items
-Velma sold 48 Items
-Velma bought 46 Items
-The number of items damaged during cleaning by Velma is 0
-Velma leaves the store 
