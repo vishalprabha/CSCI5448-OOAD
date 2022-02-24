@@ -57,7 +57,7 @@ public  class OuterUtils {
         // Get random sale percentage based on percentage of x
         static boolean getRandomProbability(double x) {
             //works for velma- need to add code based on x
-            double p =  rand.nextDouble(100);
+            double p =  0 + (rand.nextDouble() * (100));
             return p < x;
         }
         // Function to get random clerk

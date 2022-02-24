@@ -3,7 +3,7 @@ import java.util.*;
 public class OpenTheStore {
 
     // Function to sell an item to customer
-    public void orchestrateSell(int day, String clerkName, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, HashMap<Integer, List<Item>> listItemsSold){
+    public boolean orchestrateSell(int day, String clerkName, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, HashMap<Integer, List<Item>> listItemsSold){
         String buyItemName = customerObj.getBuyItemName();
         List<Item> items = inventoryObj.getItemsList();
         for(Item item : items) {
@@ -48,13 +48,7 @@ public class OpenTheStore {
                     listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                     listItemsSold.get(day).add(item);
                     announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
-                    if(Objects.equals(item.getClass().getSuperclass().getName(), "stringed")){
-                        if(OuterUtils.Utils.getRandomProbability(initialProb)) {
-                            DecoratingItem itemDec = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
-                        }
-                        //announceSellingPart();
-                    }
-                    return;
+                    return true;
                 }
                 else if(OuterUtils.Utils.getRandomProbability(secondProb)){
                         cashRegisterObj.addMoney((0.9)*item.getListPrice());
@@ -64,15 +58,16 @@ public class OpenTheStore {
                         listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                         listItemsSold.get(day).add(item);
                         announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 10 );
-                        return;
+                        return true;
                     }
                 else{
                     System.out.println("Customer "+customerObj.getId()+ " left without buying "+item.getClass().getName()+" even though it was present");
-                    return;
+                    return false;
                 }
             }
         }
         System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName+"  but none were in inventory, so they left.");
+        return false;
     }
     // Function to check count of clothing items
     public int countClothing(Inventory inventoryObj){
@@ -92,7 +87,7 @@ public class OpenTheStore {
         return count;
     }
     // Function to buy an item from the customer
-    public void orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
+    public boolean orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
         Item addItem = customerObj.getSellItemObj();
         String currCondition = addItem.getCondition();
         double purchasePrice;
@@ -112,9 +107,9 @@ public class OpenTheStore {
             // If clothing inventory empty, we don't buy any clothes
             if (countClothing(inventoryObj) == 0){
                 System.out.println("Store received a  "+addItem.getClass().getName()+ " from customer "+customerObj.getId()+ ", but store will no longer buy clothes from customer");
-                return;
+                return true;
             }}
-        // Executing normal buy oepration
+        // Executing normal buy operation
         if(OuterUtils.Utils.getRandomProbability(50)) {
             addItem.setPurchasePrice(purchasePrice);
             addItem.setListPrice(2*purchasePrice);
@@ -125,6 +120,7 @@ public class OpenTheStore {
                 inventoryObj.addInventory(addItem);
                 cashRegisterObj.removeMoney(purchasePrice);
                 announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
+                return true;
         }
         else if(OuterUtils.Utils.getRandomProbability(75)) {
             purchasePrice = (1.1) * purchasePrice;
@@ -137,12 +133,12 @@ public class OpenTheStore {
                 inventoryObj.addInventory(addItem);
                 cashRegisterObj.removeMoney(purchasePrice);
                 announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
-
+                return true;
         }
         else{
             System.out.println("Customer "+customerObj.getId()+ " wanted to sell a "+addItem.getClass().getName()+"  but did not sell even after providing discount");
+            return false;
         }
-
     }
 
     public void announceSelling(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){

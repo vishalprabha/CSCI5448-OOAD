@@ -9,10 +9,11 @@ public class CleanTheStore {
         return (itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
     }
 
-    public void orchestrateCleaning(int damagePercentage, Inventory inventoryObj) {
+    public void orchestrateCleaning(int damagePercentage, Inventory inventoryObj, Announcer announcer, String name, int day) {
         List<Item> items = inventoryObj.ItemsList;
         int i;
         boolean toDamage = OuterUtils.Utils.getRandomProbability(damagePercentage);
+        int itemsDamaged = 0;
         if(toDamage) {
             if(items.size()== 0) {
                 System.out.println("Store cleaned");
@@ -33,8 +34,10 @@ public class CleanTheStore {
                 damageItem.condition = conditionOptions[i - 1];
             }
             //Polymorphism
+            itemsDamaged++;
             announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
         }
+        announcer.publishEvent(name+" broked "+itemsDamaged+" items",day);
         System.out.println("Store cleaned");
     }
 }
