@@ -32,7 +32,7 @@ public class Inventory {
             MP3 mp3Player = new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", false);
             ItemsList.add(mp3Player);
             purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
-            CassettePlayer cassettePlayer = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent");
+            CassettePlayer cassettePlayer = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", false);
             ItemsList.add(cassettePlayer);
             purchasePrice = OuterUtils.Utils.getRandomPrice(1,50);
             Guitar guitar = new Guitar(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", 0, "excellent", OuterUtils.Utils.getRandomBoolean(), false);

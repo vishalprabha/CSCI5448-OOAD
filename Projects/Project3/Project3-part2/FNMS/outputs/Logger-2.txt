@@ -1,0 +1,9 @@
+Shaggy arrives at store
+Shaggyreports 895.9672975660925 in register.
+Shaggy finds 63 items in store
+Shaggy finds  worth 1746.129102889348
+Shaggy ordered 0 items
+Shaggy sold5 Items
+Shaggy bought5 Items
+Shaggy broked 0 items
+Shaggy leaves the store 

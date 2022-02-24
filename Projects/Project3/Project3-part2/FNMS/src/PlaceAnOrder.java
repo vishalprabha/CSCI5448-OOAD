@@ -66,7 +66,7 @@ public class PlaceAnOrder {
         else if(Objects.equals(itemStr, "CassettePlayer")){
             for(int i = 0; i < 3;i++) {
                 purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
-                itemObjs.add(new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition()));
+                itemObjs.add(new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "New", currentDay, OuterUtils.Utils.getRandomCondition(), false));
                 checkRegObj.checkBalanceInRegister(currentDay, cashRegisterObj);
                 cashRegisterObj.removeMoney(purchasePrice);
             }
