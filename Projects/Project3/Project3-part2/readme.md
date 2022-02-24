@@ -31,9 +31,9 @@ The strategy pattern is used to assign the tune algorithm dynamically to a parti
 
 ### Observer
 
-The observer pattern is used to publish the events of interest in order to keep track. 
-
-<br>
+The observer pattern is used to publish the events of interest to keep track. There are two observers which keep track of the events occurring. 
+The tracker object is instantiated at the beginning and prints a tabulated report of all the items sold, purchased and damaged every day.
+The Logger object is instantiated each day the store runs and prints human-readable events text to a logger file in the outputs directory for each day.
 
 # Assumptions and implementations
 
@@ -54,16 +54,17 @@ Changes to items:
 2. The equalized, tuned, and adjusted property are initially set to false when items are added to the inventory, placing an order, and when purchasing from a customer.
 3. In the OpenTheStore class where buying and selling is orchestrated, when an item of type stringed, wind or players arrive, their respective probability of sale is increased based on the description if their respective boolean property is set true.
 
+New behavior: 
+
+All the new behavior is implemented as described in the UML and OO concepts section. 
+
 Assumptions:
-1. The electric property of a stringed instrument is set to true or false randomly at each phase (inventory addition, purchase, and customer selling items).
-2. The output file generation is specific to mac systems and its required to already have the outputs directory.
+- The electric property of a stringed instrument is set to true or false randomly at each phase (inventory addition, purchase, and customer selling items).
+- **The output file generation is specific to mac systems and its required to already have the "outputs" directory.**
 
-
-
-<br>
 
 # Changes in UML compared to previous submission
 
 
 
-# Note
+
