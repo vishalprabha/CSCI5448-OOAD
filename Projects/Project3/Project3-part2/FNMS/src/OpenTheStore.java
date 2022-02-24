@@ -48,6 +48,12 @@ public class OpenTheStore {
                     listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                     listItemsSold.get(day).add(item);
                     announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
+                    if(Objects.equals(item.getClass().getSuperclass().getName(), "stringed")){
+                        if(OuterUtils.Utils.getRandomProbability(initialProb)) {
+                            DecoratingItem itemDec = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
+                        }
+                        //announceSellingPart();
+                    }
                     return;
                 }
                 else if(OuterUtils.Utils.getRandomProbability(secondProb)){
