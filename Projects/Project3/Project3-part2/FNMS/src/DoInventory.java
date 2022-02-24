@@ -23,9 +23,10 @@ public class DoInventory {
             totalPurchasePrice += item.getPurchasePrice();
             int updatedCount = countItems.get(item.getClass().getName()) + 1;
             countItems.put(item.getClass().getName(), updatedCount);
-
+            // Tuning certain items
             if(Objects.equals(item.getClass().getSuperclass().getName(), "Players") || Objects.equals(item.getClass().getSuperclass().getName(), "Stringed") || Objects.equals(item.getClass().getSuperclass().getName(), "Wind")){
                 if(tuneObj.tune(item)){
+                    // Changing conditions and price if item is damaged during tuning
                     if(OuterUtils.Utils.getRandomProbability(10)){
                         damangedTuning +=1;
                         String[] conditionOptions = item.conditionOptions;
@@ -36,9 +37,7 @@ public class DoInventory {
                                 break;
                         }
                         if(index==0) {
-                            //inventoryObj.deleteInventory(item);
                             removeItems.add(item);
-                            System.out.println("bleh");
                         } else {
                             item.condition = conditionOptions[index - 1];
                         }
@@ -47,6 +46,8 @@ public class DoInventory {
                 }
             }
         }
+        // Remove items from inventory after tune damage and poor condition
+        // Work around for bug while deleting
         for(Item element: removeItems){
             numberOfItems--;
             totalPurchasePrice += element.getPurchasePrice();
@@ -55,6 +56,7 @@ public class DoInventory {
             inventoryObj.deleteInventory(element);
         }
         announce(totalPurchasePrice);
+        // Publishing the tracked components
         announcer.publishEvent(name + " finds " + numberOfItems + " items in store", currentDay);
         announcer.publishEvent(name + " finds  worth "+totalPurchasePrice, currentDay);
         announcer.publishEvent(name + " damaged " + damangedTuning + " items while tuning during doinventory step", currentDay);
