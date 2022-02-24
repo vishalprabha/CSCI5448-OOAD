@@ -10,15 +10,34 @@ public class DoInventory {
         List<Item> items = inventoryObj.getItemsList();
         double totalPurchasePrice = 0.0;
         int numberOfItems = 0;
+        int index;
+        // Variable to keep track of damaged objects during doInventory
+        int damangedTuning = 0;
         HashMap<String, Integer> countItems = new HashMap<>();
         List<String> itemTypes = OuterUtils.Utils.getItemTypes();
         for(String itemType: itemTypes){
             countItems.put(itemType, 0);
         }
+
         //Keep hashmap count of items
         for(Item item: items){
-            if(Objects.equals(item.getClass().getSuperclass().getName(), "Players")){
+            if(Objects.equals(item.getClass().getSuperclass().getName(), "Players") || Objects.equals(item.getClass().getSuperclass().getName(), "Stringed") || Objects.equals(item.getClass().getSuperclass().getName(), "Wind")){
                 if(tuneObj.tune(item)){
+                    if(OuterUtils.Utils.getRandomProbability(10)){
+                        damangedTuning +=1;
+                        String[] conditionOptions = item.conditionOptions;
+                        item.listPrice = (0.8) * (item.listPrice);
+                        String currcondition = item.condition;
+                        for(index=0; index< 5;index++ ) {
+                            if(Objects.equals(conditionOptions[index], currcondition))
+                                break;
+                        }
+                        if(index==0) {
+                            inventoryObj.deleteInventory(item);
+                        } else {
+                            item.condition = conditionOptions[index - 1];
+                        }
+                    }
 
                 }
             }
@@ -30,6 +49,7 @@ public class DoInventory {
         announce(totalPurchasePrice);
         announcer.publishEvent(name + " finds " + numberOfItems + " items in store", currentDay);
         announcer.publishEvent(name + " finds  worth "+totalPurchasePrice, currentDay);
+        announcer.publishEvent(name + " damanged " + damangedTuning + " items while tuning during doinventory step", currentDay);
         //For subclass items with zero count, place an order except for clothing class
         int ordered =0;
         for(Map.Entry<String, Integer> element : countItems.entrySet()){

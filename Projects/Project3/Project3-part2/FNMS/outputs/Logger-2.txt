@@ -7,3 +7,13 @@ Shaggy sold5 Items
 Shaggy bought5 Items
 Shaggy broked 0 items
 Shaggy leaves the store 
+Velma arrives at store
+Velmareports 925.4478631495485 in register.
+Velma finds 62 items in store
+Velma finds  worth 1835.609411297218
+Velma damanged 1 items while tuning during doinventory step
+Velma ordered 0 items
+Velma sold6 Items
+Velma bought2 Items
+Velma broked 0 items
+Velma leaves the store 

@@ -7,3 +7,13 @@ Shaggy sold9 Items
 Shaggy bought4 Items
 Shaggy broked 1 items
 Shaggy leaves the store 
+Daphne arrives at store
+Daphnereports 1374.2297215394983 in register.
+Daphne finds 52 items in store
+Daphne finds  worth 1670.495975526147
+Daphne damanged 0 items while tuning during doinventory step
+Daphne ordered 3 items
+Daphne sold7 Items
+Daphne bought7 Items
+Daphne broked 0 items
+Daphne leaves the store 

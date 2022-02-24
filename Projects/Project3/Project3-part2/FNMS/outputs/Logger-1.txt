@@ -7,3 +7,13 @@ Velma sold2 Items
 Velma bought2 Items
 Velma broked 0 items
 Velma leaves the store 
+Velma arrives at store
+Velmareports 1000.0 in register.
+Velma finds 63 items in store
+Velma finds  worth 1716.1973197657862
+Velma damanged 0 items while tuning during doinventory step
+Velma ordered 0 items
+Velma sold3 Items
+Velma bought2 Items
+Velma broked 0 items
+Velma leaves the store 
