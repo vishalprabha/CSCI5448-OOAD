@@ -1,0 +1,48 @@
+Daphne arrives at store
+Daphne added 18 items to inventory
+Daphne reports 23886.08741111529 in register.
+Daphne finds 30 items in store
+Daphne finds  worth 972.1930387549878
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 972.1930387549878
+Daphne ordered 5 items
+Daphne sold 48 Items
+Daphne bought 35 Items
+The number of items damaged during cleaning by Daphne is 1
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 12 items to inventory
+Daphne reports 27502.789184553603 in register.
+Daphne finds 108 items in store
+Daphne finds  worth 5664.958439988699
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 5664.958439988699
+Daphne ordered 7 items
+Daphne sold 52 Items
+Daphne bought 51 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 9 items to inventory
+Daphne reports 25500.351386906437 in register.
+Daphne finds 38 items in store
+Daphne finds  worth 1163.0115560806187
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1163.0115560806187
+Daphne ordered 11 items
+Daphne sold 42 Items
+Daphne bought 47 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Velma arrives at store
+Velma added 6 items to inventory
+Velma reports 25668.818930330577 in register.
+Velma finds 16 items in store
+Velma finds  worth 479.7999620381263
+Velma damaged 0 items while tuning during doinventory step
+Items in inventory are worth 479.7999620381263
+Velma ordered 12 items
+Velma sold 36 Items
+Velma bought 43 Items
+The number of items damaged during cleaning by Velma is 0
+Velma leaves the store 

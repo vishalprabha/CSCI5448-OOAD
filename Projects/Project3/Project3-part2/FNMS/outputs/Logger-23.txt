@@ -1,0 +1,60 @@
+Velma arrives at store
+Velma added 12 items to inventory
+Velma reports 15142.751624927412 in register.
+Velma finds 75 items in store
+Velma finds  worth 3145.9524763423974
+Velma damaged 1 items while tuning during doinventory step
+Items in inventory are worth 3145.9524763423974
+Velma ordered 7 items
+Velma sold 35 Items
+Velma bought 37 Items
+The number of items damaged during cleaning by Velma is 0
+Velma leaves the store 
+Shaggy arrives at store
+Shaggy added 12 items to inventory
+Shaggy reports 15165.476587286428 in register.
+Shaggy finds 22 items in store
+Shaggy finds  worth 780.9003029516158
+Shaggy damaged 0 items while tuning during doinventory step
+Items in inventory are worth 780.9003029516158
+Shaggy ordered 9 items
+Shaggy sold 29 Items
+Shaggy bought 25 Items
+The number of items damaged during cleaning by Shaggy is 0
+Shaggy leaves the store 
+Daphne arrives at store
+Daphne added 9 items to inventory
+Daphne reports 16488.839708903786 in register.
+Daphne finds 96 items in store
+Daphne finds  worth 4618.487540137742
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 4618.487540137742
+Daphne ordered 4 items
+Daphne sold 38 Items
+Daphne bought 39 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 18 items to inventory
+Daphne reports 14632.222158644645 in register.
+Daphne finds 53 items in store
+Daphne finds  worth 1624.650234784874
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1624.650234784874
+Daphne ordered 8 items
+Daphne sold 41 Items
+Daphne bought 33 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 18 items to inventory
+Daphne reports 15483.65475608313 in register.
+Daphne finds 41 items in store
+Daphne finds  worth 1079.3020451321818
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1079.3020451321818
+Daphne ordered 10 items
+Daphne sold 40 Items
+Daphne bought 28 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 

@@ -10,7 +10,7 @@ public class CleanTheStore {
         System.out.println(itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
     }
 
-    public void orchestrateCleaning(int damagePercentage, Inventory inventoryObj, Announcer announcer, String name, int day) {
+    public int orchestrateCleaning(int damagePercentage, Inventory inventoryObj, Announcer announcer, String name, int day) {
         List<Item> items = inventoryObj.ItemsList;
         int i;
         boolean toDamage = OuterUtils.Utils.getRandomProbability(damagePercentage);
@@ -18,7 +18,7 @@ public class CleanTheStore {
         if(toDamage) {
             if(items.size()== 0) {
                 System.out.println("Store cleaned");
-                return;
+                return 0;
             }
             //Polymorphism concept
             Item damageItem = items.get(rand.nextInt(items.size()));
@@ -40,5 +40,6 @@ public class CleanTheStore {
         }
         announcer.publishEvent("The number of items damaged during cleaning by " + name + " is " + itemsDamaged, day);
         System.out.println("Store cleaned");
+        return itemsDamaged;
     }
 }

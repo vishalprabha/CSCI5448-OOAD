@@ -3,7 +3,7 @@ import java.util.*;
 public class DoInventory {
 
 
-    public void checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay, Announcer announcer, String name, TuneAlgorithm tuneObj){
+    public int checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay, Announcer announcer, String name, TuneAlgorithm tuneObj){
         List<Item> items = inventoryObj.getItemsList();
         double totalPurchasePrice = 0.0;
         int numberOfItems = 0;
@@ -70,6 +70,7 @@ public class DoInventory {
             }
         }
         announcer.publishEvent(name +" ordered "+ordered+" items", currentDay);
+        return damangedTuning;
     }
 
     public void announce(double totalValue){

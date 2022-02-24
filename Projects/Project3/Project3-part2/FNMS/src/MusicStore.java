@@ -230,8 +230,8 @@ public class MusicStore {
             clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name);
 
             // Check inventory and place and order
-            clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj);
-
+            int damagedWhileTuning = clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj);
+            clerkObj.itemsDamaged = clerkObj.itemsDamaged + damagedWhileTuning;
             // Open the store
             int beforeSell = inventoryObj.ItemsList.size();
             int beforeBuy = inventoryObj.ItemsList.size();
@@ -252,7 +252,8 @@ public class MusicStore {
             announcer.publishEvent(clerkObj.name + " sold " + sold + " Items", day);
             announcer.publishEvent(clerkObj.name + " bought " + bought + " Items", day);
             // Clean the store
-            clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
+            int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
+            clerkObj.itemsDamaged = clerkObj.itemsDamaged + damaged;
             // Leave the store
             clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer);
             //announcer.publishEvent("final", day);

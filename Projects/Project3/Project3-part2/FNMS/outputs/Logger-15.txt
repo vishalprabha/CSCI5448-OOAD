@@ -1,0 +1,59 @@
+Velma arrives at store
+Velma added 18 items to inventory
+Velma reports 5793.194001650101 in register.
+Velma finds 86 items in store
+Velma finds  worth 3581.3061125911668
+Velma damaged 2 items while tuning during doinventory step
+Items in inventory are worth 3581.3061125911668
+Velma ordered 5 items
+Velma sold 26 Items
+Velma bought 20 Items
+The number of items damaged during cleaning by Velma is 0
+Velma leaves the store 
+Daphne arrives at store
+Daphne added 12 items to inventory
+Daphne reports 7204.900253610283 in register.
+Daphne finds 31 items in store
+Daphne finds  worth 955.9268945686723
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 955.9268945686723
+Daphne ordered 7 items
+Daphne sold 24 Items
+Daphne bought 18 Items
+The number of items damaged during cleaning by Daphne is 1
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 15 items to inventory
+Daphne reports 7249.885165176848 in register.
+Daphne finds 77 items in store
+Daphne finds  worth 3992.554316603988
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 3992.554316603988
+Daphne ordered 6 items
+Daphne sold 29 Items
+Daphne bought 27 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Shaggy arrives at store
+Shaggy reports 6024.184240596445 in register.
+Shaggy finds 51 items in store
+Shaggy finds  worth 1751.2859318349742
+Shaggy damaged 2 items while tuning during doinventory step
+Items in inventory are worth 1751.2859318349742
+Shaggy ordered 6 items
+Shaggy sold 26 Items
+Shaggy bought 20 Items
+The number of items damaged during cleaning by Shaggy is 0
+Shaggy leaves the store 
+Velma arrives at store
+Velma added 6 items to inventory
+Velma reports 5893.897347849423 in register.
+Velma finds 54 items in store
+Velma finds  worth 2188.0542179224
+Velma damaged 0 items while tuning during doinventory step
+Items in inventory are worth 2188.0542179224
+Velma ordered 6 items
+Velma sold 33 Items
+Velma bought 18 Items
+The number of items damaged during cleaning by Velma is 0
+Velma leaves the store 

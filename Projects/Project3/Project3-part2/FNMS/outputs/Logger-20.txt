@@ -1,0 +1,60 @@
+Shaggy arrives at store
+Shaggy added 15 items to inventory
+Shaggy reports 11784.06316175543 in register.
+Shaggy finds 88 items in store
+Shaggy finds  worth 3480.9936957066293
+Shaggy damaged 0 items while tuning during doinventory step
+Items in inventory are worth 3480.9936957066293
+Shaggy ordered 4 items
+Shaggy sold 37 Items
+Shaggy bought 31 Items
+The number of items damaged during cleaning by Shaggy is 0
+Shaggy leaves the store 
+Daphne arrives at store
+Daphne added 12 items to inventory
+Daphne reports 13289.858902989563 in register.
+Daphne finds 19 items in store
+Daphne finds  worth 637.1852241775563
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 637.1852241775563
+Daphne ordered 11 items
+Daphne sold 24 Items
+Daphne bought 23 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 21 items to inventory
+Daphne reports 14366.465420430231 in register.
+Daphne finds 100 items in store
+Daphne finds  worth 4592.156701422459
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 4592.156701422459
+Daphne ordered 4 items
+Daphne sold 41 Items
+Daphne bought 33 Items
+The number of items damaged during cleaning by Daphne is 1
+Daphne leaves the store 
+Daphne arrives at store
+Daphne added 9 items to inventory
+Daphne reports 11953.318119588781 in register.
+Daphne finds 52 items in store
+Daphne finds  worth 1601.1235215896288
+Daphne damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1601.1235215896288
+Daphne ordered 5 items
+Daphne sold 37 Items
+Daphne bought 28 Items
+The number of items damaged during cleaning by Daphne is 0
+Daphne leaves the store 
+Shaggy arrives at store
+Shaggy added 12 items to inventory
+Shaggy reports 12809.953070181928 in register.
+Shaggy finds 48 items in store
+Shaggy finds  worth 1467.3214174244208
+Shaggy damaged 0 items while tuning during doinventory step
+Items in inventory are worth 1467.3214174244208
+Shaggy ordered 11 items
+Shaggy sold 38 Items
+Shaggy bought 29 Items
+The number of items damaged during cleaning by Shaggy is 1
+Shaggy leaves the store 
