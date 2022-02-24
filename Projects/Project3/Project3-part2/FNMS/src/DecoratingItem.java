@@ -3,20 +3,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
-// we can make our own custom decorator that takes the original item being sold
-// and lets us add to it
-// in decorator fashion, this should not impact the code for selling undecorated items
-// note that this has no impact on the existing SellAnItem in Clerk
-// or the way items work
-// We will include an internal ArrayList of the items being purchased
-
 public abstract class DecoratingItem {
     HashMap<Integer, List<Item>> listItemsSold;
     Inventory inventoryObj;
     CashRegister cashRegisterObj;
     int day;
-
-    boolean isItemAddedToInventory;
+    boolean isItemSoldFromInventory = false;
     Item soldItem;
 
     DecoratingItem(Inventory inventory, HashMap<Integer, List<Item>> listItemsSold, CashRegister cashRegister, int day) {
@@ -26,23 +18,28 @@ public abstract class DecoratingItem {
         this.day = day;
     }
 
-    public boolean getIsItemAddedToInventory(){
-        return isItemAddedToInventory;
+    public boolean getIsItemSoldFromInventory(){
+        return isItemSoldFromInventory;
     }
 
-    public void setIsItemAddedToInventory(boolean value){
-        this.isItemAddedToInventory = value;
+    //set true if sold
+    public void setIsItemSoldFromInventory(boolean value){
+        this.isItemSoldFromInventory = value;
     }
 
     public Item getSoldItem(){
         return soldItem;
     }
 
+    //set sold item
     public void setSoldItem(Item item){
         soldItem = item;
     }
-    public void AddItemTypeToInventory(String itemType) {
-        for(Item item : inventoryObj.getItemsList()) {
+
+    //Sell additional from inventory if present.
+    public void SellItemFromInventory(String itemType) {
+        List<Item> items = inventoryObj.getItemsList();
+        for(Item item : items) {
             if (Objects.equals(item.getClass().getName(), itemType)) {
                 cashRegisterObj.addMoney(item.getListPrice());
                 item.setSalePrice(item.getListPrice());
@@ -51,32 +48,43 @@ public abstract class DecoratingItem {
                 // code auto generated from intelliJ suggestion
                 listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                 listItemsSold.get(day).add(item);
-                soldItem = item;
-                //announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
+                setSoldItem(item);
+                setIsItemSoldFromInventory(true);
+                return;
             }
         }
     }
 
 }
 
-// you could add special rules here for deciding whether you want to add an
-// Item and how many, and make sure there's enough, etc.
-// for simplicity if there is one, we add it to the sale and take it off inventory
-
 class AddGigBag extends DecoratingItem {
     AddGigBag(Inventory inventory, HashMap<Integer, List<Item>> listItemsSold, CashRegister cashRegisterObj, int day) {
         super(inventory, listItemsSold, cashRegisterObj, day);
-        AddItemTypeToInventory("GigBag");
+        SellItemFromInventory("GigBag");
     }
 }
 
 class AddStrings extends DecoratingItem {
     AddStrings(Inventory inventory, HashMap<Integer, List<Item>> listItemsSold, CashRegister cashRegisterObj, int day) {
         super(inventory, listItemsSold, cashRegisterObj, day);
-        AddItemTypeToInventory("Strings");
+        SellItemFromInventory("Strings");
     }
-
 }
+
+class AddCables extends DecoratingItem {
+    AddCables(Inventory inventory, HashMap<Integer, List<Item>> listItemsSold, CashRegister cashRegisterObj, int day) {
+        super(inventory, listItemsSold, cashRegisterObj, day);
+        SellItemFromInventory("Cables");
+    }
+}
+
+class AddPracticeAmps extends DecoratingItem {
+    AddPracticeAmps(Inventory inventory, HashMap<Integer, List<Item>> listItemsSold, CashRegister cashRegisterObj, int day) {
+        super(inventory, listItemsSold, cashRegisterObj, day);
+        SellItemFromInventory("PracticeAmps");
+    }
+}
+
 
 
 

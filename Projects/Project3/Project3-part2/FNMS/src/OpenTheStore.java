@@ -48,6 +48,49 @@ public class OpenTheStore {
                     listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                     listItemsSold.get(day).add(item);
                     announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
+                    if(Objects.equals(item.getClass().getSuperclass().getName(), "Stringed")){
+                        //Chance of additional items to be sold if stringed instrument is sold.
+                        Stringed stringed = (Stringed) item;
+                        boolean isElectric = stringed.isElectric();
+                        double multiplier = 1.0;
+                        if(!isElectric){
+                            multiplier = 0.9; //Sale percentage decreases by 10% if stringed instrument is not electric.
+                        }
+                        if(OuterUtils.Utils.getRandomProbability(20 * multiplier)) {
+                            DecoratingItem gigBag = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
+                            //Get the additional item sold(if any)
+                            if(gigBag.getIsItemSoldFromInventory()){
+                                announceSellingAdditionalItem(clerkName, gigBag.getSoldItem().getClass().getName(), customerObj.getId(), gigBag.getSoldItem().getSalePrice(), 0);
+                            }
+                        }
+                        if(OuterUtils.Utils.getRandomProbability(40 * multiplier)) {
+                            int numberOfStrings = OuterUtils.Utils.getRandomInt(1,4);
+                            for(int i =0; i<= numberOfStrings; i++) {
+                                DecoratingItem string = new AddStrings(inventoryObj, listItemsSold, cashRegisterObj, day);
+                                //Get the additional item sold(if any)
+                                if (string.getIsItemSoldFromInventory()) {
+                                    announceSellingAdditionalItem(clerkName, string.getSoldItem().getClass().getName(), customerObj.getId(), string.getSoldItem().getSalePrice(), 0);
+                                }
+                            }
+                        }
+                        if(OuterUtils.Utils.getRandomProbability(30 * multiplier)) {
+                            int numberOfCables = OuterUtils.Utils.getRandomInt(1,3);
+                            for(int i =0; i<= numberOfCables; i++) {
+                                DecoratingItem cable = new AddCables(inventoryObj, listItemsSold, cashRegisterObj, day);
+                                //Get the additional item sold(if any)
+                                if (cable.getIsItemSoldFromInventory()) {
+                                    announceSellingAdditionalItem(clerkName, cable.getSoldItem().getClass().getName(), customerObj.getId(), cable.getSoldItem().getSalePrice(), 0);
+                                }
+                            }
+                        }
+                        if(OuterUtils.Utils.getRandomProbability(25 * multiplier)) {
+                            DecoratingItem practiceAmp = new AddPracticeAmps(inventoryObj, listItemsSold, cashRegisterObj, day);
+                            //Get the additional item sold(if any)
+                            if (practiceAmp.getIsItemSoldFromInventory()) {
+                                announceSellingAdditionalItem(clerkName, practiceAmp.getSoldItem().getClass().getName(), customerObj.getId(), practiceAmp.getSoldItem().getSalePrice(), 0);
+                            }
+                        }
+                    }
                     return true;
                 }
                 else if(OuterUtils.Utils.getRandomProbability(secondProb)){
@@ -58,6 +101,49 @@ public class OpenTheStore {
                         listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                         listItemsSold.get(day).add(item);
                         announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 10 );
+                        if(Objects.equals(item.getClass().getSuperclass().getName(), "Stringed")){
+                            //Chance of additional items to be sold if stringed instrument is sold.
+                            Stringed stringed = (Stringed) item;
+                            boolean isElectric = stringed.isElectric();
+                            double multiplier = 1.0;
+                            if(isElectric){
+                                multiplier = 0.9;//Sale percentage decreases by 10% if stringed instrument is not electric.
+                            }
+                            if(OuterUtils.Utils.getRandomProbability(20 * multiplier)) {
+                                DecoratingItem gigBag = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
+                                //Get the additional item sold(if any)
+                                if(gigBag.getIsItemSoldFromInventory()){
+                                    announceSellingAdditionalItem(clerkName, gigBag.getSoldItem().getClass().getName(), customerObj.getId(), gigBag.getSoldItem().getSalePrice(), 0);
+                                }
+                            }
+                            if(OuterUtils.Utils.getRandomProbability(40 * multiplier)) {
+                                int numberOfStrings = OuterUtils.Utils.getRandomInt(1,4);
+                                for(int i =0; i<= numberOfStrings; i++) {
+                                    DecoratingItem string = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
+                                    //Get the additional item sold(if any)
+                                    if (string.getIsItemSoldFromInventory()) {
+                                        announceSellingAdditionalItem(clerkName, string.getSoldItem().getClass().getName(), customerObj.getId(), string.getSoldItem().getSalePrice(), 0);
+                                    }
+                                }
+                            }
+                            if(OuterUtils.Utils.getRandomProbability(30 * multiplier)) {
+                                int numberOfCables = OuterUtils.Utils.getRandomInt(1,3);
+                                for(int i =0; i<= numberOfCables; i++) {
+                                    DecoratingItem cable = new AddCables(inventoryObj, listItemsSold, cashRegisterObj, day);
+                                    //Get the additional item sold(if any)
+                                    if (cable.getIsItemSoldFromInventory()) {
+                                        announceSellingAdditionalItem(clerkName, cable.getSoldItem().getClass().getName(), customerObj.getId(), cable.getSoldItem().getSalePrice(), 0);
+                                    }
+                                }
+                            }
+                            if(OuterUtils.Utils.getRandomProbability(25 * multiplier)) {
+                                DecoratingItem practiceAmp = new AddPracticeAmps(inventoryObj, listItemsSold, cashRegisterObj, day);
+                                //Get the additional item sold(if any)
+                                if (practiceAmp.getIsItemSoldFromInventory()) {
+                                    announceSellingAdditionalItem(clerkName, practiceAmp.getSoldItem().getClass().getName(), customerObj.getId(), practiceAmp.getSoldItem().getSalePrice(), 0);
+                                }
+                            }
+                        }
                         return true;
                     }
                 else{
@@ -143,6 +229,11 @@ public class OpenTheStore {
 
     public void announceSelling(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
         System.out.println(clerkName + " sold a " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
+    }
+
+    //Announcement for selling additional item after stringed instrument is sold.
+    public void announceSellingAdditionalItem(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
+        System.out.println(clerkName + " sold an additional item " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
     }
 
     public void announceBuying(String clerkName, String itemName, int customerNumber, double itemCost, String condition, String age){
