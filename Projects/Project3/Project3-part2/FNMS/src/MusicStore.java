@@ -90,15 +90,18 @@ public class MusicStore {
         // Creating Customer list for holding customers arriving in a day
         listCustomerObj =  new ArrayList<>();
 
+
+
+    }
+
+    public void simulate(int days){
+
         announcer= new Announcer();
         logger= new Logger();
         tracker= new Tracker(clerkObjList);
         announcer.addListener(logger);
         announcer.addListener(tracker);
 
-    }
-
-    public void simulate(int days){
         int randomNumberCustomers;
         String itemType;
         Clerk clerkObj;
