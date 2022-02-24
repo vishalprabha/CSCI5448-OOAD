@@ -1,11 +1,12 @@
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class DoInventory {
 
 
-    public void checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay, Announcer announcer, String name){
+    public void checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay, Announcer announcer, String name, TuneAlgorithm tuneObj){
         List<Item> items = inventoryObj.getItemsList();
         double totalPurchasePrice = 0.0;
         int numberOfItems = 0;
@@ -16,6 +17,11 @@ public class DoInventory {
         }
         //Keep hashmap count of items
         for(Item item: items){
+            if(Objects.equals(item.getClass().getSuperclass().getName(), "Players")){
+                if(tuneObj.tune(item)){
+
+                }
+            }
             numberOfItems++;
             totalPurchasePrice += item.getPurchasePrice();
             int updatedCount = countItems.get(item.getClass().getName()) + 1;
