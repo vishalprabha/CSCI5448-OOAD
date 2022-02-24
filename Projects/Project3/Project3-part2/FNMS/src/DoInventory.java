@@ -1,7 +1,4 @@
-import java.util.List;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class DoInventory {
 
@@ -18,9 +15,15 @@ public class DoInventory {
         for(String itemType: itemTypes){
             countItems.put(itemType, 0);
         }
-
+        // ArrayList to keep track of items removed after tuning damage
+        ArrayList<Item> removeItems = new ArrayList<>();
         //Keep hashmap count of items
         for(Item item: items){
+            numberOfItems++;
+            totalPurchasePrice += item.getPurchasePrice();
+            int updatedCount = countItems.get(item.getClass().getName()) + 1;
+            countItems.put(item.getClass().getName(), updatedCount);
+
             if(Objects.equals(item.getClass().getSuperclass().getName(), "Players") || Objects.equals(item.getClass().getSuperclass().getName(), "Stringed") || Objects.equals(item.getClass().getSuperclass().getName(), "Wind")){
                 if(tuneObj.tune(item)){
                     if(OuterUtils.Utils.getRandomProbability(10)){
@@ -33,7 +36,9 @@ public class DoInventory {
                                 break;
                         }
                         if(index==0) {
-                            inventoryObj.deleteInventory(item);
+                            //inventoryObj.deleteInventory(item);
+                            removeItems.add(item);
+                            System.out.println("bleh");
                         } else {
                             item.condition = conditionOptions[index - 1];
                         }
@@ -41,15 +46,18 @@ public class DoInventory {
 
                 }
             }
-            numberOfItems++;
-            totalPurchasePrice += item.getPurchasePrice();
-            int updatedCount = countItems.get(item.getClass().getName()) + 1;
-            countItems.put(item.getClass().getName(), updatedCount);
+        }
+        for(Item element: removeItems){
+            numberOfItems--;
+            totalPurchasePrice += element.getPurchasePrice();
+            int updatedCount = countItems.get(element.getClass().getName()) - 1;
+            countItems.put(element.getClass().getName(), updatedCount);
+            inventoryObj.deleteInventory(element);
         }
         announce(totalPurchasePrice);
         announcer.publishEvent(name + " finds " + numberOfItems + " items in store", currentDay);
         announcer.publishEvent(name + " finds  worth "+totalPurchasePrice, currentDay);
-        announcer.publishEvent(name + " damanged " + damangedTuning + " items while tuning during doinventory step", currentDay);
+        announcer.publishEvent(name + " damaged " + damangedTuning + " items while tuning during doinventory step", currentDay);
         announcer.publishEvent("Items in inventory are worth "+totalPurchasePrice, currentDay);
         //For subclass items with zero count, place an order except for clothing class
         int ordered =0;
