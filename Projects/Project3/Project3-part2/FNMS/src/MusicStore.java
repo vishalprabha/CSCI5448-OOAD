@@ -249,8 +249,8 @@ public class MusicStore {
             }
             clerkObj.itemsSold = clerkObj.itemsSold + sold;
             clerkObj.itemsPurchased = clerkObj.itemsPurchased + bought;
-            announcer.publishEvent(clerkObj.name + " sold" + sold + " Items", day);
-            announcer.publishEvent(clerkObj.name + " bought" + bought + " Items", day);
+            announcer.publishEvent(clerkObj.name + " sold " + sold + " Items", day);
+            announcer.publishEvent(clerkObj.name + " bought " + bought + " Items", day);
             // Clean the store
             clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
             // Leave the store

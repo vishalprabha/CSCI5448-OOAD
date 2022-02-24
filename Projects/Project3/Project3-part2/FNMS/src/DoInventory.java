@@ -29,7 +29,7 @@ public class DoInventory {
         }
         announce(totalPurchasePrice);
         announcer.publishEvent(name + " finds " + numberOfItems + " items in store", currentDay);
-        announcer.publishEvent(name + " finds  worth "+totalPurchasePrice, currentDay);
+        announcer.publishEvent("Items in inventory are worth "+totalPurchasePrice, currentDay);
         //For subclass items with zero count, place an order except for clothing class
         int ordered =0;
         for(Map.Entry<String, Integer> element : countItems.entrySet()){
