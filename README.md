@@ -10,21 +10,22 @@
 
 
 # Team members
-<br>
 
 - **Srinivas Akhil Mallela**
 - **Krishna Likhitha**
 - **Vishal Prabhachandar**
 
-<br>
 
 # JDK versions used (respectively)
-<br>
 
 - Java JDK 17
 - Java JDK 17
 - Open JDK Amazon Corretto-11.0.13.8.1
 
-# Project 2
 
-<a href="https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project2/Project2-part2"> Project 2 code and documentation </a>
+# Table of Contents
+
+1. [Project 1](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project1)
+2. [Project 2](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project2)
+3. [Project 3](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project3)
+4. [Project 4](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project4)
