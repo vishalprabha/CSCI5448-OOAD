@@ -17,6 +17,9 @@ public class Tracker implements MyListener{
             System.out.println(clerkObjList.get(0).name + "                    " + clerkObjList.get(0).itemsSold + "                   " + clerkObjList.get(0).itemsPurchased + "                   " + clerkObjList.get(0).itemsDamaged);
             System.out.println(clerkObjList.get(1).name + "                    " + clerkObjList.get(1).itemsSold + "                   " + clerkObjList.get(1).itemsPurchased + "                   " + clerkObjList.get(1).itemsDamaged);
             System.out.println(clerkObjList.get(2).name + "                    " + clerkObjList.get(2).itemsSold + "                   " + clerkObjList.get(2).itemsPurchased + "                   " + clerkObjList.get(2).itemsDamaged);
+            System.out.println(clerkObjList.get(3).name + "                    " + clerkObjList.get(3).itemsSold + "                   " + clerkObjList.get(3).itemsPurchased + "                   " + clerkObjList.get(3).itemsDamaged);
+            System.out.println(clerkObjList.get(4).name + "                    " + clerkObjList.get(4).itemsSold + "                   " + clerkObjList.get(4).itemsPurchased + "                   " + clerkObjList.get(4).itemsDamaged);
+            System.out.println(clerkObjList.get(5).name + "                    " + clerkObjList.get(5).itemsSold + "                   " + clerkObjList.get(5).itemsPurchased + "                   " + clerkObjList.get(5).itemsDamaged);
         }
     }
 }

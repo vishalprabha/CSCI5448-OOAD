@@ -71,11 +71,9 @@ public class Clerk extends Staff{
         this.leaveTheStoreObj = leaveTheStoreObj;
     }
 
-    Clerk(Inventory inventoryObj, Delivery deliveryObj, CashRegister cashRegisterObj, int damagePercentage, String name, TuneAlgorithm tuneObj)
+    Clerk(int damagePercentage, String name, TuneAlgorithm tuneObj)
     {
-        setInventoryObj(inventoryObj);
-        setDeliveryObj(deliveryObj);
-        setCashRegisterObj(cashRegisterObj);
+
         setDamagePercentage(damagePercentage);
         setName(name);
         setArriveAtStoreObj(new ArriveAtStore());
@@ -91,11 +89,16 @@ public class Clerk extends Staff{
     // Return true if they have worked for 3 days consecutively
     public boolean checkConsecutive(int day){
 
+        if(daysWorked.contains(day)){
+            return true;
+        }
         for(int index = day-1; index >= day-3; day--){
             if(day <= 0){
+                daysWorked.add(day);
                 return false;
             }
             else if(!daysWorked.contains(index)){
+                daysWorked.add(day);
                 return false;
             }
 
