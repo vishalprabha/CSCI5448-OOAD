@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class Simulation {
     MusicStore northMusicStoreObj;
@@ -8,6 +11,10 @@ public class Simulation {
     public Announcer announcer;
     public Logger logger;
     public Tracker tracker;
+    MusicStore commandLineMusicStore;
+    Clerk referenceClerkObj;
+    Clerk specialClerk1;
+    Clerk specialClerk2;
 
 
     Simulation(){
@@ -101,5 +108,150 @@ public class Simulation {
         northMusicStoreObj.finish(days);
         southMusicStoreObj.finish(days);
 
+    }
+
+    void selectStore(String s, int days){
+        if (s.equals("south")) {
+            commandLineMusicStore = southMusicStoreObj;
+            referenceClerkObj = specialClerk1;
+            System.out.println("South music store is selected");
+            //initializeStore(commandLineMusicStore, days);
+        }
+        else if(s.equals("north")){
+            commandLineMusicStore = northMusicStoreObj;
+            referenceClerkObj = specialClerk2;
+            System.out.println("North music store is selected");
+            //initializeStore(commandLineMusicStore, days);
+        }
+        else{
+            System.out.println("Ineligible entry");
+        }
+    }
+
+    void initializeStores(int day){
+        // initialize that every clerk as not sick at the beginning of each day
+        for(Clerk staffMember: clerkObjList){
+            staffMember.isSick = false;
+        }
+        // Flag to keep track that only one clerk falls sick
+        boolean isSickAlreadySet = false;
+        // Getting a random clerk and checking if they have worked continuously and is not sick
+        do{
+
+            specialClerk1 = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
+            if(! isSickAlreadySet) {
+                if (OuterUtils.Utils.getRandomProbability(10)) {
+                    specialClerk1.isSick = true;
+                    isSickAlreadySet = true;
+                    System.out.println("Clerk " +specialClerk1.name+ " has fallen sick when tending to northside store and another clerk is going to replace him/her today");
+                }
+            }
+        }while(specialClerk1.checkConsecutive(day) || specialClerk1.isSick);
+        // Flag to keep track that only one clerk falls sick
+        isSickAlreadySet = false;
+        // Getting a random clerk and checking if they have worked continuously and is not sick
+        do{
+
+            specialClerk2 = OuterUtils.Utils.getRandomClerkObj(clerkObjList);
+            if(! isSickAlreadySet) {
+                if (OuterUtils.Utils.getRandomProbability(10)) {
+                    specialClerk2.isSick = true;
+                    isSickAlreadySet = true;
+                    System.out.println("Clerk " +specialClerk2.name+ " has fallen sick when tending to Southside store and another clerk is going to replace him/her today");
+                }
+            }
+        }while(specialClerk2.checkConsecutive(day) || specialClerk2.isSick);
+
+        southMusicStoreObj.InitializeStoreSim(day, specialClerk1,announcer);
+        northMusicStoreObj.InitializeStoreSim(day, specialClerk2,announcer);
+    }
+
+    void getClerkName(){
+        if(commandLineMusicStore != null) {
+            if (referenceClerkObj != null) {
+                System.out.println("Selected clerk name is :" + referenceClerkObj.getName());
+            }
+        }
+    }
+
+    void getCurrentTime(){
+        if(commandLineMusicStore != null) {
+            if (referenceClerkObj != null) {
+                //https://stackabuse.com/how-to-get-current-date-and-time-in-java/
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                System.out.println("Clerk " + referenceClerkObj.getName() + " reports time: " + dtf.format(now));
+            }
+        }
+    }
+
+    void sellItem(int day) {
+        if (commandLineMusicStore != null) {
+            if (referenceClerkObj != null) {
+                commandLineMusicStore.sellItem(day, referenceClerkObj, announcer);
+            }
+        }
+    }
+
+    void buyItem(int day) {
+        if (commandLineMusicStore != null) {
+            if (referenceClerkObj != null) {
+                commandLineMusicStore.buyItem(day, referenceClerkObj, announcer);
+            }
+        }
+    }
+
+    void closeUpStore(int day) {
+        southMusicStoreObj.closeUpStore(day, specialClerk1, announcer);
+        northMusicStoreObj.closeUpStore(day, specialClerk2, announcer);
+    }
+
+    void commandLineInterface(SimulationInvoker invoker, int day){
+        String inputString;
+        Boolean isEnd;
+        System.out.println("a. Select a store to issue commands to \nb. Ask the clerk their name (should reply with clerk’s name)\nc. Ask the clerk what time it is\nd. Sell a normal inventory item to the clerk\ne. Buy a normal inventory item from the clerk \nf. Buy a custom guitar kit from the clerk\ng. End Interactions \n ");
+        Scanner input = new Scanner(System.in);
+        // Accepting input until empty or word matches random word
+        do{
+            // Setting isEnd flag to false
+            isEnd = false;
+            System.out.println("Enter a command: ");
+            // Try catch for handling inputs other than numbers
+
+            inputString = input.nextLine();
+            // Checking for empty input
+            if (inputString.isBlank() || inputString.isEmpty()){
+                isEnd = true;
+            }
+            // Check if words are alphabets only
+            // Reference - https://www.tutorialkart.com/java/how-to-check-if-string-contains-only-alphabets-in-java/
+            if(inputString.toLowerCase().equals("a")){
+                System.out.println("Enter store name: ");
+                inputString = input.nextLine();
+                if(inputString.toLowerCase().equals("north") || (inputString.toLowerCase().equals("south"))){
+                    invoker.selectStore(inputString.toLowerCase(), day);
+                }
+            }
+            if(inputString.toLowerCase().equals("b")){
+                invoker.getClerkName();
+            }
+            if(inputString.toLowerCase().equals("c")){
+                invoker.getCurrentTime();
+            }
+            if(inputString.toLowerCase().equals("d")){
+                invoker.sellItem(day);
+            }
+            if(inputString.toLowerCase().equals("e")){
+                invoker.buyItem(day);
+            }
+            if(inputString.toLowerCase().equals("f")){
+                //invoker.customGuitar();
+            }
+            if(inputString.toLowerCase().equals("g")){
+                invoker.closeUpStore(day);
+                isEnd = true;
+            }
+
+        }while(!isEnd);
     }
 }
