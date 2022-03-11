@@ -277,16 +277,16 @@ public class MusicStore {
         clerkObj.setCashRegisterObj(cashRegisterObj);
 
         // Announce store arrival
-        clerkObj.arriveAtStoreObj.announce(day, clerkObj.name, announcer);
+        clerkObj.arriveAtStoreObj.announce(day, clerkObj.name, announcer, storeName);
 
         // Check the deliveries
-        clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj, announcer, clerkObj.name);
+        clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj, announcer, clerkObj.name, storeName);
 
         // Check the register
-        clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name);
+        clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name, storeName);
 
         // Check inventory and place and order
-        int damagedWhileTuning = clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj);
+        int damagedWhileTuning = clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj, storeName);
         clerkObj.itemsDamaged = clerkObj.itemsDamaged + damagedWhileTuning;
         sellingCustomerCount = 0;
         buyingCustomerCount = 0;
@@ -368,7 +368,7 @@ public class MusicStore {
             itemObj = new GigBag(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
         }
         specialCustomer.setSellItemObj(itemObj);
-        clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, specialCustomer, clerkObj.getName(), clerkObj.checkRegisterObj);
+        clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, specialCustomer, clerkObj.getName(), clerkObj.checkRegisterObj, storeName);
                     specialbought++;
     }
 
@@ -377,7 +377,7 @@ public class MusicStore {
         itemType = OuterUtils.Utils.getRandomItemTypes();
         specialCustomer.setBuyItemName(itemType);
         // Shuffling the customer list to get randomness
-        clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, specialCustomer, listItemsSold);
+        clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, specialCustomer, listItemsSold, storeName);
                     specialsold++;
 
     }
@@ -388,10 +388,10 @@ public class MusicStore {
         announcer.publishEvent(clerkObj.name + " sold " + specialsold + " Items", day);
         announcer.publishEvent(clerkObj.name + " bought " + specialbought + " Items", day);
         // Clean the store
-        int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
+        int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day, storeName);
         clerkObj.itemsDamaged = clerkObj.itemsDamaged + damaged;
         // Leave the store
-        clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer);
+        clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer, storeName);
         //announcer.publishEvent("final", day);
     }
 }
