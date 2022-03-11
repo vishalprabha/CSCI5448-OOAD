@@ -6,18 +6,18 @@ public class CleanTheStore {
 
     Random rand = new Random();
 
-    public void announce(float damagePercentage, String itemType, double listPrice, String condition) {
-        System.out.println(itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
+    public void announce(float damagePercentage, String itemType, double listPrice, String condition, String storeName) {
+        System.out.println(storeName+": " +itemType + "is in " + condition + "and price dropped to " + listPrice + "after " + damagePercentage);
     }
 
-    public int orchestrateCleaning(int damagePercentage, Inventory inventoryObj, Announcer announcer, String name, int day) {
+    public int orchestrateCleaning(int damagePercentage, Inventory inventoryObj, Announcer announcer, String name, int day, String storeName) {
         List<Item> items = inventoryObj.ItemsList;
         int i;
         boolean toDamage = OuterUtils.Utils.getRandomProbability(damagePercentage);
         int itemsDamaged = 0;
         if(toDamage) {
             if(items.size()== 0) {
-                System.out.println("Store cleaned");
+                System.out.println(storeName+": Store cleaned");
                 return 0;
             }
             //Polymorphism concept
@@ -36,10 +36,10 @@ public class CleanTheStore {
             }
             //Polymorphism
             itemsDamaged++;
-            announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition());
+            announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition(), storeName);
         }
-        announcer.publishEvent("The number of items damaged during cleaning by " + name + " is " + itemsDamaged, day);
-        System.out.println("Store cleaned");
+        announcer.publishEvent(storeName+": The number of items damaged during cleaning by " + name + " is " + itemsDamaged, day);
+        System.out.println(storeName+": Store cleaned");
         return itemsDamaged;
     }
 }

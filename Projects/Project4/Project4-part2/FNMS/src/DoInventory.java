@@ -3,7 +3,7 @@ import java.util.*;
 public class DoInventory {
 
 
-    public int checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay, Announcer announcer, String name, TuneAlgorithm tuneObj){
+    public int checkInventory(Delivery deliveryObj, CashRegister cashRegisterObj, CheckRegister checkRegisterObj, Inventory inventoryObj, PlaceAnOrder placeAnOrderObj, int currentDay, Announcer announcer, String name, TuneAlgorithm tuneObj, String storeName){
         List<Item> items = inventoryObj.getItemsList();
         double totalPurchasePrice = 0.0;
         int numberOfItems = 0;
@@ -25,7 +25,7 @@ public class DoInventory {
             countItems.put(item.getClass().getName(), updatedCount);
             // Tuning certain items
             if(Objects.equals(item.getClass().getSuperclass().getName(), "Players") || Objects.equals(item.getClass().getSuperclass().getName(), "Stringed") || Objects.equals(item.getClass().getSuperclass().getName(), "Wind")){
-                if(tuneObj.tune(item)){
+                if(tuneObj.tune(item, storeName)){
                     // Changing conditions and price if item is damaged during tuning
                     if(OuterUtils.Utils.getRandomProbability(10)){
                         damangedTuning +=1;
@@ -55,26 +55,26 @@ public class DoInventory {
             countItems.put(element.getClass().getName(), updatedCount);
             inventoryObj.deleteInventory(element);
         }
-        announce(totalPurchasePrice);
+        announce(totalPurchasePrice, storeName);
         // Publishing the tracked components
-        announcer.publishEvent(name + " finds " + numberOfItems + " items in store", currentDay);
-        announcer.publishEvent(name + " finds  worth "+totalPurchasePrice, currentDay);
-        announcer.publishEvent(name + " damaged " + damangedTuning + " items while tuning during doinventory step", currentDay);
-        announcer.publishEvent("Items in inventory are worth "+totalPurchasePrice, currentDay);
+        announcer.publishEvent(storeName+": "+name + " finds " + numberOfItems + " items in store", currentDay);
+        announcer.publishEvent(storeName+": "+name + " finds  worth "+totalPurchasePrice, currentDay);
+        announcer.publishEvent(storeName+": "+name + " damaged " + damangedTuning + " items while tuning during doinventory step", currentDay);
+        announcer.publishEvent(storeName+": Items in inventory are worth "+totalPurchasePrice, currentDay);
         //For subclass items with zero count, place an order except for clothing class
         int ordered =0;
         for(Map.Entry<String, Integer> element : countItems.entrySet()){
             if(element.getValue() == 0 && (!element.getKey().equals("Hats") && !element.getKey().equals("Shirts") && !element.getKey().equals("Bandanas"))){
                 ordered++;
-                placeAnOrderObj.orderItems(element.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay);
+                placeAnOrderObj.orderItems(element.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay, storeName);
             }
         }
-        announcer.publishEvent(name +" ordered "+ordered+" items", currentDay);
+        announcer.publishEvent(storeName+": "+name +" ordered "+ordered+" items", currentDay);
         return damangedTuning;
     }
 
-    public void announce(double totalValue){
-        System.out.println("Value of all the items in the store:" + totalValue);
+    public void announce(double totalValue, String storeName){
+        System.out.println(storeName+": Value of all the items in the store:" + totalValue);
     }
 
 

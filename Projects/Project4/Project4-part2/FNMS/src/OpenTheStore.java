@@ -3,7 +3,7 @@ import java.util.*;
 public class OpenTheStore {
 
     // Function to sell an item to customer
-    public boolean orchestrateSell(int day, String clerkName, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, HashMap<Integer, List<Item>> listItemsSold){
+    public boolean orchestrateSell(int day, String clerkName, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, HashMap<Integer, List<Item>> listItemsSold, String storeName){
         String buyItemName = customerObj.getBuyItemName();
         List<Item> items = inventoryObj.getItemsList();
         for(Item item : items) {
@@ -47,7 +47,7 @@ public class OpenTheStore {
                     // code auto generated from intelliJ suggestion
                     listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                     listItemsSold.get(day).add(item);
-                    announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 );
+                    announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 0 , storeName);
                     if(Objects.equals(item.getClass().getSuperclass().getName(), "Stringed")){
                         //Chance of additional items to be sold if stringed instrument is sold.
                         Stringed stringed = (Stringed) item;
@@ -60,7 +60,7 @@ public class OpenTheStore {
                             DecoratingItem gigBag = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
                             //Get the additional item sold(if any)
                             if(gigBag.getIsItemSoldFromInventory()){
-                                announceSellingAdditionalItem(clerkName, gigBag.getSoldItem().getClass().getName(), customerObj.getId(), gigBag.getSoldItem().getSalePrice(), 0);
+                                announceSellingAdditionalItem(clerkName, gigBag.getSoldItem().getClass().getName(), customerObj.getId(), gigBag.getSoldItem().getSalePrice(), 0, storeName);
                             }
                         }
                         if(OuterUtils.Utils.getRandomProbability(40 * multiplier)) {
@@ -69,7 +69,7 @@ public class OpenTheStore {
                                 DecoratingItem string = new AddStrings(inventoryObj, listItemsSold, cashRegisterObj, day);
                                 //Get the additional item sold(if any)
                                 if (string.getIsItemSoldFromInventory()) {
-                                    announceSellingAdditionalItem(clerkName, string.getSoldItem().getClass().getName(), customerObj.getId(), string.getSoldItem().getSalePrice(), 0);
+                                    announceSellingAdditionalItem(clerkName, string.getSoldItem().getClass().getName(), customerObj.getId(), string.getSoldItem().getSalePrice(), 0, storeName);
                                 }
                             }
                         }
@@ -79,7 +79,7 @@ public class OpenTheStore {
                                 DecoratingItem cable = new AddCables(inventoryObj, listItemsSold, cashRegisterObj, day);
                                 //Get the additional item sold(if any)
                                 if (cable.getIsItemSoldFromInventory()) {
-                                    announceSellingAdditionalItem(clerkName, cable.getSoldItem().getClass().getName(), customerObj.getId(), cable.getSoldItem().getSalePrice(), 0);
+                                    announceSellingAdditionalItem(clerkName, cable.getSoldItem().getClass().getName(), customerObj.getId(), cable.getSoldItem().getSalePrice(), 0, storeName);
                                 }
                             }
                         }
@@ -87,7 +87,7 @@ public class OpenTheStore {
                             DecoratingItem practiceAmp = new AddPracticeAmps(inventoryObj, listItemsSold, cashRegisterObj, day);
                             //Get the additional item sold(if any)
                             if (practiceAmp.getIsItemSoldFromInventory()) {
-                                announceSellingAdditionalItem(clerkName, practiceAmp.getSoldItem().getClass().getName(), customerObj.getId(), practiceAmp.getSoldItem().getSalePrice(), 0);
+                                announceSellingAdditionalItem(clerkName, practiceAmp.getSoldItem().getClass().getName(), customerObj.getId(), practiceAmp.getSoldItem().getSalePrice(), 0, storeName);
                             }
                         }
                     }
@@ -100,7 +100,7 @@ public class OpenTheStore {
                         inventoryObj.deleteInventory(item);
                         listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
                         listItemsSold.get(day).add(item);
-                        announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 10 );
+                        announceSelling(clerkName,item.getClass().getName(), customerObj.getId(),item.getSalePrice(), 10, storeName);
                         if(Objects.equals(item.getClass().getSuperclass().getName(), "Stringed")){
                             //Chance of additional items to be sold if stringed instrument is sold.
                             Stringed stringed = (Stringed) item;
@@ -113,7 +113,7 @@ public class OpenTheStore {
                                 DecoratingItem gigBag = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
                                 //Get the additional item sold(if any)
                                 if(gigBag.getIsItemSoldFromInventory()){
-                                    announceSellingAdditionalItem(clerkName, gigBag.getSoldItem().getClass().getName(), customerObj.getId(), gigBag.getSoldItem().getSalePrice(), 0);
+                                    announceSellingAdditionalItem(clerkName, gigBag.getSoldItem().getClass().getName(), customerObj.getId(), gigBag.getSoldItem().getSalePrice(), 0, storeName);
                                 }
                             }
                             if(OuterUtils.Utils.getRandomProbability(40 * multiplier)) {
@@ -122,7 +122,7 @@ public class OpenTheStore {
                                     DecoratingItem string = new AddGigBag(inventoryObj, listItemsSold, cashRegisterObj, day);
                                     //Get the additional item sold(if any)
                                     if (string.getIsItemSoldFromInventory()) {
-                                        announceSellingAdditionalItem(clerkName, string.getSoldItem().getClass().getName(), customerObj.getId(), string.getSoldItem().getSalePrice(), 0);
+                                        announceSellingAdditionalItem(clerkName, string.getSoldItem().getClass().getName(), customerObj.getId(), string.getSoldItem().getSalePrice(), 0, storeName);
                                     }
                                 }
                             }
@@ -132,7 +132,7 @@ public class OpenTheStore {
                                     DecoratingItem cable = new AddCables(inventoryObj, listItemsSold, cashRegisterObj, day);
                                     //Get the additional item sold(if any)
                                     if (cable.getIsItemSoldFromInventory()) {
-                                        announceSellingAdditionalItem(clerkName, cable.getSoldItem().getClass().getName(), customerObj.getId(), cable.getSoldItem().getSalePrice(), 0);
+                                        announceSellingAdditionalItem(clerkName, cable.getSoldItem().getClass().getName(), customerObj.getId(), cable.getSoldItem().getSalePrice(), 0, storeName);
                                     }
                                 }
                             }
@@ -140,19 +140,19 @@ public class OpenTheStore {
                                 DecoratingItem practiceAmp = new AddPracticeAmps(inventoryObj, listItemsSold, cashRegisterObj, day);
                                 //Get the additional item sold(if any)
                                 if (practiceAmp.getIsItemSoldFromInventory()) {
-                                    announceSellingAdditionalItem(clerkName, practiceAmp.getSoldItem().getClass().getName(), customerObj.getId(), practiceAmp.getSoldItem().getSalePrice(), 0);
+                                    announceSellingAdditionalItem(clerkName, practiceAmp.getSoldItem().getClass().getName(), customerObj.getId(), practiceAmp.getSoldItem().getSalePrice(), 0, storeName);
                                 }
                             }
                         }
                         return true;
                     }
                 else{
-                    System.out.println("Customer "+customerObj.getId()+ " left without buying "+item.getClass().getName()+" even though it was present");
+                    System.out.println(storeName+": Customer "+customerObj.getId()+ " left without buying "+item.getClass().getName()+" even though it was present");
                     return false;
                 }
             }
         }
-        System.out.println("Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName+"  but none were in inventory, so they left.");
+        System.out.println(storeName+": Customer "+customerObj.getId()+ " wanted to buy a "+buyItemName+"  but none were in inventory, so they left.");
         return false;
     }
     // Function to check count of clothing items
@@ -173,7 +173,7 @@ public class OpenTheStore {
         return count;
     }
     // Function to buy an item from the customer
-    public boolean orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj){
+    public boolean orchestrateBuy(int day, Inventory inventoryObj, CashRegister cashRegisterObj, Customer customerObj, String clerkName, CheckRegister checkRegisterObj, String storeName){
         Item addItem = customerObj.getSellItemObj();
         String currCondition = addItem.getCondition();
         double purchasePrice;
@@ -192,7 +192,7 @@ public class OpenTheStore {
         if( addItem.getClass().getName().equals("Hats") || addItem.getClass().getName().equals("Shirts") || addItem.getClass().getName().equals("Bandanas")){
             // If clothing inventory empty, we don't buy any clothes
             if (countClothing(inventoryObj) == 0){
-                System.out.println("Store received a  "+addItem.getClass().getName()+ " from customer "+customerObj.getId()+ ", but store will no longer buy clothes from customer");
+                System.out.println(storeName+": Store received a  "+addItem.getClass().getName()+ " from customer "+customerObj.getId()+ ", but store will no longer buy clothes from customer");
                 return true;
             }}
         // Executing normal buy operation
@@ -201,11 +201,11 @@ public class OpenTheStore {
             addItem.setListPrice(2*purchasePrice);
             // Checking if the register has enough money, else withdrawing from bank
             if(cashRegisterObj.getMoney() < purchasePrice) {
-                checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj);
+                checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj, storeName);
             }
                 inventoryObj.addInventory(addItem);
                 cashRegisterObj.removeMoney(purchasePrice);
-                announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
+                announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed(), storeName);
                 return true;
         }
         else if(OuterUtils.Utils.getRandomProbability(75)) {
@@ -214,30 +214,30 @@ public class OpenTheStore {
             addItem.setListPrice(2 * purchasePrice);
             // Checking if the register has enough money, else withdrawing from bank
             if(cashRegisterObj.getMoney() > purchasePrice) {
-                checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj);
+                checkRegisterObj.checkBalanceInRegister(day, cashRegisterObj, storeName);
             }
                 inventoryObj.addInventory(addItem);
                 cashRegisterObj.removeMoney(purchasePrice);
-                announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed());
+                announceBuying(clerkName, addItem.getClass().getName(), customerObj.getId(), purchasePrice, currCondition, addItem.getNewOrUsed(), storeName);
                 return true;
         }
         else{
-            System.out.println("Customer "+customerObj.getId()+ " wanted to sell a "+addItem.getClass().getName()+"  but did not sell even after providing discount");
+            System.out.println(storeName+": Customer "+customerObj.getId()+ " wanted to sell a "+addItem.getClass().getName()+"  but did not sell even after providing discount");
             return false;
         }
     }
 
-    public void announceSelling(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
-        System.out.println(clerkName + " sold a " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
+    public void announceSelling(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage, String storeName){
+        System.out.println(storeName+": " +clerkName + " sold a " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
     }
 
     //Announcement for selling additional item after stringed instrument is sold.
-    public void announceSellingAdditionalItem(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage){
-        System.out.println(clerkName + " sold an additional item " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
+    public void announceSellingAdditionalItem(String clerkName, String itemName, int customerNumber, double itemCost, int discountPercentage, String storeName){
+        System.out.println(storeName+": " +clerkName + " sold an additional item " + itemName + " to Customer " + customerNumber + " for $" + itemCost + " after a "+discountPercentage+"% discount");
     }
 
-    public void announceBuying(String clerkName, String itemName, int customerNumber, double itemCost, String condition, String age){
-        System.out.println(clerkName + " bought a " + condition +" condition "+  age + " " + itemName + " from Customer " + customerNumber + " for " + itemCost);
+    public void announceBuying(String clerkName, String itemName, int customerNumber, double itemCost, String condition, String age, String storeName){
+        System.out.println(storeName+": " +clerkName + " bought a " + condition +" condition "+  age + " " + itemName + " from Customer " + customerNumber + " for " + itemCost);
     }
 
 }

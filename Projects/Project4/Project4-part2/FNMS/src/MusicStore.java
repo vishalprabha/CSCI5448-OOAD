@@ -105,7 +105,7 @@ public class MusicStore {
         clerkObj.setCashRegisterObj(cashRegisterObj);
 
         if(day%7 == 0){
-            System.out.println("It's a sunday, the store is closed!");
+            System.out.println(storeName+": It's a sunday, the store is closed!");
             return;
         }
         // Customer ID count
@@ -203,16 +203,16 @@ public class MusicStore {
         Collections.shuffle(listCustomerObj);
 
         // Announce store arrival
-        clerkObj.arriveAtStoreObj.announce(day, clerkObj.name, announcer);
+        clerkObj.arriveAtStoreObj.announce(day, clerkObj.name, announcer, storeName);
 
         // Check the deliveries
-        clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj, announcer, clerkObj.name);
+        clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj, announcer, clerkObj.name, storeName);
 
         // Check the register
-        clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name);
+        clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name, storeName);
 
         // Check inventory and place and order
-        int damagedWhileTuning = clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj);
+        int damagedWhileTuning = clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj, storeName);
         clerkObj.itemsDamaged = clerkObj.itemsDamaged + damagedWhileTuning;
         // Open the store
         int beforeSell = inventoryObj.ItemsList.size();
@@ -221,23 +221,23 @@ public class MusicStore {
         int bought = 0;
         for(Customer customer : listCustomerObj){
             if(customer.getCustomerType().equals("Buyer")){
-                if(clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, customer, listItemsSold))
+                if(clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, customer, listItemsSold, storeName))
                     sold++;
             }
             else{
-                if(clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, customer, clerkObj.getName(), clerkObj.checkRegisterObj))
+                if(clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, customer, clerkObj.getName(), clerkObj.checkRegisterObj, storeName))
                     bought++;
             }
         }
         clerkObj.itemsSold = clerkObj.itemsSold + sold;
         clerkObj.itemsPurchased = clerkObj.itemsPurchased + bought;
-        announcer.publishEvent(clerkObj.name + " sold " + sold + " Items", day);
-        announcer.publishEvent(clerkObj.name + " bought " + bought + " Items", day);
+        announcer.publishEvent(storeName+": " +clerkObj.name + " sold " + sold + " Items", day);
+        announcer.publishEvent(storeName+": " +clerkObj.name + " bought " + bought + " Items", day);
         // Clean the store
-        int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
+        int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day, storeName);
         clerkObj.itemsDamaged = clerkObj.itemsDamaged + damaged;
         // Leave the store
-        clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer);
+        clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer, storeName);
         //announcer.publishEvent("final", day);
 
 
@@ -245,24 +245,24 @@ public class MusicStore {
 
     //Final output of values
     public void finish(int days){
-        System.out.println("\n" +days+" days simulation ended");
+        System.out.println("\n" +storeName+" : "+days+" days simulation ended");
         inventoryObj.getItemsList().size();
         double totalPurchasePrice = 0.0;
         for(Item item: inventoryObj.getItemsList()){
             totalPurchasePrice += item.getPurchasePrice();
         }
-        System.out.println("\nThere are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
+        System.out.println("\n"+storeName+": " +"There are "+ inventoryObj.getItemsList().size() + " items remaining with total purchase price of $"+totalPurchasePrice);
         double totalItemsSoldPrice = 0.0;
-        System.out.println("List of items sold:");
+        System.out.println(storeName+": " +"List of items sold:");
         for(Map.Entry<Integer, List<Item>> e : getListItemsSold().entrySet()){
             for(Item item: e.getValue()){
-                System.out.println("Item "+item.getClass().getName()+" sold on day "+e.getKey()+" for price $"+item.getSalePrice());
+                System.out.println(storeName+": " +"Item "+item.getClass().getName()+" sold on day "+e.getKey()+" for price $"+item.getSalePrice());
                 totalItemsSoldPrice += item.getSalePrice();
             }
         }
-        System.out.println("\nTotal amount of sold prices is $"+totalItemsSoldPrice);
-        System.out.println("The total amount of money drawn from bank is $" + cashRegisterObj.getWithdrawal());
-        System.out.println("Total amount of money in cash register is $" + cashRegisterObj.getMoney());
+        System.out.println("\n"+storeName+": " +"Total amount of sold prices is $"+totalItemsSoldPrice);
+        System.out.println(storeName+": " +"The total amount of money drawn from bank is $" + cashRegisterObj.getWithdrawal());
+        System.out.println(storeName+": " +"Total amount of money in cash register is $" + cashRegisterObj.getMoney());
     }
 
 }

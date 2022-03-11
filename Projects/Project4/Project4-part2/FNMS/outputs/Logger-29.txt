@@ -1,0 +1,24 @@
+North: Scrappy arrives at store
+North: Scrappy added 15 items to inventory
+North: Scrappy reports 24934.559688421243 in register.
+North: Scrappy finds 80 items in store
+North: Scrappy finds  worth 3756.750265040921
+North: Scrappy damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 3756.750265040921
+North: Scrappy ordered 2 items
+North: Scrappy sold 49 Items
+North: Scrappy bought 46 Items
+North: The number of items damaged during cleaning by Scrappy is 0
+North: Scrappy leaves the store 
+South: Fred arrives at store
+South: Fred added 12 items to inventory
+South: Fred reports 25807.788876374165 in register.
+South: Fred finds 34 items in store
+South: Fred finds  worth 1255.450506425103
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1255.450506425103
+South: Fred ordered 10 items
+South: Fred sold 44 Items
+South: Fred bought 43 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 

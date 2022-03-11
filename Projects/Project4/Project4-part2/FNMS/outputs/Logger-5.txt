@@ -1,0 +1,24 @@
+North: Fred arrives at store
+North: Fred added 6 items to inventory
+North: Fred reports 2067.3564848302376 in register.
+North: Fred finds 46 items in store
+North: Fred finds  worth 1427.3809265374423
+North: Fred damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1427.3809265374423
+North: Fred ordered 4 items
+North: Fred sold 12 Items
+North: Fred bought 8 Items
+North: The number of items damaged during cleaning by Fred is 0
+North: Fred leaves the store 
+South: Scooby arrives at store
+South: Scooby added 3 items to inventory
+South: Scooby reports 1154.0997406045165 in register.
+South: Scooby finds 53 items in store
+South: Scooby finds  worth 2252.632966776345
+South: Scooby damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2252.632966776345
+South: Scooby ordered 4 items
+South: Scooby sold 12 Items
+South: Scooby bought 5 Items
+South: The number of items damaged during cleaning by Scooby is 0
+South: Scooby leaves the store 

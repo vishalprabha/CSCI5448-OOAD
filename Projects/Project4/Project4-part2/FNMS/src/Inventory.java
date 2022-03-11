@@ -92,8 +92,8 @@ public class Inventory {
         ItemsList.remove(item);
     }
     // Announcing Items added
-    public void announce(Item item){
-        System.out.println("Item: " + item.name + " of type " + item.getClass().getName() + " has been added the store's inventory" );
+    public void announce(Item item, String storeName){
+        System.out.println(storeName+": Item: " + item.name + " of type " + item.getClass().getName() + " has been added the store's inventory" );
     }
 
 }

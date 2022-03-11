@@ -75,7 +75,7 @@ public class Simulation {
                     if (OuterUtils.Utils.getRandomProbability(10)) {
                         clerkObj1.isSick = true;
                         isSickAlreadySet = true;
-                        System.out.println("Clerk " +clerkObj1.name+ " has fallen sick when tending to northside store and another clerk is going to replace him/her today");
+                        System.out.println("North: Clerk " +clerkObj1.name+ " has fallen sick and another clerk is going to replace him/her today");
                     }
                 }
             }while(clerkObj1.checkConsecutive(day) || clerkObj1.isSick);
@@ -89,7 +89,7 @@ public class Simulation {
                     if (OuterUtils.Utils.getRandomProbability(10)) {
                         clerkObj2.isSick = true;
                         isSickAlreadySet = true;
-                        System.out.println("Clerk " +clerkObj2.name+ " has fallen sick when tending to Southside store and another clerk is going to replace him/her today");
+                        System.out.println("South: Clerk " +clerkObj2.name+ " has fallen sick and another clerk is going to replace him/her today");
                     }
                 }
             }while(clerkObj2.checkConsecutive(day) || clerkObj2.isSick);

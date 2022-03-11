@@ -1,16 +1,16 @@
 import java.util.Objects;
 // Electronic tune changes equalized, tuned and adjusted property from false to true only
 public class ElectronicTune implements TuneAlgorithm{
-    public boolean tune(Item itemObj){
+    public boolean tune(Item itemObj, String storeName){
         if(Objects.equals(itemObj.getClass().getSuperclass().getName(), "Players")){
             Players playerObj = (Players) itemObj;
             // Changing tune if false
             if(!playerObj.equalized){
                 playerObj.equalized = true;
-                System.out.println("The item "+itemObj.getClass().getName()+"'s equalized property changed from "+ false + " to "+ true + " during electronic tuning");
+                System.out.println(storeName+": The item "+itemObj.getClass().getName()+"'s equalized property changed from "+ false + " to "+ true + " during electronic tuning");
             }
             else{
-                System.out.println("The item "+itemObj.getClass().getName()+"'s equalized property was not changed");
+                System.out.println(storeName+": The item "+itemObj.getClass().getName()+"'s equalized property was not changed");
             }
             return false;
         }
@@ -19,10 +19,10 @@ public class ElectronicTune implements TuneAlgorithm{
             // Changing tune if false
             if(!stringObj.tuned){
                 stringObj.tuned = true;
-                System.out.println("The item "+itemObj.getClass().getName()+"'s tuned property changed from "+false+ " to "+ true + " during electronic tuning");
+                System.out.println(storeName+": The item "+itemObj.getClass().getName()+"'s tuned property changed from "+false+ " to "+ true + " during electronic tuning");
             }
             else{
-                System.out.println("The item "+itemObj.getClass().getName()+"'s tuned property was not changed");
+                System.out.println(storeName+": The item "+itemObj.getClass().getName()+"'s tuned property was not changed");
             }
             return false;
         }
@@ -31,10 +31,10 @@ public class ElectronicTune implements TuneAlgorithm{
             // Changing tune if false
             if(!windObj.adjusted){
                 windObj.adjusted = true;
-                System.out.println("The item "+itemObj.getClass().getName()+"'s adjusted property changed from "+false+ " to "+ true + " during electronic tuning");
+                System.out.println(storeName+": The item "+itemObj.getClass().getName()+"'s adjusted property changed from "+false+ " to "+ true + " during electronic tuning");
             }
             else{
-                System.out.println("The item "+itemObj.getClass().getName()+"'s adjusted property was not changed");
+                System.out.println(storeName+": The item "+itemObj.getClass().getName()+"'s adjusted property was not changed");
             }
             return false;
         }
