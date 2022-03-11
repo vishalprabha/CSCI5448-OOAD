@@ -9,6 +9,12 @@ public class MusicStore {
     //Example of identity
     private HashMap<Integer, List<Item>> listItemsSold;
     private String storeName;
+    //For command special case
+    int sellingCustomerCount = 0;
+    int buyingCustomerCount = 0;
+    int specialsold = 0;
+    int specialbought = 0;
+    Customer specialCustomer;
 
     public HashMap<Integer, List<Item>> getListItemsSold() {
         return listItemsSold;
@@ -265,4 +271,127 @@ public class MusicStore {
         System.out.println(storeName+": " +"Total amount of money in cash register is $" + cashRegisterObj.getMoney());
     }
 
+    public void InitializeStoreSim(int day, Clerk clerkObj, Announcer announcer){
+        clerkObj.setInventoryObj(inventoryObj);
+        clerkObj.setDeliveryObj(deliveryObj);
+        clerkObj.setCashRegisterObj(cashRegisterObj);
+
+        // Announce store arrival
+        clerkObj.arriveAtStoreObj.announce(day, clerkObj.name, announcer);
+
+        // Check the deliveries
+        clerkObj.arriveAtStoreObj.checkDelivery(day, deliveryObj, inventoryObj, announcer, clerkObj.name);
+
+        // Check the register
+        clerkObj.checkRegisterObj.checkBalance(day, cashRegisterObj, announcer, clerkObj.name);
+
+        // Check inventory and place and order
+        int damagedWhileTuning = clerkObj.doInventoryObj.checkInventory(deliveryObj, cashRegisterObj, clerkObj.checkRegisterObj, inventoryObj, clerkObj.placeAnOrderObj, day, announcer, clerkObj.name, clerkObj.tuneObj);
+        clerkObj.itemsDamaged = clerkObj.itemsDamaged + damagedWhileTuning;
+        sellingCustomerCount = 0;
+        buyingCustomerCount = 0;
+        specialsold = 0;
+        specialbought = 0;
+        specialCustomer = new Customer(1, "Seller", null, null);
+    }
+
+    public void sellItem(int day, Clerk clerkObj, Announcer announcer){
+        // Item class object
+        Item itemObj;
+        // Generate random itemtype to sell
+        String itemType = OuterUtils.Utils.getRandomItemTypes();
+        // Generate random amount
+        double purchasePrice = OuterUtils.Utils.getRandomPrice(1, 50);
+        // Can approach it better but due to time constraints used an if else ladder to create item objects
+        // The purchase prices are randomly assigned here, but the protocol followed by customer to sell is followed as per the question description
+        if(Objects.equals(itemType, "PaperScore")){
+            itemObj = new PaperScore(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(),OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+        }
+        else if(Objects.equals(itemType, "CD")){
+            itemObj = new CD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+        }
+        else if(Objects.equals(itemType, "Vinyl")){
+            itemObj = new Vinyl(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+        }
+        else if(Objects.equals(itemType, "Cassette")){
+            itemObj = new Cassette(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), OuterUtils.Utils.getRandomName());
+        }
+        else if(Objects.equals(itemType, "PlayersCD")){
+            itemObj = new PlayersCD(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), false);
+        }
+        else if(Objects.equals(itemType, "RecordPlayer")){
+            itemObj = new RecordPlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), false);
+        }
+        else if(Objects.equals(itemType, "MP3")){
+            itemObj = new MP3(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), false);
+        }
+        else if(Objects.equals(itemType, "CassettePlayer")){
+            itemObj = new CassettePlayer(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), false);
+        }
+        else if(Objects.equals(itemType, "Guitar")){
+            itemObj = new Guitar(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomBoolean(), false);
+        }
+        else if(Objects.equals(itemType, "Bass")){
+            itemObj = new Bass(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomBoolean(), false);
+        }
+        else if(Objects.equals(itemType, "Mandolin")){
+            itemObj = new Mandolin(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomBoolean(), false);
+        }
+        else if(Objects.equals(itemType, "Flute")){
+            itemObj = new Flute(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), false);
+        }
+        else if(Objects.equals(itemType, "Harmonica")){
+            itemObj = new Harmonica(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName(), false);
+        }
+        else if(Objects.equals(itemType, "Saxaphone")){
+            itemObj = new Saxaphone(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
+        }
+        else if(Objects.equals(itemType, "Hats")){
+            itemObj = new Hats(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomSize());
+        }
+        else if(Objects.equals(itemType, "Shirts")){
+            itemObj = new Shirts(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomSize());
+        }
+        else if(Objects.equals(itemType, "Bandanas")){
+            itemObj = new Bandanas(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+        }
+        else if(Objects.equals(itemType, "PracticeAmps")){
+            itemObj = new PracticeAmps(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomInt(1,10));
+        }
+        else if(Objects.equals(itemType, "Cables")){
+            itemObj = new Cables(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomInt(1,10));
+        }
+        else if(Objects.equals(itemType, "Strings")){
+            itemObj = new Strings(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition(), OuterUtils.Utils.getRandomName());
+        }
+        else{
+            itemObj = new GigBag(OuterUtils.Utils.getRandomName(), purchasePrice, purchasePrice*2, "Used", day, OuterUtils.Utils.getRandomCondition());
+        }
+        specialCustomer.setSellItemObj(itemObj);
+        clerkObj.openTheStoreObj.orchestrateBuy(day, inventoryObj, cashRegisterObj, specialCustomer, clerkObj.getName(), clerkObj.checkRegisterObj);
+                    specialbought++;
+    }
+
+    public void buyItem(int day, Clerk clerkObj, Announcer announcer){
+        String itemType;
+        itemType = OuterUtils.Utils.getRandomItemTypes();
+        specialCustomer.setBuyItemName(itemType);
+        // Shuffling the customer list to get randomness
+        clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, specialCustomer, listItemsSold);
+                    specialsold++;
+
+    }
+
+    public void closeUpStore(int day, Clerk clerkObj, Announcer announcer){
+        clerkObj.itemsSold = clerkObj.itemsSold + specialsold;
+        clerkObj.itemsPurchased = clerkObj.itemsPurchased + specialbought;
+        announcer.publishEvent(clerkObj.name + " sold " + specialsold + " Items", day);
+        announcer.publishEvent(clerkObj.name + " bought " + specialbought + " Items", day);
+        // Clean the store
+        int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day);
+        clerkObj.itemsDamaged = clerkObj.itemsDamaged + damaged;
+        // Leave the store
+        clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer);
+        //announcer.publishEvent("final", day);
+    }
 }
