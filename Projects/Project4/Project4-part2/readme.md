@@ -19,7 +19,7 @@
 # OO patterns in code
 
 ### Command
-
+There is a SimulationInvoker, SimulationCommand and a SimulationReceiver(simulation) class. Simulation receiver is passed to SimulationCommand and SimulationCommand is passed to SimulationInvoker. On receiving User's request, invoker invokes the command which in turn runs the receiver's respective execute functions.
 
 ### Singleton
 
@@ -32,6 +32,8 @@
 
 
 Assumptions:
+- In the command line interface, buying and selling items from/to the customer is randomized.
+- Both stores are initialized for the next day before command line interface is presented to the user.
 
 - **The output file generation is specific to mac systems and its required to already have the "outputs" directory.**
 
