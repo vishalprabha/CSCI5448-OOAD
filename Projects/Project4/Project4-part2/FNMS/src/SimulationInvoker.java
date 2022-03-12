@@ -6,7 +6,6 @@ public class SimulationInvoker {
     void selectStore(String s, int day){
         command.selectStore(s, day);
     }
-
     void getClerkName(){
         command.getClerkName();
     }
