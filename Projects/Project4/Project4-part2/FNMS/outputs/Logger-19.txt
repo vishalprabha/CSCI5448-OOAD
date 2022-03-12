@@ -1,0 +1,72 @@
+North: Scooby arrives at store
+North: Scooby added 12 items to inventory
+North: Scooby reports 11768.218776544923 in register.
+North: Scooby finds 77 items in store
+North: Scooby finds  worth 3012.667863954645
+North: Scooby damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 3012.667863954645
+North: Scooby ordered 7 items
+North: Scooby sold 31 Items
+North: Scooby bought 32 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
+South: Scrappy arrives at store
+South: Scrappy added 12 items to inventory
+South: Scrappy reports 16086.601059847057 in register.
+South: Scrappy finds 52 items in store
+South: Scrappy finds  worth 2300.7320280666822
+South: Scrappy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2300.7320280666822
+South: Scrappy ordered 6 items
+South: Scrappy sold 34 Items
+South: Scrappy bought 25 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 
+North: Shaggy arrives at store
+North: Shaggy added 15 items to inventory
+North: Shaggy reports 13015.573566642483 in register.
+North: Shaggy finds 57 items in store
+North: Shaggy finds  worth 1893.8723860129173
+North: Shaggy damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1893.8723860129173
+North: Shaggy ordered 5 items
+North: Shaggy sold 44 Items
+North: Shaggy bought 29 Items
+North: The number of items damaged during cleaning by Shaggy is 1
+North: Shaggy leaves the store 
+South: Daphne arrives at store
+South: Daphne added 9 items to inventory
+South: Daphne reports 10718.752830982176 in register.
+South: Daphne finds 61 items in store
+South: Daphne finds  worth 3054.8587992794005
+South: Daphne damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 3054.8587992794005
+South: Daphne ordered 7 items
+South: Daphne sold 32 Items
+South: Daphne bought 27 Items
+South: The number of items damaged during cleaning by Daphne is 1
+South: Daphne leaves the store 
+North: Shaggy arrives at store
+North: Shaggy added 9 items to inventory
+North: Shaggy reports 9317.51599256861 in register.
+North: Shaggy finds 123 items in store
+North: Shaggy finds  worth 4781.898729015532
+North: Shaggy damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 4781.898729015532
+North: Shaggy ordered 7 items
+North: Shaggy sold 38 Items
+North: Shaggy bought 32 Items
+North: The number of items damaged during cleaning by Shaggy is 0
+North: Shaggy leaves the store 
+South: Daphne arrives at store
+South: Daphne added 15 items to inventory
+South: Daphne reports 9822.582579478472 in register.
+South: Daphne finds 91 items in store
+South: Daphne finds  worth 4662.8792709608715
+South: Daphne damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 4662.8792709608715
+South: Daphne ordered 3 items
+South: Daphne sold 45 Items
+South: Daphne bought 29 Items
+South: The number of items damaged during cleaning by Daphne is 0
+South: Daphne leaves the store 

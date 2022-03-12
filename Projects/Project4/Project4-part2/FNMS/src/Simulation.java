@@ -60,7 +60,7 @@ public class Simulation {
 
     void runStores(int days){
 
-        for(int day = 0; day <= days; day ++){
+        for(int day = 1; day <= days; day ++){
 
             Clerk clerkObj1;
             Clerk clerkObj2;
@@ -327,6 +327,7 @@ public class Simulation {
                     }
 
                     double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
+                    System.out.println("Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName());
                     Item itemObj = new CustomGuitarItem("customGuitar");
                     invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
                     input.nextLine();
@@ -401,6 +402,7 @@ public class Simulation {
                     }
 
                     double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
+                    System.out.println("Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName());
                     Item itemObj = new CustomGuitarItem("customGuitar");
                     invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
                     input.nextLine();
