@@ -1,0 +1,12 @@
+South: Scrappy arrives at store
+South: Scrappy added 6 items to inventory
+South: Scrappy reports 3166.1953996400166 in register.
+South: Scrappy finds 30 items in store
+South: Scrappy finds  worth 922.3080315247046
+South: Scrappy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 922.3080315247046
+South: Scrappy ordered 7 items
+South: Scrappy sold 9 Items
+South: Scrappy bought 8 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 

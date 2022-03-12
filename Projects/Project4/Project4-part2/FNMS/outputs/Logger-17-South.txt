@@ -1,0 +1,12 @@
+South: Scooby arrives at store
+South: Scooby added 9 items to inventory
+South: Scooby reports 8485.110207590771 in register.
+South: Scooby finds 55 items in store
+South: Scooby finds  worth 2798.494426474245
+South: Scooby damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 2798.494426474245
+South: Scooby ordered 6 items
+South: Scooby sold 33 Items
+South: Scooby bought 25 Items
+South: The number of items damaged during cleaning by Scooby is 0
+South: Scooby leaves the store 

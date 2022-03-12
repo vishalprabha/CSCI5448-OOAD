@@ -1,0 +1,11 @@
+South: Velma arrives at store
+South: Velma reports 2346.4687907671555 in register.
+South: Velma finds 38 items in store
+South: Velma finds  worth 1125.4059251783979
+South: Velma damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 1125.4059251783979
+South: Velma ordered 4 items
+South: Velma sold 12 Items
+South: Velma bought 6 Items
+South: The number of items damaged during cleaning by Velma is 0
+South: Velma leaves the store 

@@ -1,0 +1,12 @@
+North: Shaggy arrives at store
+North: Shaggy added 12 items to inventory
+North: Shaggy reports 20005.651169674373 in register.
+North: Shaggy finds 22 items in store
+North: Shaggy finds  worth 666.3887814280096
+North: Shaggy damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 666.3887814280096
+North: Shaggy ordered 9 items
+North: Shaggy sold 42 Items
+North: Shaggy bought 35 Items
+North: The number of items damaged during cleaning by Shaggy is 1
+North: Shaggy leaves the store 

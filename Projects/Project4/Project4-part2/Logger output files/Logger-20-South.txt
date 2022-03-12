@@ -1,0 +1,12 @@
+South: Fred arrives at store
+South: Fred added 6 items to inventory
+South: Fred reports 12152.468717427451 in register.
+South: Fred finds 62 items in store
+South: Fred finds  worth 3120.737560181078
+South: Fred damaged 2 items while tuning during doinventory step
+South: Items in inventory are worth 3120.737560181078
+South: Fred ordered 9 items
+South: Fred sold 38 Items
+South: Fred bought 37 Items
+South: The number of items damaged during cleaning by Fred is 1
+South: Fred leaves the store 

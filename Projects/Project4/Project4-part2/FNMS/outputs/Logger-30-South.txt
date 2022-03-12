@@ -1,0 +1,12 @@
+South: Daphne arrives at store
+South: Daphne added 12 items to inventory
+South: Daphne reports 30711.00327114041 in register.
+South: Daphne finds 57 items in store
+South: Daphne finds  worth 2782.7733795693803
+South: Daphne damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2782.7733795693803
+South: Daphne ordered 5 items
+South: Daphne sold 62 Items
+South: Daphne bought 49 Items
+South: The number of items damaged during cleaning by Daphne is 1
+South: Daphne leaves the store 

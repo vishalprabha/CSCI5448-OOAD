@@ -1,0 +1,12 @@
+North: Scrappy arrives at store
+North: Scrappy added 9 items to inventory
+North: Scrappy reports 25249.36445593791 in register.
+North: Scrappy finds 28 items in store
+North: Scrappy finds  worth 942.7059740250508
+North: Scrappy damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 942.7059740250508
+North: Scrappy ordered 5 items
+North: Scrappy sold 45 Items
+North: Scrappy bought 43 Items
+North: The number of items damaged during cleaning by Scrappy is 1
+North: Scrappy leaves the store 

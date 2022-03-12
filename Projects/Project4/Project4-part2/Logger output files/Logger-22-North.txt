@@ -1,0 +1,12 @@
+North: Daphne arrives at store
+North: Daphne added 9 items to inventory
+North: Daphne reports 16391.206428066125 in register.
+North: Daphne finds 27 items in store
+North: Daphne finds  worth 831.4089379324193
+North: Daphne damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 831.4089379324193
+North: Daphne ordered 7 items
+North: Daphne sold 29 Items
+North: Daphne bought 30 Items
+North: The number of items damaged during cleaning by Daphne is 0
+North: Daphne leaves the store 

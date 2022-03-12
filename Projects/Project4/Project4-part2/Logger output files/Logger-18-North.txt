@@ -1,0 +1,12 @@
+North: Scooby arrives at store
+North: Scooby added 21 items to inventory
+North: Scooby reports 12434.371806768837 in register.
+North: Scooby finds 30 items in store
+North: Scooby finds  worth 932.2703613149467
+North: Scooby damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 932.2703613149467
+North: Scooby ordered 7 items
+North: Scooby sold 37 Items
+North: Scooby bought 25 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
