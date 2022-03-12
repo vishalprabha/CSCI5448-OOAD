@@ -158,7 +158,7 @@ public class Simulation {
                 if (OuterUtils.Utils.getRandomProbability(10)) {
                     specialClerk2.isSick = true;
                     isSickAlreadySet = true;
-                    System.out.println("Clerk " +specialClerk2.name+ " has fallen sick when tending to Southside store and another clerk is going to replace him/her today");
+                    System.out.println("Clerk " + specialClerk2.name + " has fallen sick when tending to Southside store and another clerk is going to replace him/her today");
                 }
             }
         }while(specialClerk2.checkConsecutive(day) || specialClerk2.isSick);
@@ -207,11 +207,22 @@ public class Simulation {
         northMusicStoreObj.closeUpStore(day, specialClerk2, announcer);
     }
 
+    void sellCustomerGuitarItem(Item item, int day, double totalValue){
+        if (commandLineMusicStore != null) {
+            if (referenceClerkObj != null) {
+                commandLineMusicStore.sellCustomerGuitarItem(item, totalValue, day, referenceClerkObj);
+            }
+        }
+    }
+
     void commandLineInterface(SimulationInvoker invoker, int day){
         String inputString;
         Boolean isEnd;
         System.out.println("a. Select a store to issue commands to \nb. Ask the clerk their name (should reply with clerk’s name)\nc. Ask the clerk what time it is\nd. Sell a normal inventory item to the clerk\ne. Buy a normal inventory item from the clerk \nf. Buy a custom guitar kit from the clerk\ng. End Interactions \n ");
         Scanner input = new Scanner(System.in);
+        String selectedStore = null;
+        NorthSideFactory northSideFactory = new NorthSideFactory();
+        SouthSideFactory southSideFactory = new SouthSideFactory();
         // Accepting input until empty or word matches random word
         do{
             // Setting isEnd flag to false
@@ -230,6 +241,7 @@ public class Simulation {
                 System.out.println("Enter store name: ");
                 inputString = input.nextLine();
                 if(inputString.toLowerCase().equals("north") || (inputString.toLowerCase().equals("south"))){
+                    selectedStore = inputString.toLowerCase();
                     invoker.selectStore(inputString.toLowerCase(), day);
                 }
             }
@@ -246,7 +258,154 @@ public class Simulation {
                 invoker.buyItem(day);
             }
             if(inputString.toLowerCase().equals("f")){
-                //invoker.customGuitar();
+                if(selectedStore != null && selectedStore.equals("north")){
+                    Bridge bridge;
+                    KnobSet knob;
+                    Covers cover;
+                    Neck neck;
+                    PickUps pickUp;
+                    PickGuard pickGuard;
+                    List<Bridge> bridges = northSideFactory.createBridge();
+                    System.out.println("Select a bridge from 1 to 3");
+                    int inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        bridge = bridges.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<KnobSet> knobs = northSideFactory.createKnobSet();
+                    System.out.println("Select a knob from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        knob = knobs.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+
+                    List<Covers> covers = northSideFactory.createCovers();
+                    System.out.println("Select a cover from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        cover = covers.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<Neck> necks = northSideFactory.createNeck();
+                    System.out.println("Select a neck from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum >= 0 && inputNum <= 2){
+                        neck = necks.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<PickGuard> pickGuards = northSideFactory.createPickGuard();
+                    System.out.println("Select a pick guard from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        pickGuard = pickGuards.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<PickUps> pickUps = northSideFactory.createPickUps();
+                    System.out.println("Select a pick up from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        pickUp = pickUps.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+
+                    double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
+                    Item itemObj = new CustomGuitarItem("customGuitar");
+                    invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
+                    input.nextLine();
+                }
+                else if(selectedStore != null && selectedStore.equals("south")){
+                    Bridge bridge;
+                    KnobSet knob;
+                    Covers cover;
+                    Neck neck;
+                    PickUps pickUp;
+                    PickGuard pickGuard;
+                    List<Bridge> bridges = southSideFactory.createBridge();
+                    System.out.println("Select a bridge from 1 to 3");
+                    int inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        bridge = bridges.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<KnobSet> knobs = southSideFactory.createKnobSet();
+                    System.out.println("Select a knob from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        knob = knobs.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+
+                    List<Covers> covers = southSideFactory.createCovers();
+                    System.out.println("Select a cover from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        cover = covers.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<Neck> necks = southSideFactory.createNeck();
+                    System.out.println("Select a neck from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum >= 0 && inputNum <= 2){
+                        neck = necks.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<PickGuard> pickGuards = southSideFactory.createPickGuard();
+                    System.out.println("Select a pick guard from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        pickGuard = pickGuards.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+                    List<PickUps> pickUps = southSideFactory.createPickUps();
+                    System.out.println("Select a pick up from 1 to 3");
+                    inputNum = input.nextInt();
+                    if(inputNum > 0 && inputNum <= 3){
+                        pickUp = pickUps.get(inputNum - 1);
+                    }
+                    else{
+                        System.out.println("Invalid entry");
+                        continue;
+                    }
+
+                    double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
+                    Item itemObj = new CustomGuitarItem("customGuitar");
+                    invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
+                    input.nextLine();
+                }
             }
             if(inputString.toLowerCase().equals("g")){
                 invoker.closeUpStore(day);

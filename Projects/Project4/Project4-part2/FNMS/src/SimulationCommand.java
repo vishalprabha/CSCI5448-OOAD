@@ -21,4 +21,7 @@ public class SimulationCommand implements SimulationCommandInterface {
     public void closeUpStore(int day){
         receiver.closeUpStore(day);
     }
+    public void sellCustomerGuitarItem(Item item, int day, double totalValue){
+        receiver.sellCustomerGuitarItem(item, day, totalValue);
+    }
 }

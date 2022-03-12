@@ -379,7 +379,6 @@ public class MusicStore {
         // Shuffling the customer list to get randomness
         clerkObj.openTheStoreObj.orchestrateSell(day, clerkObj.name, inventoryObj, cashRegisterObj, specialCustomer, listItemsSold, storeName);
                     specialsold++;
-
     }
 
     public void closeUpStore(int day, Clerk clerkObj, Announcer announcer){
@@ -393,5 +392,14 @@ public class MusicStore {
         // Leave the store
         clerkObj.leaveTheStoreObj.announce(clerkObj.name, day, announcer, storeName);
         //announcer.publishEvent("final", day);
+    }
+    public void sellCustomerGuitarItem(Item item, double totalValue, int day, Clerk clerkObj){
+        cashRegisterObj.addMoney(totalValue);
+        item.setSalePrice(totalValue);
+        item.setDaySold(day);
+        // code auto generated from intelliJ suggestion
+        listItemsSold.computeIfAbsent(day, k -> new ArrayList<>());
+        listItemsSold.get(day).add(item);
+        clerkObj.openTheStoreObj.announceSelling(clerkObj.name, item.getClass().getName(), 1, item.getSalePrice(), 0 , storeName);
     }
 }

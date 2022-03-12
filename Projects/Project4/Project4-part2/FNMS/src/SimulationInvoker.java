@@ -21,4 +21,7 @@ public class SimulationInvoker {
     void closeUpStore(int day){
         command.closeUpStore(day);
     }
+    void sellCustomerGuitarItem(Item item, int day, double totalValue){
+        command.sellCustomerGuitarItem(item, day, totalValue);
+    }
 }
