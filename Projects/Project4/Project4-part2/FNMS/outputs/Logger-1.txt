@@ -1,0 +1,72 @@
+North: Velma arrives at store
+North: Velma got thousand dollars from bank
+North: Velma reports 1000.0 in register.
+North: Velma finds 63 items in store
+North: Velma finds  worth 1632.7264424899283
+North: Velma damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1632.7264424899283
+North: Velma ordered 0 items
+North: Velma sold 2 Items
+North: Velma bought 3 Items
+North: The number of items damaged during cleaning by Velma is 0
+North: Velma leaves the store 
+South: Fred arrives at store
+South: Fred got thousand dollars from bank
+South: Fred reports 1000.0 in register.
+South: Fred finds 63 items in store
+South: Fred finds  worth 1500.5826398292916
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1500.5826398292916
+South: Fred ordered 0 items
+South: Fred sold 5 Items
+South: Fred bought 0 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 
+North: Scooby arrives at store
+North: Scooby got thousand dollars from bank
+North: Scooby reports 1000.0 in register.
+North: Scooby finds 63 items in store
+North: Scooby finds  worth 1766.7070881320221
+North: Scooby damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1766.7070881320221
+North: Scooby ordered 0 items
+North: Scooby sold 4 Items
+North: Scooby bought 3 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
+South: Shaggy arrives at store
+South: Shaggy got thousand dollars from bank
+South: Shaggy reports 1000.0 in register.
+South: Shaggy finds 63 items in store
+South: Shaggy finds  worth 1470.3649297231464
+South: Shaggy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1470.3649297231464
+South: Shaggy ordered 0 items
+South: Shaggy sold 7 Items
+South: Shaggy bought 1 Items
+South: The number of items damaged during cleaning by Shaggy is 0
+South: Shaggy leaves the store 
+North: Scooby arrives at store
+North: Scooby got thousand dollars from bank
+North: Scooby reports 1000.0 in register.
+North: Scooby finds 63 items in store
+North: Scooby finds  worth 1739.181663006997
+North: Scooby damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1739.181663006997
+North: Scooby ordered 0 items
+North: Scooby sold 5 Items
+North: Scooby bought 3 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
+South: Shaggy arrives at store
+South: Shaggy got thousand dollars from bank
+South: Shaggy reports 1000.0 in register.
+South: Shaggy finds 63 items in store
+South: Shaggy finds  worth 1614.03760521607
+South: Shaggy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1614.03760521607
+South: Shaggy ordered 0 items
+South: Shaggy sold 4 Items
+South: Shaggy bought 1 Items
+South: The number of items damaged during cleaning by Shaggy is 0
+South: Shaggy leaves the store 

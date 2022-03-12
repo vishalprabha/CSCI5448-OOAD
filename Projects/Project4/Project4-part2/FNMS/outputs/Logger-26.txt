@@ -1,0 +1,72 @@
+North: Velma arrives at store
+North: Velma added 9 items to inventory
+North: Velma reports 19057.334245983806 in register.
+North: Velma finds 90 items in store
+North: Velma finds  worth 4623.619175323562
+North: Velma damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 4623.619175323562
+North: Velma ordered 9 items
+North: Velma sold 40 Items
+North: Velma bought 47 Items
+North: The number of items damaged during cleaning by Velma is 1
+North: Velma leaves the store 
+South: Scrappy arrives at store
+South: Scrappy added 3 items to inventory
+South: Scrappy reports 32099.88305091954 in register.
+South: Scrappy finds 15 items in store
+South: Scrappy finds  worth 665.776868156173
+South: Scrappy damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 665.776868156173
+South: Scrappy ordered 9 items
+South: Scrappy sold 41 Items
+South: Scrappy bought 34 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 
+North: Scrappy arrives at store
+North: Scrappy added 36 items to inventory
+North: Scrappy reports 21736.132776676757 in register.
+North: Scrappy finds 81 items in store
+North: Scrappy finds  worth 3165.043794267026
+North: Scrappy damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 3165.043794267026
+North: Scrappy ordered 3 items
+North: Scrappy sold 60 Items
+North: Scrappy bought 45 Items
+North: The number of items damaged during cleaning by Scrappy is 0
+North: Scrappy leaves the store 
+South: Fred arrives at store
+South: Fred added 21 items to inventory
+South: Fred reports 20558.505228424965 in register.
+South: Fred finds 64 items in store
+South: Fred finds  worth 2417.75855402917
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2417.75855402917
+South: Fred ordered 5 items
+South: Fred sold 49 Items
+South: Fred bought 41 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 
+North: Scooby arrives at store
+North: Scooby added 18 items to inventory
+North: Scooby reports 20889.24674267371 in register.
+North: Scooby finds 129 items in store
+North: Scooby finds  worth 5051.399811439679
+North: Scooby damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 5051.399811439679
+North: Scooby ordered 4 items
+North: Scooby sold 61 Items
+North: Scooby bought 46 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
+South: Fred arrives at store
+South: Fred added 12 items to inventory
+South: Fred reports 22980.352974625257 in register.
+South: Fred finds 80 items in store
+South: Fred finds  worth 3717.541875805555
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 3717.541875805555
+South: Fred ordered 5 items
+South: Fred sold 48 Items
+South: Fred bought 39 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 

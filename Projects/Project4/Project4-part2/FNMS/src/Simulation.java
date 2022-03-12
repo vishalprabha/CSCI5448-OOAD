@@ -64,7 +64,7 @@ public class Simulation {
 
     void runStores(int days){
 
-        for(int day = 0; day <= days; day ++){
+        for(int day = 1; day <= days; day ++){
 
             Clerk clerkObj1;
             Clerk clerkObj2;

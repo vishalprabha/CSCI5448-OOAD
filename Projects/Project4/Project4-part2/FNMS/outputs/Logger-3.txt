@@ -1,0 +1,66 @@
+North: Velma arrives at store
+North: Velma reports 976.8004397708729 in register.
+North: Velma finds 64 items in store
+North: Velma finds  worth 1861.825189231542
+North: Velma damaged 2 items while tuning during doinventory step
+North: Items in inventory are worth 1861.825189231542
+North: Velma ordered 0 items
+North: Velma sold 10 Items
+North: Velma bought 7 Items
+North: The number of items damaged during cleaning by Velma is 0
+North: Velma leaves the store 
+South: Scrappy arrives at store
+South: Scrappy reports 1782.718770993185 in register.
+South: Scrappy finds 45 items in store
+South: Scrappy finds  worth 1231.7214698207372
+South: Scrappy damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 1231.7214698207372
+South: Scrappy ordered 4 items
+South: Scrappy sold 8 Items
+South: Scrappy bought 5 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 
+North: Daphne arrives at store
+North: Daphne reports 1336.1694956749438 in register.
+North: Daphne finds 58 items in store
+North: Daphne finds  worth 1741.9078884892358
+North: Daphne damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1741.9078884892358
+North: Daphne ordered 2 items
+North: Daphne sold 7 Items
+North: Daphne bought 6 Items
+North: The number of items damaged during cleaning by Daphne is 0
+North: Daphne leaves the store 
+South: Velma arrives at store
+South: Velma reports 1347.1295732258704 in register.
+South: Velma finds 48 items in store
+South: Velma finds  worth 1401.5788018307035
+South: Velma damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 1401.5788018307035
+South: Velma ordered 1 items
+South: Velma sold 11 Items
+South: Velma bought 5 Items
+South: The number of items damaged during cleaning by Velma is 0
+South: Velma leaves the store 
+North: Scooby arrives at store
+North: Scooby reports 1109.8928416195267 in register.
+North: Scooby finds 56 items in store
+North: Scooby finds  worth 1920.5465305326986
+North: Scooby damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 1920.5465305326986
+North: Scooby ordered 3 items
+North: Scooby sold 8 Items
+North: Scooby bought 8 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
+South: Scrappy arrives at store
+South: Scrappy reports 1676.7577367947692 in register.
+South: Scrappy finds 48 items in store
+South: Scrappy finds  worth 1358.1883604423886
+South: Scrappy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1358.1883604423886
+South: Scrappy ordered 2 items
+South: Scrappy sold 8 Items
+South: Scrappy bought 5 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 
