@@ -1,0 +1,72 @@
+North: Daphne arrives at store
+North: Daphne added 6 items to inventory
+North: Daphne reports 16997.618484597802 in register.
+North: Daphne finds 88 items in store
+North: Daphne finds  worth 4509.438766927497
+North: Daphne damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 4509.438766927497
+North: Daphne ordered 5 items
+North: Daphne sold 41 Items
+North: Daphne bought 43 Items
+North: The number of items damaged during cleaning by Daphne is 0
+North: Daphne leaves the store 
+South: Daphne arrives at store
+South: Daphne added 15 items to inventory
+South: Daphne reports 28583.368604727966 in register.
+South: Daphne finds 38 items in store
+South: Daphne finds  worth 1574.1595087352468
+South: Daphne damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1574.1595087352468
+South: Daphne ordered 4 items
+South: Daphne sold 55 Items
+South: Daphne bought 35 Items
+South: The number of items damaged during cleaning by Daphne is 0
+South: Daphne leaves the store 
+North: Scrappy arrives at store
+North: Scrappy added 12 items to inventory
+North: Scrappy reports 21204.23677431007 in register.
+North: Scrappy finds 47 items in store
+North: Scrappy finds  worth 1934.5900106411118
+North: Scrappy damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 1934.5900106411118
+North: Scrappy ordered 9 items
+North: Scrappy sold 37 Items
+North: Scrappy bought 39 Items
+North: The number of items damaged during cleaning by Scrappy is 0
+North: Scrappy leaves the store 
+South: Fred arrives at store
+South: Fred added 9 items to inventory
+South: Fred reports 18683.97923333416 in register.
+South: Fred finds 57 items in store
+South: Fred finds  worth 2390.8083227869943
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2390.8083227869943
+South: Fred ordered 6 items
+South: Fred sold 41 Items
+South: Fred bought 34 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 
+North: Daphne arrives at store
+North: Daphne added 27 items to inventory
+North: Daphne reports 18126.093725028986 in register.
+North: Daphne finds 140 items in store
+North: Daphne finds  worth 5181.242071494875
+North: Daphne damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 5181.242071494875
+North: Daphne ordered 4 items
+North: Daphne sold 61 Items
+North: Daphne bought 41 Items
+North: The number of items damaged during cleaning by Daphne is 0
+North: Daphne leaves the store 
+South: Velma arrives at store
+South: Velma added 21 items to inventory
+South: Velma reports 20024.660073129555 in register.
+South: Velma finds 89 items in store
+South: Velma finds  worth 4029.805567083969
+South: Velma damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 4029.805567083969
+South: Velma ordered 4 items
+South: Velma sold 53 Items
+South: Velma bought 38 Items
+South: The number of items damaged during cleaning by Velma is 0
+South: Velma leaves the store 
