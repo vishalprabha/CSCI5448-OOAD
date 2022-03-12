@@ -36,6 +36,7 @@ Assumptions:
 - Both stores are initialized for the next day before command line interface is presented to the user.
 
 - **The output file generation is specific to mac systems and its required to already have the "outputs" directory.**
+- **Prior to running the program, please clear the currently generated output files.**
 
 
 # Changes in UML compared to previous submission
