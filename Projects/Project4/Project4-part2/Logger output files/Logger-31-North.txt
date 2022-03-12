@@ -1,0 +1,5 @@
+North: Scrappy sold Customer guitar kit components: NorthSideBridge1, NorthSideKnobSet2, NorthSideCovers3, NorthSideNeck1, NorthSidePickGuard2, NorthSidePickUps3 Items
+Scrappy sold 1 Items
+Scrappy bought 1 Items
+North: The number of items damaged during cleaning by Scrappy is 0
+North: Scrappy leaves the store 

@@ -1,12 +1,12 @@
-South: Scrappy arrives at store
-South: Scrappy added 18 items to inventory
-South: Scrappy reports 3251.946518733928 in register.
-South: Scrappy finds 44 items in store
-South: Scrappy finds  worth 1362.8508854790368
-South: Scrappy damaged 0 items while tuning during doinventory step
-South: Items in inventory are worth 1362.8508854790368
-South: Scrappy ordered 4 items
-South: Scrappy sold 21 Items
-South: Scrappy bought 11 Items
-South: The number of items damaged during cleaning by Scrappy is 0
-South: Scrappy leaves the store 
+South: Daphne arrives at store
+South: Daphne added 3 items to inventory
+South: Daphne reports 1894.236626179176 in register.
+South: Daphne finds 46 items in store
+South: Daphne finds  worth 2086.7539266247095
+South: Daphne damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2086.7539266247095
+South: Daphne ordered 8 items
+South: Daphne sold 18 Items
+South: Daphne bought 16 Items
+South: The number of items damaged during cleaning by Daphne is 0
+South: Daphne leaves the store 

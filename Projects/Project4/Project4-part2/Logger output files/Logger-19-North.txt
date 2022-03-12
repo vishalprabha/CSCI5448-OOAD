@@ -1,12 +1,12 @@
 North: Velma arrives at store
-North: Velma added 30 items to inventory
-North: Velma reports 13591.458680708407 in register.
-North: Velma finds 40 items in store
-North: Velma finds  worth 1319.0819075432435
+North: Velma added 15 items to inventory
+North: Velma reports 11531.756769768668 in register.
+North: Velma finds 53 items in store
+North: Velma finds  worth 2300.9056395245234
 North: Velma damaged 0 items while tuning during doinventory step
-North: Items in inventory are worth 1319.0819075432435
-North: Velma ordered 5 items
+North: Items in inventory are worth 2300.9056395245234
+North: Velma ordered 8 items
 North: Velma sold 40 Items
-North: Velma bought 24 Items
+North: Velma bought 28 Items
 North: The number of items damaged during cleaning by Velma is 0
 North: Velma leaves the store 

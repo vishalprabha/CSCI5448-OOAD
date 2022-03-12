@@ -1,12 +1,12 @@
 North: Fred arrives at store
-North: Fred added 12 items to inventory
-North: Fred reports 3605.3009762989145 in register.
-North: Fred finds 42 items in store
-North: Fred finds  worth 1535.620090466736
+North: Fred added 6 items to inventory
+North: Fred reports 2030.9534718259472 in register.
+North: Fred finds 53 items in store
+North: Fred finds  worth 2625.2209144181516
 North: Fred damaged 1 items while tuning during doinventory step
-North: Items in inventory are worth 1535.620090466736
+North: Items in inventory are worth 2625.2209144181516
 North: Fred ordered 3 items
-North: Fred sold 22 Items
-North: Fred bought 11 Items
+North: Fred sold 17 Items
+North: Fred bought 12 Items
 North: The number of items damaged during cleaning by Fred is 0
 North: Fred leaves the store 

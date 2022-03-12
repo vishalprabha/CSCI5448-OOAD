@@ -1,12 +1,12 @@
-South: Velma arrives at store
-South: Velma added 24 items to inventory
-South: Velma reports 6571.962234305013 in register.
-South: Velma finds 57 items in store
-South: Velma finds  worth 2110.2185029091256
-South: Velma damaged 0 items while tuning during doinventory step
-South: Items in inventory are worth 2110.2185029091256
-South: Velma ordered 4 items
-South: Velma sold 28 Items
-South: Velma bought 21 Items
-South: The number of items damaged during cleaning by Velma is 0
-South: Velma leaves the store 
+South: Scooby arrives at store
+South: Scooby added 6 items to inventory
+South: Scooby reports 5760.410529173212 in register.
+South: Scooby finds 76 items in store
+South: Scooby finds  worth 3074.0135045222873
+South: Scooby damaged 2 items while tuning during doinventory step
+South: Items in inventory are worth 3074.0135045222873
+South: Scooby ordered 5 items
+South: Scooby sold 28 Items
+South: Scooby bought 26 Items
+South: The number of items damaged during cleaning by Scooby is 0
+South: Scooby leaves the store 

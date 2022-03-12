@@ -1,0 +1,5 @@
+South: Daphne sold Customer guitar kit components: SouthSideBridge3, SouthSideKnobSet2, SouthSideCovers1, SouthSideNeck3, SouthSidePickGuard2, SouthSidePickUps1 Items
+Daphne sold 1 Items
+Daphne bought 1 Items
+South: The number of items damaged during cleaning by Daphne is 0
+South: Daphne leaves the store 

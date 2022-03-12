@@ -1,12 +1,12 @@
-South: Shaggy arrives at store
-South: Shaggy added 21 items to inventory
-South: Shaggy reports 23110.149137256965 in register.
-South: Shaggy finds 65 items in store
-South: Shaggy finds  worth 2984.5742701090135
-South: Shaggy damaged 0 items while tuning during doinventory step
-South: Items in inventory are worth 2984.5742701090135
-South: Shaggy ordered 4 items
-South: Shaggy sold 48 Items
-South: Shaggy bought 43 Items
-South: The number of items damaged during cleaning by Shaggy is 1
-South: Shaggy leaves the store 
+South: Scrappy arrives at store
+South: Scrappy added 6 items to inventory
+South: Scrappy reports 21615.430573006102 in register.
+South: Scrappy finds 101 items in store
+South: Scrappy finds  worth 4272.543961591301
+South: Scrappy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 4272.543961591301
+South: Scrappy ordered 7 items
+South: Scrappy sold 45 Items
+South: Scrappy bought 46 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 

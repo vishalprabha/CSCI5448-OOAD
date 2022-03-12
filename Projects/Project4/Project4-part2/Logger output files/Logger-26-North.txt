@@ -1,12 +1,12 @@
-North: Fred arrives at store
-North: Fred added 12 items to inventory
-North: Fred reports 22712.772095528348 in register.
-North: Fred finds 18 items in store
-North: Fred finds  worth 606.819383433332
-North: Fred damaged 0 items while tuning during doinventory step
-North: Items in inventory are worth 606.819383433332
-North: Fred ordered 11 items
-North: Fred sold 34 Items
-North: Fred bought 39 Items
-North: The number of items damaged during cleaning by Fred is 1
-North: Fred leaves the store 
+North: Velma arrives at store
+North: Velma added 9 items to inventory
+North: Velma reports 22106.83028964543 in register.
+North: Velma finds 54 items in store
+North: Velma finds  worth 2470.197839662464
+North: Velma damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 2470.197839662464
+North: Velma ordered 6 items
+North: Velma sold 50 Items
+North: Velma bought 35 Items
+North: The number of items damaged during cleaning by Velma is 0
+North: Velma leaves the store 

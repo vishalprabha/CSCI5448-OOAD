@@ -1,11 +1,12 @@
-North: Fred arrives at store
-North: Fred reports 4505.44208499318 in register.
-North: Fred finds 27 items in store
-North: Fred finds  worth 1232.7180443083957
-North: Fred damaged 0 items while tuning during doinventory step
-North: Items in inventory are worth 1232.7180443083957
-North: Fred ordered 7 items
-North: Fred sold 19 Items
-North: Fred bought 13 Items
-North: The number of items damaged during cleaning by Fred is 0
-North: Fred leaves the store 
+North: Daphne arrives at store
+North: Daphne added 3 items to inventory
+North: Daphne reports 3118.19392208405 in register.
+North: Daphne finds 44 items in store
+North: Daphne finds  worth 2309.177340725338
+North: Daphne damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 2309.177340725338
+North: Daphne ordered 6 items
+North: Daphne sold 18 Items
+North: Daphne bought 14 Items
+North: The number of items damaged during cleaning by Daphne is 1
+North: Daphne leaves the store 

@@ -1,12 +1,12 @@
-South: Scooby arrives at store
-South: Scooby added 9 items to inventory
-South: Scooby reports 8485.110207590771 in register.
-South: Scooby finds 55 items in store
-South: Scooby finds  worth 2798.494426474245
-South: Scooby damaged 1 items while tuning during doinventory step
-South: Items in inventory are worth 2798.494426474245
-South: Scooby ordered 6 items
-South: Scooby sold 33 Items
-South: Scooby bought 25 Items
-South: The number of items damaged during cleaning by Scooby is 0
-South: Scooby leaves the store 
+South: Scrappy arrives at store
+South: Scrappy added 9 items to inventory
+South: Scrappy reports 9352.376357385296 in register.
+South: Scrappy finds 81 items in store
+South: Scrappy finds  worth 3413.293872892145
+South: Scrappy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 3413.293872892145
+South: Scrappy ordered 4 items
+South: Scrappy sold 31 Items
+South: Scrappy bought 33 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 

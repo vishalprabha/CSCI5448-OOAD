@@ -215,6 +215,8 @@ public class Simulation {
     }
 
     void commandLineInterface(SimulationInvoker invoker, int day){
+        logger= Logger.getInstance();
+        announcer.addListener(logger);
         String inputString;
         Boolean isEnd;
         System.out.println("a. Select a store to issue commands to \nb. Ask the clerk their name (should reply with clerk’s name)\nc. Ask the clerk what time it is\nd. Sell a normal inventory item to the clerk\ne. Buy a normal inventory item from the clerk \nf. Buy a custom guitar kit from the clerk\ng. End Interactions \n ");
@@ -334,6 +336,7 @@ public class Simulation {
 
                     double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
                     System.out.println("Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName());
+                    announcer.publishEvent("North: " +referenceClerkObj.name + " sold " + "Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName() + " Items", day, "North");
                     Item itemObj = new CustomGuitarItem("customGuitar");
                     invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
                     input.nextLine();
@@ -415,6 +418,7 @@ public class Simulation {
 
                     double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
                     System.out.println("Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName());
+                    announcer.publishEvent("South: " +referenceClerkObj.name + " sold " + "Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName() + " Items", day, "South");
                     Item itemObj = new CustomGuitarItem("customGuitar");
                     invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
                     input.nextLine();
@@ -426,5 +430,6 @@ public class Simulation {
             }
 
         }while(!isEnd);
+        announcer.removeListener(logger);
     }
 }

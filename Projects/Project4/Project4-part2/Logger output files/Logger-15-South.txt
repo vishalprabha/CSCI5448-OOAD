@@ -1,11 +1,12 @@
-South: Velma arrives at store
-South: Velma reports 7419.287444138001 in register.
-South: Velma finds 47 items in store
-South: Velma finds  worth 1977.8484903726642
-South: Velma damaged 0 items while tuning during doinventory step
-South: Items in inventory are worth 1977.8484903726642
-South: Velma ordered 7 items
-South: Velma sold 26 Items
-South: Velma bought 25 Items
-South: The number of items damaged during cleaning by Velma is 0
-South: Velma leaves the store 
+South: Scrappy arrives at store
+South: Scrappy added 9 items to inventory
+South: Scrappy reports 6376.126250140789 in register.
+South: Scrappy finds 80 items in store
+South: Scrappy finds  worth 3432.8049321923636
+South: Scrappy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 3432.8049321923636
+South: Scrappy ordered 4 items
+South: Scrappy sold 32 Items
+South: Scrappy bought 31 Items
+South: The number of items damaged during cleaning by Scrappy is 0
+South: Scrappy leaves the store 

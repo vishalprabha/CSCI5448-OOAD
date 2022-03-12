@@ -1,12 +1,12 @@
-South: Fred arrives at store
-South: Fred added 6 items to inventory
-South: Fred reports 27971.77897593234 in register.
-South: Fred finds 59 items in store
-South: Fred finds  worth 3096.2840857807237
-South: Fred damaged 0 items while tuning during doinventory step
-South: Items in inventory are worth 3096.2840857807237
-South: Fred ordered 6 items
-South: Fred sold 55 Items
-South: Fred bought 48 Items
-South: The number of items damaged during cleaning by Fred is 0
-South: Fred leaves the store 
+South: Daphne arrives at store
+South: Daphne added 15 items to inventory
+South: Daphne reports 26196.832860544382 in register.
+South: Daphne finds 108 items in store
+South: Daphne finds  worth 4482.374851207386
+South: Daphne damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 4482.374851207386
+South: Daphne ordered 4 items
+South: Daphne sold 52 Items
+South: Daphne bought 52 Items
+South: The number of items damaged during cleaning by Daphne is 0
+South: Daphne leaves the store 

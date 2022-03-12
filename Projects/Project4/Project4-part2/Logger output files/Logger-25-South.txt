@@ -1,12 +1,12 @@
-South: Fred arrives at store
-South: Fred added 18 items to inventory
-South: Fred reports 20491.338112024183 in register.
-South: Fred finds 61 items in store
-South: Fred finds  worth 2952.0574156500834
-South: Fred damaged 0 items while tuning during doinventory step
-South: Items in inventory are worth 2952.0574156500834
-South: Fred ordered 6 items
-South: Fred sold 55 Items
-South: Fred bought 42 Items
-South: The number of items damaged during cleaning by Fred is 0
-South: Fred leaves the store 
+South: Velma arrives at store
+South: Velma added 18 items to inventory
+South: Velma reports 20007.289437355044 in register.
+South: Velma finds 107 items in store
+South: Velma finds  worth 4373.496326974329
+South: Velma damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 4373.496326974329
+South: Velma ordered 6 items
+South: Velma sold 50 Items
+South: Velma bought 47 Items
+South: The number of items damaged during cleaning by Velma is 0
+South: Velma leaves the store 
