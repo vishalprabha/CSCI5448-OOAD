@@ -39,3 +39,4 @@ Assumptions:
 
 
 # Changes in UML compared to previous submission
+- Added SimulationInvoker, SimulationCommand and additional methods to Simulation and MusicStore class.
