@@ -8,8 +8,16 @@ public class Tracker implements MyListener{
        this.clerkObjList = clerkObjList;
     }
 
+    private static Tracker obj = null;
+    private Tracker() {}
+    public static Tracker getInstance(List<Clerk> clerkObjList) {
+        if(obj == null)
+            obj = new Tracker(clerkObjList);
+        return obj;
+    }
+
     @Override
-    public void notifyEvent(String event, int day) {
+    public void notifyEvent(String event, int day, String name) {
         String strarray[] = event.split(" ");
         if (strarray[1].equals("leaves")) {
             System.out.println("Tracker: Day " + day);

@@ -4,7 +4,7 @@ import java.util.List;
 public class ArriveAtStore {
     // Store arrival announcement
     public void announce(int day, String name, Announcer announcer, String storeName){
-        announcer.publishEvent(storeName+": " +name +" arrives at store",day);
+        announcer.publishEvent(storeName+": " +name +" arrives at store",day, storeName);
         System.out.println(storeName+": " +name + " arrives at the store on Day "+ day);
     }
     // Checking for any deliveries and adding to inventory
@@ -16,7 +16,7 @@ public class ArriveAtStore {
                 inventoryObj.addInventory(itemObj);
                 inventoryObj.announce(itemObj, storeName);
             }
-            announcer.publishEvent(storeName+": " +name + " added "+ deliveredItems.size() + " items to inventory", day);
+            announcer.publishEvent(storeName+": " +name + " added "+ deliveredItems.size() + " items to inventory", day, storeName);
         }
         else{
             System.out.println(storeName+": No Items delivered on day "+ day);

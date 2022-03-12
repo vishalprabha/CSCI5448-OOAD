@@ -38,7 +38,7 @@ public class CleanTheStore {
             itemsDamaged++;
             announce(damagePercentage, damageItem.getName(), damageItem.getListPrice(), damageItem.getCondition(), storeName);
         }
-        announcer.publishEvent(storeName+": The number of items damaged during cleaning by " + name + " is " + itemsDamaged, day);
+        announcer.publishEvent(storeName+": The number of items damaged during cleaning by " + name + " is " + itemsDamaged, day, storeName);
         System.out.println(storeName+": Store cleaned");
         return itemsDamaged;
     }
