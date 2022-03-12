@@ -273,6 +273,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<KnobSet> knobs = northSideFactory.createKnobSet();
@@ -283,6 +284,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
 
@@ -294,16 +296,18 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<Neck> necks = northSideFactory.createNeck();
                     System.out.println("Select a neck from 1 to 3");
                     inputNum = input.nextInt();
-                    if(inputNum >= 0 && inputNum <= 2){
+                    if(inputNum > 0 && inputNum <= 3){
                         neck = necks.get(inputNum - 1);
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<PickGuard> pickGuards = northSideFactory.createPickGuard();
@@ -314,6 +318,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<PickUps> pickUps = northSideFactory.createPickUps();
@@ -324,6 +329,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
 
@@ -348,6 +354,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<KnobSet> knobs = southSideFactory.createKnobSet();
@@ -358,6 +365,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
 
@@ -369,16 +377,18 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<Neck> necks = southSideFactory.createNeck();
                     System.out.println("Select a neck from 1 to 3");
                     inputNum = input.nextInt();
-                    if(inputNum >= 0 && inputNum <= 2){
+                    if(inputNum > 0 && inputNum <= 3){
                         neck = necks.get(inputNum - 1);
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<PickGuard> pickGuards = southSideFactory.createPickGuard();
@@ -389,6 +399,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
                     List<PickUps> pickUps = southSideFactory.createPickUps();
@@ -399,6 +410,7 @@ public class Simulation {
                     }
                     else{
                         System.out.println("Invalid entry");
+                        input.nextLine();
                         continue;
                     }
 
