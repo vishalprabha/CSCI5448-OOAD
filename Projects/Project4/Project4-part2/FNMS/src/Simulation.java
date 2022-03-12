@@ -328,6 +328,7 @@ public class Simulation {
                     }
 
                     double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
+                    System.out.println("Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName());
                     Item itemObj = new CustomGuitarItem("customGuitar");
                     invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
                     input.nextLine();
@@ -402,6 +403,7 @@ public class Simulation {
                     }
 
                     double totalValue = bridge.getPrice() + knob.getPrice() + cover.getPrice() + neck.getPrice() + pickGuard.getPrice() + pickUp.getPrice();
+                    System.out.println("Customer guitar kit components: " + bridge.getClass().getName() + ", " + knob.getClass().getName() + ", " + cover.getClass().getName() + ", " + neck.getClass().getName() + ", " + pickGuard.getClass().getName() + ", " + pickUp.getClass().getName());
                     Item itemObj = new CustomGuitarItem("customGuitar");
                     invoker.sellCustomerGuitarItem(itemObj, day, totalValue);
                     input.nextLine();
