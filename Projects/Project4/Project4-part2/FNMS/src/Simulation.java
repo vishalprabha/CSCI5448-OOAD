@@ -103,11 +103,12 @@ public class Simulation {
             northMusicStoreObj.simulate(day, clerkObj1, announcer);
             southMusicStoreObj.simulate(day, clerkObj2, announcer);
 
-
         }
+    }
+
+    void finish(int days){
         northMusicStoreObj.finish(days);
         southMusicStoreObj.finish(days);
-
     }
 
     void selectStore(String s, int days){

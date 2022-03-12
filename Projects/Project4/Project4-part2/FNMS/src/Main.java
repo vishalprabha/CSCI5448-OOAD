@@ -14,5 +14,6 @@ public class Main {
 
         invoker.setCommand(command); //invoker
         sim.commandLineInterface(invoker, days);
+        sim.finish(days);
     }
 }
