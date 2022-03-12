@@ -10,3 +10,27 @@ North: Scrappy sold 47 Items
 North: Scrappy bought 42 Items
 North: The number of items damaged during cleaning by Scrappy is 0
 North: Scrappy leaves the store 
+North: Daphne arrives at store
+North: Daphne added 6 items to inventory
+North: Daphne reports 28372.38393003058 in register.
+North: Daphne finds 15 items in store
+North: Daphne finds  worth 606.006446020018
+North: Daphne damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 606.006446020018
+North: Daphne ordered 11 items
+North: Daphne sold 38 Items
+North: Daphne bought 41 Items
+North: The number of items damaged during cleaning by Daphne is 0
+North: Daphne leaves the store 
+North: Velma arrives at store
+North: Velma added 9 items to inventory
+North: Velma reports 23339.767621904957 in register.
+North: Velma finds 56 items in store
+North: Velma finds  worth 1843.3650826486917
+North: Velma damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1843.3650826486917
+North: Velma ordered 4 items
+North: Velma sold 48 Items
+North: Velma bought 33 Items
+North: The number of items damaged during cleaning by Velma is 0
+North: Velma leaves the store 

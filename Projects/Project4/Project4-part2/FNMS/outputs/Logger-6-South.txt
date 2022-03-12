@@ -10,3 +10,27 @@ South: Scrappy sold 9 Items
 South: Scrappy bought 8 Items
 South: The number of items damaged during cleaning by Scrappy is 0
 South: Scrappy leaves the store 
+South: Velma arrives at store
+South: Velma added 6 items to inventory
+South: Velma reports 1430.5154609217325 in register.
+South: Velma finds 51 items in store
+South: Velma finds  worth 2252.2997509478478
+South: Velma damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2252.2997509478478
+South: Velma ordered 5 items
+South: Velma sold 18 Items
+South: Velma bought 10 Items
+South: The number of items damaged during cleaning by Velma is 1
+South: Velma leaves the store 
+South: Shaggy arrives at store
+South: Shaggy added 21 items to inventory
+South: Shaggy reports 1815.5799348035903 in register.
+South: Shaggy finds 54 items in store
+South: Shaggy finds  worth 2063.8982976310435
+South: Shaggy damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2063.8982976310435
+South: Shaggy ordered 3 items
+South: Shaggy sold 23 Items
+South: Shaggy bought 12 Items
+South: The number of items damaged during cleaning by Shaggy is 0
+South: Shaggy leaves the store 

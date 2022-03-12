@@ -10,3 +10,27 @@ North: Scooby sold 44 Items
 North: Scooby bought 33 Items
 North: The number of items damaged during cleaning by Scooby is 0
 North: Scooby leaves the store 
+North: Fred arrives at store
+North: Fred added 15 items to inventory
+North: Fred reports 18102.923368070064 in register.
+North: Fred finds 37 items in store
+North: Fred finds  worth 1615.613837052399
+North: Fred damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 1615.613837052399
+North: Fred ordered 5 items
+North: Fred sold 50 Items
+North: Fred bought 36 Items
+North: The number of items damaged during cleaning by Fred is 0
+North: Fred leaves the store 
+North: Daphne arrives at store
+North: Daphne added 21 items to inventory
+North: Daphne reports 16876.830743626673 in register.
+North: Daphne finds 52 items in store
+North: Daphne finds  worth 1404.5017563478254
+North: Daphne damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 1404.5017563478254
+North: Daphne ordered 8 items
+North: Daphne sold 35 Items
+North: Daphne bought 32 Items
+North: The number of items damaged during cleaning by Daphne is 0
+North: Daphne leaves the store 

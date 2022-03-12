@@ -10,3 +10,27 @@ South: Scooby sold 34 Items
 South: Scooby bought 30 Items
 South: The number of items damaged during cleaning by Scooby is 0
 South: Scooby leaves the store 
+South: Fred arrives at store
+South: Fred added 18 items to inventory
+South: Fred reports 10427.604337481836 in register.
+South: Fred finds 61 items in store
+South: Fred finds  worth 2257.5006204988604
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2257.5006204988604
+South: Fred ordered 7 items
+South: Fred sold 36 Items
+South: Fred bought 30 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 
+South: Scooby arrives at store
+South: Scooby added 24 items to inventory
+South: Scooby reports 15029.56377102805 in register.
+South: Scooby finds 58 items in store
+South: Scooby finds  worth 2015.1029599439228
+South: Scooby damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2015.1029599439228
+South: Scooby ordered 5 items
+South: Scooby sold 42 Items
+South: Scooby bought 28 Items
+South: The number of items damaged during cleaning by Scooby is 0
+South: Scooby leaves the store 

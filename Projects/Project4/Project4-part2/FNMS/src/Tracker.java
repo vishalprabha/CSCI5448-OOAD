@@ -19,7 +19,7 @@ public class Tracker implements MyListener{
     @Override
     public void notifyEvent(String event, int day, String name) {
         String strarray[] = event.split(" ");
-        if (strarray[1].equals("leaves")) {
+        if (strarray[2].equals("leaves")) {
             System.out.println("Tracker: Day " + day);
             System.out.println("Clerk          Items Sold            Items Purchased          Items Damaged");
             System.out.println(clerkObjList.get(0).name + "                    " + clerkObjList.get(0).itemsSold + "                   " + clerkObjList.get(0).itemsPurchased + "                   " + clerkObjList.get(0).itemsDamaged);

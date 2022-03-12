@@ -10,3 +10,26 @@ South: Scrappy sold 22 Items
 South: Scrappy bought 13 Items
 South: The number of items damaged during cleaning by Scrappy is 0
 South: Scrappy leaves the store 
+South: Scooby arrives at store
+South: Scooby added 6 items to inventory
+South: Scooby reports 2188.8901366518257 in register.
+South: Scooby finds 49 items in store
+South: Scooby finds  worth 2135.3112324443537
+South: Scooby damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 2135.3112324443537
+South: Scooby ordered 5 items
+South: Scooby sold 18 Items
+South: Scooby bought 11 Items
+South: The number of items damaged during cleaning by Scooby is 0
+South: Scooby leaves the store 
+South: Shaggy arrives at store
+South: Shaggy reports 3429.5672474448584 in register.
+South: Shaggy finds 43 items in store
+South: Shaggy finds  worth 2159.724682022343
+South: Shaggy damaged 1 items while tuning during doinventory step
+South: Items in inventory are worth 2159.724682022343
+South: Shaggy ordered 7 items
+South: Shaggy sold 21 Items
+South: Shaggy bought 12 Items
+South: The number of items damaged during cleaning by Shaggy is 0
+South: Shaggy leaves the store 

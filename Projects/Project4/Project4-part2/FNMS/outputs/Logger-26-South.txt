@@ -10,3 +10,27 @@ South: Shaggy sold 48 Items
 South: Shaggy bought 43 Items
 South: The number of items damaged during cleaning by Shaggy is 1
 South: Shaggy leaves the store 
+South: Daphne arrives at store
+South: Daphne added 33 items to inventory
+South: Daphne reports 21426.698998360756 in register.
+South: Daphne finds 75 items in store
+South: Daphne finds  worth 2720.4586130942535
+South: Daphne damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 2720.4586130942535
+South: Daphne ordered 3 items
+South: Daphne sold 61 Items
+South: Daphne bought 43 Items
+South: The number of items damaged during cleaning by Daphne is 0
+South: Daphne leaves the store 
+South: Fred arrives at store
+South: Fred added 18 items to inventory
+South: Fred reports 29387.683048408864 in register.
+South: Fred finds 33 items in store
+South: Fred finds  worth 1182.8624616773022
+South: Fred damaged 0 items while tuning during doinventory step
+South: Items in inventory are worth 1182.8624616773022
+South: Fred ordered 6 items
+South: Fred sold 49 Items
+South: Fred bought 40 Items
+South: The number of items damaged during cleaning by Fred is 0
+South: Fred leaves the store 

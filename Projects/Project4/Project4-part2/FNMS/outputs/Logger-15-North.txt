@@ -10,3 +10,27 @@ North: Shaggy sold 26 Items
 North: Shaggy bought 21 Items
 North: The number of items damaged during cleaning by Shaggy is 1
 North: Shaggy leaves the store 
+North: Scooby arrives at store
+North: Scooby added 3 items to inventory
+North: Scooby reports 7211.037649173423 in register.
+North: Scooby finds 39 items in store
+North: Scooby finds  worth 2257.7961473015325
+North: Scooby damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 2257.7961473015325
+North: Scooby ordered 7 items
+North: Scooby sold 31 Items
+North: Scooby bought 22 Items
+North: The number of items damaged during cleaning by Scooby is 0
+North: Scooby leaves the store 
+North: Velma arrives at store
+North: Velma added 3 items to inventory
+North: Velma reports 7411.761056302758 in register.
+North: Velma finds 40 items in store
+North: Velma finds  worth 2068.731589298719
+North: Velma damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 2068.731589298719
+North: Velma ordered 5 items
+North: Velma sold 22 Items
+North: Velma bought 20 Items
+North: The number of items damaged during cleaning by Velma is 0
+North: Velma leaves the store 

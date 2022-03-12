@@ -10,3 +10,27 @@ North: Scrappy sold 35 Items
 North: Scrappy bought 19 Items
 North: The number of items damaged during cleaning by Scrappy is 0
 North: Scrappy leaves the store 
+North: Scrappy arrives at store
+North: Scrappy added 21 items to inventory
+North: Scrappy reports 5839.771904650328 in register.
+North: Scrappy finds 61 items in store
+North: Scrappy finds  worth 2797.169903066132
+North: Scrappy damaged 0 items while tuning during doinventory step
+North: Items in inventory are worth 2797.169903066132
+North: Scrappy ordered 4 items
+North: Scrappy sold 36 Items
+North: Scrappy bought 19 Items
+North: The number of items damaged during cleaning by Scrappy is 0
+North: Scrappy leaves the store 
+North: Scooby arrives at store
+North: Scooby added 9 items to inventory
+North: Scooby reports 6513.713344429777 in register.
+North: Scooby finds 49 items in store
+North: Scooby finds  worth 2146.641576386855
+North: Scooby damaged 1 items while tuning during doinventory step
+North: Items in inventory are worth 2146.641576386855
+North: Scooby ordered 4 items
+North: Scooby sold 26 Items
+North: Scooby bought 19 Items
+North: The number of items damaged during cleaning by Scooby is 1
+North: Scooby leaves the store 
