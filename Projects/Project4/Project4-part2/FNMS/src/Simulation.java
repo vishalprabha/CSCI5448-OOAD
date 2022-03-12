@@ -54,12 +54,8 @@ public class Simulation {
         clerkObjList.add(new Clerk(10, "Scrappy", tuneAlgos.get(choice)));
         tuneAlgos.remove(choice);
         announcer= new Announcer();
-        logger= new Logger();
-        tracker= new Tracker(clerkObjList);
-        announcer.addListener(logger);
+        tracker= Tracker.getInstance(clerkObjList);
         announcer.addListener(tracker);
-
-
     }
 
     void runStores(int days){
@@ -68,6 +64,8 @@ public class Simulation {
 
             Clerk clerkObj1;
             Clerk clerkObj2;
+            logger= Logger.getInstance();
+            announcer.addListener(logger);
             // initialize that every clerk as not sick at the beginning of each day
             for(Clerk staffMember: clerkObjList){
                 staffMember.isSick = false;
@@ -103,6 +101,7 @@ public class Simulation {
             northMusicStoreObj.simulate(day, clerkObj1, announcer);
             southMusicStoreObj.simulate(day, clerkObj2, announcer);
 
+            announcer.removeListener(logger);
         }
     }
 

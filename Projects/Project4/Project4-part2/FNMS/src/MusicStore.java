@@ -64,6 +64,10 @@ public class MusicStore {
         this.listCustomerObj = listCustomerObj;
     }
 
+    public String getStoreName() {
+        return storeName;
+    }
+
     MusicStore(String name){
         // Initializing clerkObject list
         clerkObjList = new ArrayList<>();
@@ -237,8 +241,8 @@ public class MusicStore {
         }
         clerkObj.itemsSold = clerkObj.itemsSold + sold;
         clerkObj.itemsPurchased = clerkObj.itemsPurchased + bought;
-        announcer.publishEvent(storeName+": " +clerkObj.name + " sold " + sold + " Items", day);
-        announcer.publishEvent(storeName+": " +clerkObj.name + " bought " + bought + " Items", day);
+        announcer.publishEvent(storeName+": " +clerkObj.name + " sold " + sold + " Items", day, storeName);
+        announcer.publishEvent(storeName+": " +clerkObj.name + " bought " + bought + " Items", day, storeName);
         // Clean the store
         int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day, storeName);
         clerkObj.itemsDamaged = clerkObj.itemsDamaged + damaged;
@@ -384,8 +388,8 @@ public class MusicStore {
     public void closeUpStore(int day, Clerk clerkObj, Announcer announcer){
         clerkObj.itemsSold = clerkObj.itemsSold + specialsold;
         clerkObj.itemsPurchased = clerkObj.itemsPurchased + specialbought;
-        announcer.publishEvent(clerkObj.name + " sold " + specialsold + " Items", day);
-        announcer.publishEvent(clerkObj.name + " bought " + specialbought + " Items", day);
+        announcer.publishEvent(clerkObj.name + " sold " + specialsold + " Items", day, storeName);
+        announcer.publishEvent(clerkObj.name + " bought " + specialbought + " Items", day, storeName);
         // Clean the store
         int damaged = clerkObj.cleanTheStoreObj.orchestrateCleaning(clerkObj.damagePercentage, inventoryObj, announcer, clerkObj.name, day, storeName);
         clerkObj.itemsDamaged = clerkObj.itemsDamaged + damaged;

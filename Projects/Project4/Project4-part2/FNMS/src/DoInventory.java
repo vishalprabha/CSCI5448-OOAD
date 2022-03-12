@@ -57,10 +57,10 @@ public class DoInventory {
         }
         announce(totalPurchasePrice, storeName);
         // Publishing the tracked components
-        announcer.publishEvent(storeName+": "+name + " finds " + numberOfItems + " items in store", currentDay);
-        announcer.publishEvent(storeName+": "+name + " finds  worth "+totalPurchasePrice, currentDay);
-        announcer.publishEvent(storeName+": "+name + " damaged " + damangedTuning + " items while tuning during doinventory step", currentDay);
-        announcer.publishEvent(storeName+": Items in inventory are worth "+totalPurchasePrice, currentDay);
+        announcer.publishEvent(storeName+": "+name + " finds " + numberOfItems + " items in store", currentDay, storeName);
+        announcer.publishEvent(storeName+": "+name + " finds  worth "+totalPurchasePrice, currentDay, storeName);
+        announcer.publishEvent(storeName+": "+name + " damaged " + damangedTuning + " items while tuning during doinventory step", currentDay, storeName);
+        announcer.publishEvent(storeName+": Items in inventory are worth "+totalPurchasePrice, currentDay, storeName);
         //For subclass items with zero count, place an order except for clothing class
         int ordered =0;
         for(Map.Entry<String, Integer> element : countItems.entrySet()){
@@ -69,7 +69,7 @@ public class DoInventory {
                 placeAnOrderObj.orderItems(element.getKey(),deliveryObj, cashRegisterObj,checkRegisterObj ,currentDay, storeName);
             }
         }
-        announcer.publishEvent(storeName+": "+name +" ordered "+ordered+" items", currentDay);
+        announcer.publishEvent(storeName+": "+name +" ordered "+ordered+" items", currentDay, storeName);
         return damangedTuning;
     }
 

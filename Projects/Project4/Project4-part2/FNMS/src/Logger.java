@@ -4,12 +4,12 @@ import java.io.IOException;
 
 public class Logger implements MyListener{
     @Override
-    public void notifyEvent(String event, int day) {
+    public void notifyEvent(String event, int day, String name) {
         try {
 
             // Open given file in append mode by creating an
             // object of BufferedWriter class
-            BufferedWriter bout = new BufferedWriter(new FileWriter("outputs/Logger-"+day+".txt", true));
+            BufferedWriter bout = new BufferedWriter(new FileWriter("outputs/Logger-"+day+"-"+name+".txt", true));
 
             // Writing on output stream
             bout.write(event+"\n");
@@ -24,5 +24,11 @@ public class Logger implements MyListener{
             System.out.println("exception occurred" + e);
         }
 
+    }
+
+    private static Logger obj = new Logger();
+    private Logger() {};
+    public static Logger getInstance() {
+        return obj;
     }
 }

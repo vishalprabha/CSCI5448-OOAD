@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String []args){
-        int days = 30;
+        int days = 2;
         Simulation sim = new Simulation();
         sim.runStores(days);
 
