@@ -1,5 +1,5 @@
 package com.discussion.board;
-
+// Main control file
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class ForumApplication {
+public class DiscussionBoard {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -15,6 +15,6 @@ public class ForumApplication {
     }
 
 	public static void main(String[] args) {
-		SpringApplication.run(ForumApplication.class, args);
+		SpringApplication.run(DiscussionBoard.class, args);
 	}
 }

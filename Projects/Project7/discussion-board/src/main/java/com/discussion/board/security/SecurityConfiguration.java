@@ -1,6 +1,6 @@
-package com.discussion.board.configuration;
+package com.discussion.board.security;
 
-import com.discussion.board.repositories.UserRepository;
+import com.discussion.board.datastore.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

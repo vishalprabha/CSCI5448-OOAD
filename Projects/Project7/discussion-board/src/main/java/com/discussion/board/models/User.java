@@ -1,23 +1,28 @@
-package com.discussion.board.entities;
+package com.discussion.board.models;
+// User details with getters and setters
 
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import java.time.format.DateTimeFormatter;
+import java.util.Collection;
+import java.util.Collections;
+import java.time.LocalDateTime;
+import java.util.Optional;
+import java.util.List;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Optional;
-
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+// Model in the MVC
+// Creating the table
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "user")
@@ -37,6 +42,12 @@ public class User implements UserDetails {
     private String introduction;
 
     private LocalDateTime createdDate;
+
+    @OneToMany(mappedBy = "user")
+    private List<Thread> threads;
+
+    @OneToMany(mappedBy = "user")
+    private List<Post> posts;
 
     public Long getId() {
         return id;
@@ -104,7 +115,21 @@ public class User implements UserDetails {
         this.createdDate = createdDate;
     }
 
+    public List<Thread> getThreads() {
+        return threads;
+    }
 
+    public void setThreads(List<Thread> threads) {
+        this.threads = threads;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
 
     public String displayContentOfOptional() {
         if (Optional.ofNullable(introduction).isPresent())

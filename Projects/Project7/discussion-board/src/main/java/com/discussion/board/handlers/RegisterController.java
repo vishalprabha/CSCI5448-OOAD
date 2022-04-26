@@ -1,31 +1,34 @@
-package com.discussion.board.controllers;
+package com.discussion.board.handlers;
 
-import com.discussion.board.repositories.UserRepository;
-import com.discussion.board.entities.User;
+import com.discussion.board.datastore.UserRepository;
+import com.discussion.board.models.User;
 
+import java.time.LocalDateTime;
+import java.util.Objects;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.RedirectView;
-
 import javax.servlet.http.HttpServletRequest;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
+// The singleton pattern is a mechanism that ensures only one instance of an object exists per application
+// Spring restricts a singleton to one object per Spring IoC container. Spring creates all beans as singletons
 
+// Mediator
+// Controller in the MVC
 @Controller
 public class RegisterController {
-
+    // Singleton
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-
+    // Autowired singletons are used to inject a bean of the same type into each controller
     @Autowired
     public RegisterController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
@@ -41,7 +44,7 @@ public class RegisterController {
     public String displayRegister(Model model) {
         return "register";
     }
-
+    // Register user and encrypt store the pwd
     @PostMapping("register")
     public View registerUser(@RequestParam("username") String username, @RequestParam("password") String password,
                              @RequestParam("introduction") String introduction, HttpServletRequest request) {

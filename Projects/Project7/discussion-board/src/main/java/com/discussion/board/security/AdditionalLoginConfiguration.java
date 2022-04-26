@@ -1,4 +1,4 @@
-package com.discussion.board.configuration;
+package com.discussion.board.security;
 
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
