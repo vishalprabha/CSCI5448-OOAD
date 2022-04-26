@@ -31,3 +31,5 @@
 4. [Project 4](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project4)
 5. [Project 5](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project5)
 6. [Project 6](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project6)
+7. [Project 7](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Project7)
+8. [Pecha Kucha](https://github.com/vishalprabha/CSCI5448-OOAD/tree/main/Projects/Pecha%20Kucha)
