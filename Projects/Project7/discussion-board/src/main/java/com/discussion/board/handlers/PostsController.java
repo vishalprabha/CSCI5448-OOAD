@@ -15,6 +15,9 @@ import java.util.List;
 
 // Controller in the MVC
 // Mediator
+
+// State pattern is used to seamlessly shift between controllers. From profile -> CreatePost -> List posts -> CreateThread ->
+// ListThread, there is a seamless transfer between controllers.
 @Controller
 public class PostsController {
     // Singleton

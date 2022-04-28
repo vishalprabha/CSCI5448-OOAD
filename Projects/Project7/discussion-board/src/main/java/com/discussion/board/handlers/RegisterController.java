@@ -23,6 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 
 // Mediator
 // Controller in the MVC
+// State pattern is used to seamlessly shift between controllers. From profile -> CreatePost -> List posts -> CreateThread ->
+// ListThread, there is a seamless transfer between controllers.
 @Controller
 public class RegisterController {
     // Singleton

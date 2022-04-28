@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 // Controller in the MVC
 // Mediator
+// State pattern is used to seamlessly shift between controllers. From profile -> CreatePost -> List posts -> CreateThread ->
+// ListThread, there is a seamless transfer between controllers.
 @Controller
 public class ThreadsController {
     // Singleton
