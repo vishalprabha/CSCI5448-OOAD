@@ -2,6 +2,8 @@
 
 ## Discussion Board
 
+[Discussion board - demo video](https://youtu.be/bCqB5F68KEw)
+
 
 ## Team members
 
@@ -22,7 +24,7 @@
 - MVC
 - Proxy
 - Mediator
-
+- State
 
 ## Techstack
 
