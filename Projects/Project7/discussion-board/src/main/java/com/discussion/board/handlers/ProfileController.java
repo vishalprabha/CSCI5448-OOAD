@@ -31,6 +31,7 @@ public class ProfileController {
     private final ThreadRepository threadRepository;
     private final PostRepository postRepository;
     // Autowired singletons are used to inject a bean of the same type into each controller
+    // Reference code : https://www.baeldung.com/spring-autowire
     @Autowired
     public ProfileController(UserRepository userRepository, ThreadRepository threadRepository, PostRepository postRepository) {
         this.userRepository = userRepository;
@@ -38,6 +39,7 @@ public class ProfileController {
         this.postRepository = postRepository;
     }
     // Get profile details
+    // Reference code : https://springhow.com/thymeleaf-form-handling
     @GetMapping("profile")
     public String displayMyProfile(Model model) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -75,6 +77,7 @@ public class ProfileController {
         return "profile";
     }
 
+    // Reference code : https://www.baeldung.com/spring-thymeleaf-request-parameters
     @PostMapping("profile")
     public View addTask(@RequestParam("category") String category, @RequestParam("title") String title,
                         @RequestParam("content") String content, @RequestParam(name="code", required=false) String code,

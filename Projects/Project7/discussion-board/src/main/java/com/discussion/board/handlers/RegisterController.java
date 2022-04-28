@@ -28,6 +28,7 @@ public class RegisterController {
     // Singleton
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    // Reference code : https://www.baeldung.com/spring-autowire
     // Autowired singletons are used to inject a bean of the same type into each controller
     @Autowired
     public RegisterController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
@@ -40,6 +41,7 @@ public class RegisterController {
         return new BCryptPasswordEncoder();
     }
 
+    // Reference code : https://www.baeldung.com/spring-thymeleaf-request-parameters
     @GetMapping("register")
     public String displayRegister(Model model) {
         return "register";

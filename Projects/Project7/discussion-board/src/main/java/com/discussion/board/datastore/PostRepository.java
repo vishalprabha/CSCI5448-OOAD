@@ -10,6 +10,8 @@ import java.util.List;
 // The proxy pattern is a technique that allows one object — the proxy — to control access to another object — the subject or service.
 // Proxy pattern
 //  PostRepository directly access the MySQL DB using JPArepository which act as the proxies
+// Reference code : https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html
+// Reference code : https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 public interface PostRepository extends JpaRepository<Post, Long> {
     // Update operation for liking a post
     @Modifying

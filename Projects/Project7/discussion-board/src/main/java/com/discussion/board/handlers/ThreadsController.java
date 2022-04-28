@@ -20,12 +20,14 @@ public class ThreadsController {
     private final ThreadRepository threadRepository;
     private final PostRepository postRepository;
     // Autowired singletons are used to inject a bean of the same type into each controller
+    // Reference code : https://www.baeldung.com/spring-autowire
     @Autowired
     public ThreadsController(ThreadRepository threadRepository, PostRepository postRepository) {
         this.threadRepository = threadRepository;
         this.postRepository = postRepository;
     }
 
+    // Reference code : https://www.baeldung.com/spring-thymeleaf-request-parameters
     // Get all threads
     @GetMapping("threads")
     public String displayAllThreads(Model model) {

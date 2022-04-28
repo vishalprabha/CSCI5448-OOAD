@@ -19,12 +19,14 @@ import java.util.List;
 public class PostsController {
     // Singleton
     private final PostRepository postRepository;
+    // Reference code : https://www.baeldung.com/spring-autowire
     // Autowired singletons are used to inject a bean of the same type into each controller
     @Autowired
     public PostsController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
     // Get User posts
+    //Reference code : https://springhow.com/thymeleaf-form-handling
     @GetMapping("posts/{id}")
     public String displayPostsByUser(@PathVariable String id, Model model) {
         List<Post> posts = postRepository.findPostByUser_IdOrderByCreatedDateDesc(Long.parseLong(id));

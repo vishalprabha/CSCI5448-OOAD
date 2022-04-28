@@ -17,6 +17,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableGlobalMethodSecurity
+// Reference code : https://spring.io/blog/2013/07/03/spring-security-java-config-preview-web-security/
+// Reference code : https://www.baeldung.com/java-config-spring-security
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final UserRepository userRepository;

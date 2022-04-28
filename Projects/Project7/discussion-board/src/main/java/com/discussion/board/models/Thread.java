@@ -18,6 +18,7 @@ import javax.persistence.Table;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 // Model in the MVC
 // Creating the thread table
+// reference code : https://prateek-ashtikar512.medium.com/spring-boot-jpa-entity-listener-fa759e5b73a9
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "thread")

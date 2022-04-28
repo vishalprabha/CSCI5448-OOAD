@@ -32,12 +32,14 @@ public class ThreadController {
     private final ThreadRepository threadRepository;
     private final PostRepository postRepository;
     // Autowired singletons are used to inject a bean of the same type into each controller
+    // Reference code : https://www.baeldung.com/spring-autowire
     @Autowired
     public ThreadController(UserRepository userRepository, ThreadRepository threadRepository, PostRepository postRepository) {
         this.userRepository = userRepository;
         this.threadRepository = threadRepository;
         this.postRepository = postRepository;
     }
+    // Reference code : https://www.baeldung.com/spring-thymeleaf-request-parameters
     // Get the post
     @GetMapping("thread/{id}")
     public String displayThread(@PathVariable String id,  Model model) {
@@ -53,6 +55,7 @@ public class ThreadController {
         model.addAttribute("idUser", idUser);
         return "thread";
     }
+    // Reference code : https://www.baeldung.com/spring-thymeleaf-request-parameters
     // Update a post
     @PostMapping("thread/{id}")
     public View updatePost(@RequestParam String id_thread, @RequestParam String action, @RequestParam String id_post,
@@ -69,6 +72,7 @@ public class ThreadController {
         return new RedirectView(contextPath + "/thread/" + id_thread);
     }
 
+    // Reference code : https://www.baeldung.com/spring-thymeleaf-request-parameters
     // Create a post
     @PostMapping("thread")
     public View addPost(@RequestParam("content") String content,
