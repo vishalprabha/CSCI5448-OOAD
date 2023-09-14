@@ -58,3 +58,4 @@
 
 - JDK 1.8 is mandatory to run
 - Internet connection is required to load some components
+
